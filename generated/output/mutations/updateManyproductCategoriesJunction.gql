@@ -1,0 +1,5 @@
+mutation updateManyproductCategoriesJunction($data: product_categories_junctionUpdateManyMutationInput!, $where: product_categories_junctionWhereInput){
+    updateManyproductCategoriesJunction(data: $data, where: $where){
+        count
+    }
+}

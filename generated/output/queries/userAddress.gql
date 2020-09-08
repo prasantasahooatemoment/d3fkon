@@ -1,0 +1,20 @@
+query userAddress($where: user_addressWhereUniqueInput!){
+    userAddress(where: $where){
+        alias
+        city
+        first_name
+        id
+        last_name
+        poc_no
+        state
+        street_address
+        user{
+            blocked
+            full_name
+            id
+            mobile_no
+        }
+        user_id
+        zip_code
+    }
+}

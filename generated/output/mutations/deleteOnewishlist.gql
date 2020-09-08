@@ -1,0 +1,18 @@
+mutation deleteOnewishlist($where: wishlistWhereUniqueInput!){
+    deleteOnewishlist(where: $where){
+        id
+        product
+        product_quantity{
+            id
+            product_id
+            product_qty
+        }
+        user{
+            blocked
+            full_name
+            id
+            mobile_no
+        }
+        user_id
+    }
+}

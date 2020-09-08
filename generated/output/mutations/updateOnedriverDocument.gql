@@ -1,0 +1,15 @@
+mutation updateOnedriverDocument($data: driver_documentUpdateInput!, $where: driver_documentWhereUniqueInput!){
+    updateOnedriverDocument(data: $data, where: $where){
+        document
+        driver{
+            approved
+            blocked
+            currently_delivering
+            full_name
+            id
+            mobile_no
+        }
+        driver_id
+        id
+    }
+}

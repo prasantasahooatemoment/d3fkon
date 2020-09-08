@@ -1,0 +1,16 @@
+mutation updateOnestoreDocument($data: store_documentUpdateInput!, $where: store_documentWhereUniqueInput!){
+    updateOnestoreDocument(data: $data, where: $where){
+        document
+        id
+        store{
+            address
+            approved
+            blocked
+            id
+            lat
+            lng
+            name
+        }
+        store_id
+    }
+}

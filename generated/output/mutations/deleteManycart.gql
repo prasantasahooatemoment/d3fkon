@@ -1,0 +1,5 @@
+mutation deleteManycart($where: cartWhereInput){
+    deleteManycart(where: $where){
+        count
+    }
+}

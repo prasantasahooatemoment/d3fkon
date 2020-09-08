@@ -1,0 +1,25 @@
+query productCategoriesJunction($where: product_categories_junctionWhereUniqueInput!){
+    productCategoriesJunction(where: $where){
+        category{
+            grouped_under
+            icon
+            id
+            name
+        }
+        category_id
+        id
+        product{
+            cost
+            description
+            discount
+            discounted_cost
+            id
+            mrp
+            store_id
+            tax
+            title
+            total_cost
+        }
+        product_id
+    }
+}

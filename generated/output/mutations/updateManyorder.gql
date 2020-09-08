@@ -1,0 +1,5 @@
+mutation updateManyorder($data: orderUpdateManyMutationInput!, $where: orderWhereInput){
+    updateManyorder(data: $data, where: $where){
+        count
+    }
+}

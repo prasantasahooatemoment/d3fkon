@@ -1,0 +1,12 @@
+mutation deleteOneproductType($cursor: product_types_junctionWhereUniqueInput, $skip: Int, $take: Int, $where: product_typeWhereUniqueInput!){
+    deleteOneproductType(where: $where){
+        id
+        product_types_junction(cursor: $cursor, skip: $skip, take: $take){
+            id
+            product_id
+            product_type_id
+        }
+        type
+        type_name
+    }
+}

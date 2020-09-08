@@ -1,0 +1,5 @@
+mutation deleteManystoreDocument($where: store_documentWhereInput){
+    deleteManystoreDocument(where: $where){
+        count
+    }
+}

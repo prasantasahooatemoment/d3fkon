@@ -1,0 +1,13 @@
+mutation upsertOnecategory($cursor: product_categories_junctionWhereUniqueInput, $skip: Int, $take: Int, $create: categoryCreateInput!, $update: categoryUpdateInput!, $where: categoryWhereUniqueInput!){
+    upsertOnecategory(create: $create, update: $update, where: $where){
+        grouped_under
+        icon
+        id
+        name
+        product_categories_junction(cursor: $cursor, skip: $skip, take: $take){
+            category_id
+            id
+            product_id
+        }
+    }
+}

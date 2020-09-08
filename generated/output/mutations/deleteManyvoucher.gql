@@ -1,0 +1,5 @@
+mutation deleteManyvoucher($where: voucherWhereInput){
+    deleteManyvoucher(where: $where){
+        count
+    }
+}

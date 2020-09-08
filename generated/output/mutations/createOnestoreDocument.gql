@@ -1,0 +1,16 @@
+mutation createOnestoreDocument($data: store_documentCreateInput!){
+    createOnestoreDocument(data: $data){
+        document
+        id
+        store{
+            address
+            approved
+            blocked
+            id
+            lat
+            lng
+            name
+        }
+        store_id
+    }
+}

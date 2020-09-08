@@ -1,0 +1,5 @@
+mutation updateManyuserAddress($data: user_addressUpdateManyMutationInput!, $where: user_addressWhereInput){
+    updateManyuserAddress(data: $data, where: $where){
+        count
+    }
+}

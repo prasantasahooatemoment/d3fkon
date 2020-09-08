@@ -1,0 +1,5 @@
+mutation updateManyvoucher($data: voucherUpdateManyMutationInput!, $where: voucherWhereInput){
+    updateManyvoucher(data: $data, where: $where){
+        count
+    }
+}

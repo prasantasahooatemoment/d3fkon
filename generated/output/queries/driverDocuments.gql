@@ -1,0 +1,15 @@
+query driverDocuments($cursor: driver_documentWhereUniqueInput, $orderBy: driver_documentOrderByInput, $skip: Int, $take: Int, $where: driver_documentWhereInput){
+    driverDocuments(cursor: $cursor, orderBy: $orderBy, skip: $skip, take: $take, where: $where){
+        document
+        driver{
+            approved
+            blocked
+            currently_delivering
+            full_name
+            id
+            mobile_no
+        }
+        driver_id
+        id
+    }
+}

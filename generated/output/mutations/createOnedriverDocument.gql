@@ -1,0 +1,15 @@
+mutation createOnedriverDocument($data: driver_documentCreateInput!){
+    createOnedriverDocument(data: $data){
+        document
+        driver{
+            approved
+            blocked
+            currently_delivering
+            full_name
+            id
+            mobile_no
+        }
+        driver_id
+        id
+    }
+}

@@ -1,0 +1,5 @@
+mutation updateManydriver($data: driverUpdateManyMutationInput!, $where: driverWhereInput){
+    updateManydriver(data: $data, where: $where){
+        count
+    }
+}

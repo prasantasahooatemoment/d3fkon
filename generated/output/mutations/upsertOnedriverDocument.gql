@@ -1,0 +1,15 @@
+mutation upsertOnedriverDocument($create: driver_documentCreateInput!, $update: driver_documentUpdateInput!, $where: driver_documentWhereUniqueInput!){
+    upsertOnedriverDocument(create: $create, update: $update, where: $where){
+        document
+        driver{
+            approved
+            blocked
+            currently_delivering
+            full_name
+            id
+            mobile_no
+        }
+        driver_id
+        id
+    }
+}

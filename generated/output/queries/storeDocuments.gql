@@ -1,0 +1,16 @@
+query storeDocuments($cursor: store_documentWhereUniqueInput, $orderBy: store_documentOrderByInput, $skip: Int, $take: Int, $where: store_documentWhereInput){
+    storeDocuments(cursor: $cursor, orderBy: $orderBy, skip: $skip, take: $take, where: $where){
+        document
+        id
+        store{
+            address
+            approved
+            blocked
+            id
+            lat
+            lng
+            name
+        }
+        store_id
+    }
+}

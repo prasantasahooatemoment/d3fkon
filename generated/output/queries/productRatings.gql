@@ -1,0 +1,26 @@
+query productRatings($cursor: product_ratingWhereUniqueInput, $orderBy: product_ratingOrderByInput, $skip: Int, $take: Int, $where: product_ratingWhereInput){
+    productRatings(cursor: $cursor, orderBy: $orderBy, skip: $skip, take: $take, where: $where){
+        id
+        product{
+            cost
+            description
+            discount
+            discounted_cost
+            id
+            mrp
+            store_id
+            tax
+            title
+            total_cost
+        }
+        product_id
+        rating
+        user{
+            blocked
+            full_name
+            id
+            mobile_no
+        }
+        user_id
+    }
+}

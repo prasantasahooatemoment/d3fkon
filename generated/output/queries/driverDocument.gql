@@ -1,0 +1,15 @@
+query driverDocument($where: driver_documentWhereUniqueInput!){
+    driverDocument(where: $where){
+        document
+        driver{
+            approved
+            blocked
+            currently_delivering
+            full_name
+            id
+            mobile_no
+        }
+        driver_id
+        id
+    }
+}

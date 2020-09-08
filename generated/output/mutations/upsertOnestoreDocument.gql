@@ -1,0 +1,16 @@
+mutation upsertOnestoreDocument($create: store_documentCreateInput!, $update: store_documentUpdateInput!, $where: store_documentWhereUniqueInput!){
+    upsertOnestoreDocument(create: $create, update: $update, where: $where){
+        document
+        id
+        store{
+            address
+            approved
+            blocked
+            id
+            lat
+            lng
+            name
+        }
+        store_id
+    }
+}

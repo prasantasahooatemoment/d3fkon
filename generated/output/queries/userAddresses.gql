@@ -1,0 +1,20 @@
+query userAddresses($cursor: user_addressWhereUniqueInput, $orderBy: user_addressOrderByInput, $skip: Int, $take: Int, $where: user_addressWhereInput){
+    userAddresses(cursor: $cursor, orderBy: $orderBy, skip: $skip, take: $take, where: $where){
+        alias
+        city
+        first_name
+        id
+        last_name
+        poc_no
+        state
+        street_address
+        user{
+            blocked
+            full_name
+            id
+            mobile_no
+        }
+        user_id
+        zip_code
+    }
+}

@@ -1,0 +1,5 @@
+mutation updateManystore($data: storeUpdateManyMutationInput!, $where: storeWhereInput){
+    updateManystore(data: $data, where: $where){
+        count
+    }
+}

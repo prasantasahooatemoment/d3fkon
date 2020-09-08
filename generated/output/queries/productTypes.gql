@@ -1,0 +1,12 @@
+query productTypes($cursor: product_types_junctionWhereUniqueInput, $skip: Int, $take: Int, $cursor1: product_typeWhereUniqueInput, $orderBy: product_typeOrderByInput, $skip1: Int, $take1: Int, $where: product_typeWhereInput){
+    productTypes(cursor: $cursor1, orderBy: $orderBy, skip: $skip1, take: $take1, where: $where){
+        id
+        product_types_junction(cursor: $cursor, skip: $skip, take: $take){
+            id
+            product_id
+            product_type_id
+        }
+        type
+        type_name
+    }
+}

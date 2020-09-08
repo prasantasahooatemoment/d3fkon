@@ -1,0 +1,24 @@
+mutation upsertOneproductTypesJunction($create: product_types_junctionCreateInput!, $update: product_types_junctionUpdateInput!, $where: product_types_junctionWhereUniqueInput!){
+    upsertOneproductTypesJunction(create: $create, update: $update, where: $where){
+        id
+        product{
+            cost
+            description
+            discount
+            discounted_cost
+            id
+            mrp
+            store_id
+            tax
+            title
+            total_cost
+        }
+        product_id
+        product_type{
+            id
+            type
+            type_name
+        }
+        product_type_id
+    }
+}

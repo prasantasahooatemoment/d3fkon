@@ -1,0 +1,16 @@
+mutation deleteOnestoreDocument($where: store_documentWhereUniqueInput!){
+    deleteOnestoreDocument(where: $where){
+        document
+        id
+        store{
+            address
+            approved
+            blocked
+            id
+            lat
+            lng
+            name
+        }
+        store_id
+    }
+}

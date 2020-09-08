@@ -1,0 +1,20 @@
+mutation updateOneuserAddress($data: user_addressUpdateInput!, $where: user_addressWhereUniqueInput!){
+    updateOneuserAddress(data: $data, where: $where){
+        alias
+        city
+        first_name
+        id
+        last_name
+        poc_no
+        state
+        street_address
+        user{
+            blocked
+            full_name
+            id
+            mobile_no
+        }
+        user_id
+        zip_code
+    }
+}

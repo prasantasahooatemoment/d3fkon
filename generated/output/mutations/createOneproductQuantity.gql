@@ -1,0 +1,33 @@
+mutation createOneproductQuantity($cursor: cartWhereUniqueInput, $skip: Int, $take: Int, $cursor1: wishlistWhereUniqueInput, $skip1: Int, $take1: Int, $data: product_quantityCreateInput!){
+    createOneproductQuantity(data: $data){
+        cart(cursor: $cursor, skip: $skip, take: $take){
+            id
+            product
+            shipping_cost
+            total_cost
+            total_discount
+            user_id
+            vouchers
+        }
+        id
+        product{
+            cost
+            description
+            discount
+            discounted_cost
+            id
+            mrp
+            store_id
+            tax
+            title
+            total_cost
+        }
+        product_id
+        product_qty
+        wishlist(cursor: $cursor1, skip: $skip1, take: $take1){
+            id
+            product
+            user_id
+        }
+    }
+}

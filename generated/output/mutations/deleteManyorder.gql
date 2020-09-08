@@ -1,0 +1,5 @@
+mutation deleteManyorder($where: orderWhereInput){
+    deleteManyorder(where: $where){
+        count
+    }
+}

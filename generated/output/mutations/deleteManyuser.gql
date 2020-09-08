@@ -1,0 +1,5 @@
+mutation deleteManyuser($where: userWhereInput){
+    deleteManyuser(where: $where){
+        count
+    }
+}

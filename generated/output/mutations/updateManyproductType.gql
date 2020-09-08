@@ -1,0 +1,5 @@
+mutation updateManyproductType($data: product_typeUpdateManyMutationInput!, $where: product_typeWhereInput){
+    updateManyproductType(data: $data, where: $where){
+        count
+    }
+}

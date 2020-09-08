@@ -1,0 +1,5 @@
+mutation deleteManydriverDocument($where: driver_documentWhereInput){
+    deleteManydriverDocument(where: $where){
+        count
+    }
+}

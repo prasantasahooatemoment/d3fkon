@@ -1,0 +1,16 @@
+query storeDocument($where: store_documentWhereUniqueInput!){
+    storeDocument(where: $where){
+        document
+        id
+        store{
+            address
+            approved
+            blocked
+            id
+            lat
+            lng
+            name
+        }
+        store_id
+    }
+}

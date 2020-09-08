@@ -1,0 +1,243 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["insensitiveFilters", "connectOrCreate"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model address {
+  id             String           @default(dbgenerated()) @id
+  name           String?
+  street_one     String?
+  street_two     String?
+  city           String?          @default("Bangalore")
+  country        String?          @default("India")
+  region         String?          @default("Karnataka")
+  pincode        Float?
+  lat            Float?
+  lng            Float?
+  mobile         Float?           @unique
+  created_at     DateTime?        @default(now())
+  driver         driver[]         @relation("addressTodriver_address_id")
+  store          store[]          @relation("addressTostore_address_id")
+  user_addresses user_addresses[] @relation("addressTouser_addresses_address_id")
+}
+
+model bank_detail {
+  id           String    @default(dbgenerated()) @id
+  account_no   Float?
+  account_name String?
+  ifsc_code    String?
+  created_at   DateTime? @default(now())
+  bank_name    String?
+  driver_id    String?
+  store_id     String?
+  driver       driver?   @relation("bank_detail_driver_idTodriver", fields: [driver_id], references: [id])
+  store        store?    @relation("bank_detail_store_idTostore", fields: [store_id], references: [id])
+}
+
+model driver {
+  id              String            @default(dbgenerated()) @id
+  mobile          Float?            @unique
+  address_id      String?
+  created_at      DateTime?         @default(now())
+  address         address?          @relation("addressTodriver_address_id", fields: [address_id], references: [id])
+  bank_detail     bank_detail[]     @relation("bank_detail_driver_idTodriver")
+  driver_document driver_document[] @relation("driverTodriver_document_driver_id")
+  order           order[]           @relation("driverToorder_driver_id")
+  ticket          ticket[]          @relation("driverToticket_driver_id")
+}
+
+model driver_document {
+  id         String          @default(dbgenerated()) @id
+  url        String?
+  type       document_types?
+  driver_id  String?
+  created_at DateTime?       @default(now())
+  driver     driver?         @relation("driverTodriver_document_driver_id", fields: [driver_id], references: [id])
+}
+
+model order {
+  id               String           @default(dbgenerated()) @id
+  user_id          String?
+  driver_id        String?
+  ref_no           String?
+  otp              String?
+  store_id         String?
+  shipping_cost    Float?
+  total_commission Float?
+  created_at       DateTime?        @default(now())
+  active           Boolean?
+  status           order_status?
+  driver           driver?          @relation("driverToorder_driver_id", fields: [driver_id], references: [id])
+  store            store?           @relation("order_store_idTostore", fields: [store_id], references: [id])
+  user             user?            @relation("order_user_idTouser", fields: [user_id], references: [id])
+  order_products   order_products[] @relation("orderToorder_products_order_id")
+  transaction      transaction[]    @relation("orderTotransaction_order_id")
+}
+
+model order_products {
+  id               String    @default(dbgenerated()) @id
+  product_id       String?
+  order_id         String?
+  quantity         Float?
+  selling_price    Float?
+  discounted_price Float?
+  created_at       DateTime? @default(now())
+  updated_at       DateTime? @default(now())
+  size             String?
+  order            order?    @relation("orderToorder_products_order_id", fields: [order_id], references: [id])
+  product          product?  @relation("order_products_product_idToproduct", fields: [product_id], references: [id])
+}
+
+model product {
+  id               String           @default(dbgenerated()) @id
+  name             String?
+  description      String?
+  offer            Boolean?
+  active           Boolean?
+  cost_price       Float?
+  selling_price    Float?
+  discounted_price Float?
+  store_id         String?
+  created_at       DateTime?        @default(now())
+  store            store?           @relation("product_store_idTostore", fields: [store_id], references: [id])
+  order_products   order_products[] @relation("order_products_product_idToproduct")
+  product_image    product_image[]  @relation("productToproduct_image_product_id")
+  product_sizes    product_sizes[]
+  rating           rating[]         @relation("productTorating_product_id")
+}
+
+model product_image {
+  id         String    @default(dbgenerated()) @id
+  created_at DateTime? @default(now())
+  image_url  String?
+  product_id String?
+  product    product?  @relation("productToproduct_image_product_id", fields: [product_id], references: [id])
+}
+
+model product_sizes {
+  id         String    @default(dbgenerated()) @id
+  product_id String?
+  size_id    String?
+  created_at DateTime? @default(now())
+  product    product?  @relation(fields: [product_id], references: [id])
+  size       size?     @relation(fields: [size_id], references: [id])
+}
+
+model rating {
+  id         String    @default(dbgenerated()) @id
+  rating     Float?
+  product_id String?
+  user_id    String?
+  created_at DateTime? @default(now())
+  product    product?  @relation("productTorating_product_id", fields: [product_id], references: [id])
+  user       user?     @relation("rating_user_idTouser", fields: [user_id], references: [id])
+}
+
+model size {
+  id            String          @default(dbgenerated()) @id
+  name          String?         @unique
+  created_at    DateTime?       @default(now())
+  product_sizes product_sizes[]
+}
+
+model store {
+  id             String           @default(dbgenerated()) @id
+  logo           String?
+  address_id     String?
+  active         Boolean?
+  created_at     DateTime?        @default(now())
+  name           String?
+  address        address?         @relation("addressTostore_address_id", fields: [address_id], references: [id])
+  bank_detail    bank_detail[]    @relation("bank_detail_store_idTostore")
+  order          order[]          @relation("order_store_idTostore")
+  product        product[]        @relation("product_store_idTostore")
+  store_document store_document[] @relation("storeTostore_document_store_id")
+  ticket         ticket[]         @relation("storeToticket_store_id")
+}
+
+model store_document {
+  id         String    @default(dbgenerated()) @id
+  store_id   String?
+  url        String?
+  created_at DateTime? @default(now())
+  store      store?    @relation("storeTostore_document_store_id", fields: [store_id], references: [id])
+}
+
+model ticket {
+  id             String           @default(dbgenerated()) @id
+  user_id        String?
+  driver_id      String?
+  store_id       String?
+  type           ticket_types?
+  name           String?
+  open           Boolean?
+  created_at     DateTime?        @default(now())
+  driver         driver?          @relation("driverToticket_driver_id", fields: [driver_id], references: [id])
+  store          store?           @relation("storeToticket_store_id", fields: [store_id], references: [id])
+  user           user?            @relation("ticket_user_idTouser", fields: [user_id], references: [id])
+  ticket_history ticket_history[] @relation("ticketToticket_history_ticket_id")
+}
+
+model ticket_history {
+  id         String    @default(dbgenerated()) @id
+  message    String?
+  admin      Boolean?
+  ticket_id  String?
+  created_at DateTime? @default(now())
+  ticket     ticket?   @relation("ticketToticket_history_ticket_id", fields: [ticket_id], references: [id])
+}
+
+model transaction {
+  id         String    @default(dbgenerated()) @id
+  user_id    String?
+  order_id   String?
+  amount     Float?
+  tax        Float?
+  created_at DateTime? @default(now())
+  order      order?    @relation("orderTotransaction_order_id", fields: [order_id], references: [id])
+  user       user?     @relation("transaction_user_idTouser", fields: [user_id], references: [id])
+}
+
+model user {
+  id             String           @default(dbgenerated()) @id
+  mobile         Float?           @unique
+  name           String?
+  active         Boolean?
+  order          order[]          @relation("order_user_idTouser")
+  rating         rating[]         @relation("rating_user_idTouser")
+  ticket         ticket[]         @relation("ticket_user_idTouser")
+  transaction    transaction[]    @relation("transaction_user_idTouser")
+  user_addresses user_addresses[] @relation("userTouser_addresses_user_id")
+}
+
+model user_addresses {
+  id         String   @default(dbgenerated()) @id
+  address_id String?
+  user_id    String?
+  address    address? @relation("addressTouser_addresses_address_id", fields: [address_id], references: [id])
+  user       user?    @relation("userTouser_addresses_user_id", fields: [user_id], references: [id])
+}
+
+enum document_types {
+  aadhar
+  dl
+  photo
+}
+
+enum order_status {
+  arriving
+  confirmed
+  delivered
+  ordered
+}
+
+enum ticket_types {
+  driver
+  store
+  user
+}

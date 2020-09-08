@@ -1,0 +1,5 @@
+mutation updateManycart($data: cartUpdateManyMutationInput!, $where: cartWhereInput){
+    updateManycart(data: $data, where: $where){
+        count
+    }
+}

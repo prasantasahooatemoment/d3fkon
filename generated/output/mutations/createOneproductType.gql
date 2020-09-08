@@ -1,0 +1,12 @@
+mutation createOneproductType($cursor: product_types_junctionWhereUniqueInput, $skip: Int, $take: Int, $data: product_typeCreateInput!){
+    createOneproductType(data: $data){
+        id
+        product_types_junction(cursor: $cursor, skip: $skip, take: $take){
+            id
+            product_id
+            product_type_id
+        }
+        type
+        type_name
+    }
+}

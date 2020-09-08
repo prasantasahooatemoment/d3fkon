@@ -1,0 +1,24 @@
+mutation deleteOnevoucher($cursor: cartWhereUniqueInput, $skip: Int, $take: Int, $where: voucherWhereUniqueInput!){
+    deleteOnevoucher(where: $where){
+        cart(cursor: $cursor, skip: $skip, take: $take){
+            id
+            product
+            shipping_cost
+            total_cost
+            total_discount
+            user_id
+            vouchers
+        }
+        cost
+        id
+        user{
+            blocked
+            full_name
+            id
+            mobile_no
+        }
+        user_id
+        validity_date
+        voucher_no
+    }
+}

@@ -1,0 +1,5 @@
+mutation updateManyproductImage($data: product_imageUpdateManyMutationInput!, $where: product_imageWhereInput){
+    updateManyproductImage(data: $data, where: $where){
+        count
+    }
+}

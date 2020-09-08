@@ -1,0 +1,5 @@
+mutation deleteManyuserAddress($where: user_addressWhereInput){
+    deleteManyuserAddress(where: $where){
+        count
+    }
+}

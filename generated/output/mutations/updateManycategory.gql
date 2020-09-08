@@ -1,0 +1,5 @@
+mutation updateManycategory($data: categoryUpdateManyMutationInput!, $where: categoryWhereInput){
+    updateManycategory(data: $data, where: $where){
+        count
+    }
+}

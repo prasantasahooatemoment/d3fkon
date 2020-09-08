@@ -1,0 +1,66 @@
+query product($cursor: orderWhereUniqueInput, $skip: Int, $take: Int, $cursor1: product_categories_junctionWhereUniqueInput, $skip1: Int, $take1: Int, $cursor2: product_imageWhereUniqueInput, $skip2: Int, $take2: Int, $cursor3: product_quantityWhereUniqueInput, $skip3: Int, $take3: Int, $cursor4: product_ratingWhereUniqueInput, $skip4: Int, $take4: Int, $cursor5: product_types_junctionWhereUniqueInput, $skip5: Int, $take5: Int, $where: productWhereUniqueInput!){
+    product(where: $where){
+        cost
+        description
+        discount
+        discounted_cost
+        id
+        mrp
+        order(cursor: $cursor, skip: $skip, take: $take){
+            approved
+            driver_id
+            id
+            order_date
+            products
+            shipping_cost
+            shipping_provider
+            shipping_ref_no
+            status
+            store_ids
+            total_cost
+            total_discount
+            total_tax
+            user_address
+            user_id
+        }
+        product_categories_junction(cursor: $cursor1, skip: $skip1, take: $take1){
+            category_id
+            id
+            product_id
+        }
+        product_image(cursor: $cursor2, skip: $skip2, take: $take2){
+            id
+            image
+            product_id
+        }
+        product_quantity(cursor: $cursor3, skip: $skip3, take: $take3){
+            id
+            product_id
+            product_qty
+        }
+        product_rating(cursor: $cursor4, skip: $skip4, take: $take4){
+            id
+            product_id
+            rating
+            user_id
+        }
+        product_types_junction(cursor: $cursor5, skip: $skip5, take: $take5){
+            id
+            product_id
+            product_type_id
+        }
+        store{
+            address
+            approved
+            blocked
+            id
+            lat
+            lng
+            name
+        }
+        store_id
+        tax
+        title
+        total_cost
+    }
+}

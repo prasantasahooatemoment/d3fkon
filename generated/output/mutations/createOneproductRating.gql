@@ -1,0 +1,26 @@
+mutation createOneproductRating($data: product_ratingCreateInput!){
+    createOneproductRating(data: $data){
+        id
+        product{
+            cost
+            description
+            discount
+            discounted_cost
+            id
+            mrp
+            store_id
+            tax
+            title
+            total_cost
+        }
+        product_id
+        rating
+        user{
+            blocked
+            full_name
+            id
+            mobile_no
+        }
+        user_id
+    }
+}

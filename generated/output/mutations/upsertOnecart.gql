@@ -1,0 +1,29 @@
+mutation upsertOnecart($create: cartCreateInput!, $update: cartUpdateInput!, $where: cartWhereUniqueInput!){
+    upsertOnecart(create: $create, update: $update, where: $where){
+        id
+        product
+        product_quantity{
+            id
+            product_id
+            product_qty
+        }
+        shipping_cost
+        total_cost
+        total_discount
+        user{
+            blocked
+            full_name
+            id
+            mobile_no
+        }
+        user_id
+        voucher{
+            cost
+            id
+            user_id
+            validity_date
+            voucher_no
+        }
+        vouchers
+    }
+}

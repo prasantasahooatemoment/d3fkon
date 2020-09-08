@@ -1,0 +1,5 @@
+mutation deleteManyproductCategoriesJunction($where: product_categories_junctionWhereInput){
+    deleteManyproductCategoriesJunction(where: $where){
+        count
+    }
+}

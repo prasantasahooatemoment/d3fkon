@@ -1,0 +1,20 @@
+mutation deleteOneuserAddress($where: user_addressWhereUniqueInput!){
+    deleteOneuserAddress(where: $where){
+        alias
+        city
+        first_name
+        id
+        last_name
+        poc_no
+        state
+        street_address
+        user{
+            blocked
+            full_name
+            id
+            mobile_no
+        }
+        user_id
+        zip_code
+    }
+}

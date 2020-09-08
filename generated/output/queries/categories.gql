@@ -1,0 +1,13 @@
+query categories($cursor: product_categories_junctionWhereUniqueInput, $skip: Int, $take: Int, $cursor1: categoryWhereUniqueInput, $orderBy: categoryOrderByInput, $skip1: Int, $take1: Int, $where: categoryWhereInput){
+    categories(cursor: $cursor1, orderBy: $orderBy, skip: $skip1, take: $take1, where: $where){
+        grouped_under
+        icon
+        id
+        name
+        product_categories_junction(cursor: $cursor, skip: $skip, take: $take){
+            category_id
+            id
+            product_id
+        }
+    }
+}

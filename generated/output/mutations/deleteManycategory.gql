@@ -1,0 +1,5 @@
+mutation deleteManycategory($where: categoryWhereInput){
+    deleteManycategory(where: $where){
+        count
+    }
+}

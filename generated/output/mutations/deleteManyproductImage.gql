@@ -1,0 +1,5 @@
+mutation deleteManyproductImage($where: product_imageWhereInput){
+    deleteManyproductImage(where: $where){
+        count
+    }
+}

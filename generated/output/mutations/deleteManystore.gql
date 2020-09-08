@@ -1,0 +1,5 @@
+mutation deleteManystore($where: storeWhereInput){
+    deleteManystore(where: $where){
+        count
+    }
+}

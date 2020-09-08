@@ -1,0 +1,5 @@
+mutation updateManyproductRating($data: product_ratingUpdateManyMutationInput!, $where: product_ratingWhereInput){
+    updateManyproductRating(data: $data, where: $where){
+        count
+    }
+}

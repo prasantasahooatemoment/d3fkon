@@ -1,0 +1,19 @@
+mutation upsertOneproductImage($create: product_imageCreateInput!, $update: product_imageUpdateInput!, $where: product_imageWhereUniqueInput!){
+    upsertOneproductImage(create: $create, update: $update, where: $where){
+        id
+        image
+        product{
+            cost
+            description
+            discount
+            discounted_cost
+            id
+            mrp
+            store_id
+            tax
+            title
+            total_cost
+        }
+        product_id
+    }
+}

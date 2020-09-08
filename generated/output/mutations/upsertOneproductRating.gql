@@ -1,0 +1,26 @@
+mutation upsertOneproductRating($create: product_ratingCreateInput!, $update: product_ratingUpdateInput!, $where: product_ratingWhereUniqueInput!){
+    upsertOneproductRating(create: $create, update: $update, where: $where){
+        id
+        product{
+            cost
+            description
+            discount
+            discounted_cost
+            id
+            mrp
+            store_id
+            tax
+            title
+            total_cost
+        }
+        product_id
+        rating
+        user{
+            blocked
+            full_name
+            id
+            mobile_no
+        }
+        user_id
+    }
+}

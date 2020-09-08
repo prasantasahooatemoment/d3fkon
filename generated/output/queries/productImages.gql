@@ -1,0 +1,19 @@
+query productImages($cursor: product_imageWhereUniqueInput, $orderBy: product_imageOrderByInput, $skip: Int, $take: Int, $where: product_imageWhereInput){
+    productImages(cursor: $cursor, orderBy: $orderBy, skip: $skip, take: $take, where: $where){
+        id
+        image
+        product{
+            cost
+            description
+            discount
+            discounted_cost
+            id
+            mrp
+            store_id
+            tax
+            title
+            total_cost
+        }
+        product_id
+    }
+}

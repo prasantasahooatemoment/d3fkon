@@ -1,0 +1,56 @@
+{
+  "name": "typescript-graphql",
+  "scripts": {
+    "start": "node dist/server",
+    "clean": "rm -rf dist",
+    "preinstall": "npx npm-force-resolutions",
+   "build": "npm -s run clean && npm -s run generate && tsc",
+    "generate": "npm -s run generate:prisma && npm -s run generate:nexus",
+    "generate:prisma": "prisma generate",
+    "generate:nexus": "ts-node --transpile-only src/schema",
+    "postinstall": "npm -s run generate",
+    "dev": "ts-node-dev --no-notify --respawn --transpileOnly src/server"
+  },
+  "dependencies": {
+    "@nexus/schema": "0.15.0",
+    "@types/bcrypt": "^3.0.0",
+    "@types/jsonwebtoken": "^8.5.0",
+    "aws-sdk": "^2.727.1",
+    "bcrypt": "^5.0.0",
+    "circular-json": "^0.5.9",
+    "file-type": "^15.0.0",
+    "graphql": "14.6.0",
+    "graphql-middleware": "^4.0.2",
+    "graphql-shield": "^7.3.2",
+    "graphql-yoga": "1.18.3",
+    "jsonwebtoken": "^8.5.1",
+    "nexus-plugin-prisma": "^0.18.0",
+    "sendotp": "^1.2.9",
+    "tslib": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.157",
+    "@types/node": "12.12.42",
+    "@types/pg": "^7.14.3",
+    "@types/ws": "7.2.4",
+    "apollo-server": "^2.15.1",
+    "lodash": "^4.17.20",
+    "ts-node": "8.10.1",
+    "ts-node-dev": "1.0.0-pre.44",
+    "ts-transformer-keys": "^0.4.2",
+    "ttypescript": "^1.5.10",
+    "typescript": "^3.9.3"
+  },
+  "resolutions": {
+    "**/**/fs-capacitor": "6.2.0",
+    "**/graphql-upload": "11.0.0"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false,
+    "trailingComma": "all"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  }
+}
