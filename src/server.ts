@@ -9,6 +9,7 @@ import { APP_SECRET } from './constants'
 
 const opts = {
   host:'192.168.0.102',
+  port:4002,
   cors:{
       "origin": "*",
       "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
@@ -18,7 +19,7 @@ const opts = {
 }
 new GraphQLServer({  schema: applyMiddleware(schema, permissions), context: createContext }).start(opts, () =>{
   console.log(
-    `Pokemon being served at: http://localhost:4000\n⭐️`,
+    `Pokemon being served at: http://localhost:4002\n⭐️`,
   )
 }
 )
