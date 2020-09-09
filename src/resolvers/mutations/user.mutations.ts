@@ -9,10 +9,9 @@ export const userMutations = extendType({
     })
     
     t.crud.updateOneuser({
-      computedInputs: {
-        id: ({ctx, args}) => {
-          return ctx.userId
-        }
+      resolve:async(root, args, ctx, info, original)=>{
+        args.where.id = ctx.userId;
+        return original(root, args, ctx, info)
       }
     })
     // t.pr
