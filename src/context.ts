@@ -9,7 +9,7 @@ const prisma = new PrismaClient()
 const pubsub = new PubSub()
 
 export const createContext = (ctx: any): Context => {
-  let userId: number
+  let userId: string
   try {
     let Authorization = ''
     try {

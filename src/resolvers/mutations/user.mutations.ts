@@ -1,9 +1,10 @@
 
   import { extendType } from '@nexus/schema'
+import { truncate } from 'fs'
   export const userMutations = extendType({
     type:'Mutation',
       definition(t){
-       t.crud.createOneuser({"alias":"createOneuser"})
+       t.crud.createOneuser({"alias":"createOneuser", computedInputs:{active: ()=>true}})
 	t.crud.updateOneuser({"alias":"updateOneuser"})
 	t.crud.deleteOneuser({"alias":"deleteOneuser"})
 	t.crud.upsertOneuser({"alias":"upsertOneuser"})

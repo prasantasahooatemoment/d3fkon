@@ -10,6 +10,6 @@ export {
     Mutations,
     customMutations,
     // AuthPayload,
-    // MobileAuthPayload,
-    // authenticationMutation
+    MobileAuthPayload,
+    authenticationMutation
 }

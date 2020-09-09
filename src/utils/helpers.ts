@@ -2,7 +2,7 @@ import { sign } from "jsonwebtoken"
 import { tokens, APP_SECRET, AUTH_MSG91, OTP_MSG, SENDER_ID } from "../constants"
 var SendOtp = require('sendotp')
 
-export const generateAccessToken = (userId: number) => {
+export const generateAccessToken = (userId: string) => {
     const accessToken = sign(
       {
         userId,

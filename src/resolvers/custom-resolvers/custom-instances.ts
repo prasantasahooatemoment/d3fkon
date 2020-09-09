@@ -68,3 +68,12 @@ import { objectType } from '@nexus/schema'
       t.string('imageUrl');
     }
   })
+
+  export const OTP = objectType({
+    name:'OTP',
+    definition(t){
+      t.string('status', {nullable:true})
+    }
+  })
+
+  

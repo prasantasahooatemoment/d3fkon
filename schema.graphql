@@ -1021,6 +1021,11 @@ type imageObj {
   imageUrl: String!
 }
 
+type MobileAuthPayload {
+  accessToken: String!
+  user: user!
+}
+
 type Mutation {
   createOneaddress(data: addressCreateInput!): address!
   createOnebankDetail(data: bank_detailCreateInput!): bank_detail!
@@ -1076,6 +1081,8 @@ type Mutation {
   deleteOnetransaction(where: transactionWhereUniqueInput!): transaction
   deleteOneuser(where: userWhereUniqueInput!): user
   deleteOneuserAddresses(where: user_addressesWhereUniqueInput!): user_addresses
+  mobileLogin(mobile: Float!, otp: Float!): MobileAuthPayload!
+  sendOTP(mobile: Float!): OTP!
   updateManyaddress(data: addressUpdateManyMutationInput!, where: addressWhereInput): BatchPayload!
   updateManybankDetail(data: bank_detailUpdateManyMutationInput!, where: bank_detailWhereInput): BatchPayload!
   updateManydriver(data: driverUpdateManyMutationInput!, where: driverWhereInput): BatchPayload!
@@ -1131,6 +1138,7 @@ type Mutation {
   upsertOnetransaction(create: transactionCreateInput!, update: transactionUpdateInput!, where: transactionWhereUniqueInput!): transaction!
   upsertOneuser(create: userCreateInput!, update: userUpdateInput!, where: userWhereUniqueInput!): user!
   upsertOneuserAddresses(create: user_addressesCreateInput!, update: user_addressesUpdateInput!, where: user_addressesWhereUniqueInput!): user_addresses!
+  verifyOTP(mobile: Float!, otp: Int!): OTP!
 }
 
 input NestedBoolNullableFilter {
@@ -1898,6 +1906,10 @@ input orderWhereInput {
 
 input orderWhereUniqueInput {
   id: String
+}
+
+type OTP {
+  status: String
 }
 
 type product {
@@ -4393,7 +4405,6 @@ input user_addressesWhereUniqueInput {
 }
 
 input userCreateInput {
-  active: Boolean
   id: String
   mobile: Float
   name: String
