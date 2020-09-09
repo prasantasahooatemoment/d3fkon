@@ -43,28 +43,16 @@ export const bookingQuery = extendType({
       }
     })
 
-    t.field('storesWithOffers',{
-      type:'store',
-      list:true,
-      resolve: async (root: any ,args,ctx,info)=>{
-        // root.product.where = {offer: {equals: true}};
-        const storesWithOffers = await ctx.prisma.store.findMany({
-          where:{
-            product:{
-              some:{
-                offer:{
-                  equals:true
-                }
-              }
-            }
-          },
-          include:{
-            product:true
-          },
-        })
-      
-        return storesWithOffers;
-
+    t.crud.stores({
+      alias:'storesWithOffers',
+      pagination:true,
+      filtering:true,
+      computedInputs:{
+        where: () => ({ product:{
+          some:{
+            offer:true
+          }
+        }})
       }
     })
 }
