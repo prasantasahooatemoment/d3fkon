@@ -13,7 +13,7 @@ export const product = objectType({
 	t.field('avgRating', {
 		type:'Float',
 		async resolve(root, args, ctx, info){
-			return await ctx.prisma.rating.aggregate({
+			const res =  await ctx.prisma.rating.aggregate({
 				avg:{
 					rating:true
 				},
@@ -21,6 +21,7 @@ export const product = objectType({
 					product_id:root.id
 				}
 			})
+			return res || 0;
 		}
 	})
 	t.model.offer()
