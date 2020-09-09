@@ -69,6 +69,7 @@ CREATE TABLE "rating" (
 CREATE TABLE "driver" (
   "id" uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
   "mobile" float UNIQUE,
+  "name" varchar,
   "address_id" uuid,
   "created_at" timestamptz DEFAULT (now())
 );

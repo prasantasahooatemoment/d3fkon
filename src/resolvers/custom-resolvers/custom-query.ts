@@ -33,11 +33,12 @@ export const bookingQuery = extendType({
       type:'store',
       list:true,
       resolve: async (root, args, ctx, info)=>{
-        const stores = await ctx.prisma.store.findMany({
+        let stores = await ctx.prisma.store.findMany({
           include:{
             order:true
           }
         })
+        stores = stores.filter(e=>e.order.length > 0);
       return stores.sort((a,b)=>(b.order.length - a.order.length)).slice(0,10);
       }
     })
