@@ -47,6 +47,7 @@ export const bookingQuery = extendType({
       list:true,
       resolve: async (root: any ,args,ctx,info)=>{
         // root.product.where = {offer: {equals: true}};
+        console.log(info.variableValues);
         const storesWithOffers = await ctx.prisma.store.findMany({
           where:{
             product:{
