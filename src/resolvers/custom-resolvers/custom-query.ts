@@ -63,8 +63,8 @@ export const bookingQuery = extendType({
 
         storesWithOffers.forEach((e,i, arr)=>{
           arr[i].product = arr[i].product.filter((x)=>x.offer == true);
-          console.log(arr[i].product)
         })
+        console.log(storesWithOffers);
         return storesWithOffers;
 
       }
