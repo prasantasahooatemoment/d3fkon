@@ -61,11 +61,10 @@ export const bookingQuery = extendType({
           }
         })
 
-        const stores = storesWithOffers.map((e,i)=>{
+        storesWithOffers.forEach((e,i)=>{
           e.product = e.product.filter((x)=>x.offer);
-          return e;
         })
-        return stores;
+        return storesWithOffers;
 
       }
     })
