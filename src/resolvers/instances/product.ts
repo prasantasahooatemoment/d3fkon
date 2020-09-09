@@ -21,7 +21,7 @@ export const product = objectType({
 					product_id:root.id
 				}
 			})
-			return res || 0;
+			return res.avg.rating || 0;
 		}
 	})
 	t.model.offer()
