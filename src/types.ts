@@ -8,7 +8,7 @@ export interface Context {
   req: Request
   res: Response
   pubsub: PubSub
-  userId: number
+  userId: string
 }
 
 export interface Token {
