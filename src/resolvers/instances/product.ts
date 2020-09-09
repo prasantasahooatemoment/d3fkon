@@ -31,7 +31,11 @@ export const product = objectType({
 	t.model.order_products()
 	t.model.product_image()
 	t.model.product_sizes()
-	t.model.rating()
+	t.model.rating({
+		filtering:true,
+		ordering:true,
+		pagination:true
+	})
     }
   })
 
