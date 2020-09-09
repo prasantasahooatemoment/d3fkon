@@ -10,10 +10,8 @@ const pubsub = new PubSub()
 
 
 prisma.$use(async (params, next) => {
-  if(params.action == 'update' && params.model == 'user'){
-    console.log("Hit")
-  }
   const result = await next(params);
+  
   return result;
 })
 
