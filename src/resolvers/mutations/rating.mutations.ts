@@ -3,7 +3,9 @@
   export const ratingMutations = extendType({
     type:'Mutation',
       definition(t){
-       t.crud.createOnerating({"alias":"createOnerating"})
+       t.crud.createOnerating({"alias":"createOnerating", computedInputs:{
+       user: ({ctx}) => ({connect: {id: ctx.userId}})
+      },})
 	t.crud.updateOnerating({"alias":"updateOnerating"})
 	t.crud.deleteOnerating({"alias":"deleteOnerating"})
 	t.crud.upsertOnerating({"alias":"upsertOnerating"})

@@ -7,6 +7,7 @@
        computedInputs:{
          otp: ()=> Math.floor(1000 + Math.random() * 9000).toString(),
         ref_no: () => alphanumeric_unique().toUpperCase(),
+        user: ({ctx}) => ({connect: {id: ctx.userId}})
        },
        async resolve(root, args, ctx, info, original){
          const res = original(root,args,ctx,info);
