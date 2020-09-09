@@ -4640,6 +4640,7 @@ export interface NexusGenFieldTypes {
     order: NexusGenRootTypes['order'] | null; // order
     orderProducts: NexusGenRootTypes['order_products'][]; // [order_products!]!
     orders: NexusGenRootTypes['order'][]; // [order!]!
+    popularStores: NexusGenRootTypes['store'][]; // [store!]!
     product: NexusGenRootTypes['product'] | null; // product
     productImage: NexusGenRootTypes['product_image'] | null; // product_image
     productImages: NexusGenRootTypes['product_image'][]; // [product_image!]!

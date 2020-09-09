@@ -2659,6 +2659,7 @@ type Query {
   order(where: orderWhereUniqueInput!): order
   orderProducts(after: order_productsWhereUniqueInput, before: order_productsWhereUniqueInput, first: Int, last: Int, orderBy: [order_productsOrderByInput!], where: order_productsWhereInput): [order_products!]!
   orders(after: orderWhereUniqueInput, before: orderWhereUniqueInput, first: Int, last: Int, orderBy: [orderOrderByInput!], where: orderWhereInput): [order!]!
+  popularStores: [store!]!
   product(where: productWhereUniqueInput!): product
   productImage(where: product_imageWhereUniqueInput!): product_image
   productImages(after: product_imageWhereUniqueInput, before: product_imageWhereUniqueInput, first: Int, last: Int, orderBy: [product_imageOrderByInput!], where: product_imageWhereInput): [product_image!]!

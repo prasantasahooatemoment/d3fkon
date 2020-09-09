@@ -28,6 +28,19 @@ export const bookingQuery = extendType({
     
       }
     })
+
+    t.field('popularStores',{
+      type:'store',
+      list:true,
+      resolve: async (root, args, ctx, info)=>{
+        const stores = await ctx.prisma.store.findMany({
+          include:{
+            order:true
+          }
+        })
+      return stores.sort((a,b)=>(b.order.length - a.order.length));
+      }
+    })
 }
 });
 
