@@ -46,6 +46,7 @@ export const bookingQuery = extendType({
     t.crud.stores({
       alias:'storesWithOffers',
       pagination:true,
+      ordering:true,
       filtering:true,
       computedInputs:{
         where: () => ({ product:{
