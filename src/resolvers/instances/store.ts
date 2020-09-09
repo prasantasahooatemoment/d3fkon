@@ -11,7 +11,9 @@ export const store = objectType({
 	t.model.name()
 	t.model.address()
 	t.model.bank_detail()
-	t.model.product()
+	t.model.product({
+		filtering:true
+	})
 	t.model.order()
 	t.model.store_document()
 	t.model.ticket()
