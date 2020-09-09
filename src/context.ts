@@ -9,7 +9,7 @@ const prisma = new PrismaClient()
 const pubsub = new PubSub()
 
 export const createContext = (ctx: any): Context => {
-  let userId = '-1';
+  let userId;
   try {
     let Authorization = ''
     try {
@@ -22,11 +22,11 @@ export const createContext = (ctx: any): Context => {
     const token = Authorization.replace('Bearer ', '')
     const verifiedToken = verify(token, APP_SECRET) as Token
 
-    // if (!verifiedToken.userId && verifiedToken.type !== tokens.access.name)
-    //   userId = -1
-    // else userId = verifiedToken.userId
+    if (!verifiedToken.userId && verifiedToken.type !== tokens.access.name)
+      userId = -1
+    else userId = verifiedToken.userId
   } catch (e) {
-    // userId = -1
+    userId = -1
   }
   return {
     ...ctx,
