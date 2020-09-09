@@ -7,6 +7,7 @@ export const driver = objectType({
 	t.model.created_at()
 	t.model.id()
 	t.model.mobile()
+	t.model.name()
 	t.model.address()
 	t.model.bank_detail()
 	t.model.driver_document()
