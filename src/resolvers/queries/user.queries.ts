@@ -15,6 +15,6 @@ export const userQuery = extendType({
       }
     })
     
-    t.crud.users({ filtering: true, ordering: true, alias: 'fetchAllUsers' })
+    t.crud.users({ filtering: true, ordering: true, alias: 'users' })
   },
 })

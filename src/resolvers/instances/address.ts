@@ -18,6 +18,12 @@ export const address = objectType({
 	t.model.driver()
 	t.model.store()
 	t.model.user_addresses()
+	t.field('displayAddress', {
+		type:'String',
+		resolve:(root, args, ctx, info)=>{
+			return root.street_one + ', ' + root.street_two + ', ' + root.city + ' - ' + root.pincode
+		}
+	})
     }
   })
 

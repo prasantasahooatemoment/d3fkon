@@ -13,7 +13,8 @@ export const userMutations = extendType({
         user:{
           id:ctx.userId
         }
-      }) },
+      }) 
+    },
     })
     t.crud.deleteOneuser({ alias: 'deleteOneuser' })
     t.crud.upsertOneuser({ alias: 'upsertOneuser' })
