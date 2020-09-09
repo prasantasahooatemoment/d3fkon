@@ -4,6 +4,13 @@ export const ticketMutations = extendType({
   definition(t) {
     t.crud.createOneticket({
       alias: 'createOneticket',
+      computedInputs:{
+        user:({ctx, args})=>({
+          connect:{
+            id:ctx.userId
+          }
+        })
+      }
     })
     t.crud.updateOneticket({ alias: 'updateOneticket' })
     t.crud.deleteOneticket({ alias: 'deleteOneticket' })
