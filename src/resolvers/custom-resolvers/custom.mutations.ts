@@ -33,7 +33,7 @@ export const uploadMutations = extendType({
     t.crud.createOneaddress({
       alias:"createAddress",
       resolve: async(root, args, ctx, info, original)=>{
-          args.user_addresses = {
+          args.data.user_addresses = {
             create:{
               user:{
                 connect:{
