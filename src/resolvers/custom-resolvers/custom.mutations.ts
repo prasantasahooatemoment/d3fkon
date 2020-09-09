@@ -29,5 +29,21 @@ export const uploadMutations = extendType({
         return { imageUrl: `https://boilerplate-bucket.s3.fr-par.scw.cloud/${image.filename}`}
       },
     })
+
+    t.crud.createOneaddress({
+      alias:"createAddress",
+      resolve: async(root, args, ctx, info, original)=>{
+          args.user_addresses = {
+            create:{
+              user:{
+                connect:{
+                  id:ctx.userId
+                }
+              }
+            }
+          }
+          return original(root, args, ctx, info);
+      }
+    })
   },
 })
