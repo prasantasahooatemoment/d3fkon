@@ -55,16 +55,13 @@ export const bookingQuery = extendType({
                 }
               }
             }
-          },
-          include:{
-            product:true
           }
         })
 
-        storesWithOffers.forEach((e,i, arr)=>{
-          arr[i].product = arr[i].product.filter((x)=>x.offer == true);
-        })
-        console.log(storesWithOffers[0].product);
+        // storesWithOffers.forEach((e,i, arr)=>{
+        //   arr[i].product = arr[i].product.filter((x)=>x.offer == true);
+        // })
+        // console.log(storesWithOffers[0].product);
         return storesWithOffers;
 
       }
