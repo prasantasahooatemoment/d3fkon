@@ -38,7 +38,7 @@ export const bookingQuery = extendType({
             order:true
           }
         })
-      return stores.sort((a,b)=>(b.order.length - a.order.length));
+      return stores.sort((a,b)=>(b.order.length - a.order.length)).slice(0,10);
       }
     })
 
@@ -62,7 +62,7 @@ export const bookingQuery = extendType({
         })
 
         storesWithOffers.forEach((e,i, arr)=>{
-          arr[i].product = arr[i].product.filter((x)=>x.offer);
+          arr[i].product = arr[i].product.filter((x)=>x.offer == true);
         })
         return storesWithOffers;
 
