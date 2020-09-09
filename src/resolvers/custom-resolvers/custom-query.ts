@@ -41,6 +41,32 @@ export const bookingQuery = extendType({
       return stores.sort((a,b)=>(b.order.length - a.order.length));
       }
     })
+
+    t.field('storesWithOffers',{
+      type:'store',
+      list:true,
+      resolve: async (root,args,ctx,info)=>{
+        const storesWithOffers = await ctx.prisma.store.findMany({
+          where:{
+            product:{
+              some:{
+                offer:{
+                  equals:true
+                }
+              }
+            }
+          },
+          include:{
+            product:true
+          }
+        })
+
+        return storesWithOffers.forEach((e,i)=>{
+          e.product = e.product.filter((x)=>x.offer);
+        })
+
+      }
+    })
 }
 });
 
