@@ -89,6 +89,8 @@ CREATE TABLE "order" (
   "otp" varchar,
   "store_id" uuid,
   "shipping_cost" float,
+  "pickup_address_id" uuid,
+  "drop_address_id" uuid,
   "total_commission" float,
   "created_at" timestamptz DEFAULT (now()),
   "active" boolean,
@@ -211,6 +213,10 @@ ALTER TABLE "product_sizes" ADD FOREIGN KEY ("size_id") REFERENCES "size" ("id")
 ALTER TABLE "driver_document" ADD FOREIGN KEY ("driver_id") REFERENCES "driver" ("id");
 
 ALTER TABLE "order" ADD FOREIGN KEY ("driver_id") REFERENCES "driver" ("id");
+
+ALTER TABLE "order" ADD FOREIGN KEY ("pickup_address_id") REFERENCES "address" ("id");
+
+ALTER TABLE "order" ADD FOREIGN KEY ("drop_address_id") REFERENCES "address" ("id");
 
 ALTER TABLE "ticket" ADD FOREIGN KEY ("user_id") REFERENCES "user" ("id");
 
