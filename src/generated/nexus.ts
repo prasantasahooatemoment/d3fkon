@@ -3792,7 +3792,6 @@ export interface NexusGenInputs {
   }
   userUpdateInput: { // input type
     active?: NexusGenInputs['NullableBoolFieldUpdateOperationsInput'] | null; // NullableBoolFieldUpdateOperationsInput
-    id?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
     mobile?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
     name?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     order?: NexusGenInputs['orderUpdateManyWithoutUserInput'] | null; // orderUpdateManyWithoutUserInput
@@ -5729,6 +5728,14 @@ export interface NexusGenArgTypes {
       where?: NexusGenInputs['store_documentWhereInput'] | null; // store_documentWhereInput
     }
     stores: { // args
+      after?: NexusGenInputs['storeWhereUniqueInput'] | null; // storeWhereUniqueInput
+      before?: NexusGenInputs['storeWhereUniqueInput'] | null; // storeWhereUniqueInput
+      first?: number | null; // Int
+      last?: number | null; // Int
+      orderBy?: NexusGenInputs['storeOrderByInput'][] | null; // [storeOrderByInput!]
+      where?: NexusGenInputs['storeWhereInput'] | null; // storeWhereInput
+    }
+    storesWithOffers: { // args
       after?: NexusGenInputs['storeWhereUniqueInput'] | null; // storeWhereUniqueInput
       before?: NexusGenInputs['storeWhereUniqueInput'] | null; // storeWhereUniqueInput
       first?: number | null; // Int

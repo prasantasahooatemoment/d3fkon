@@ -9,9 +9,9 @@ export const userMutations = extendType({
     })
     
     t.crud.updateOneuser({
-      alias: 'updateOneuser',
-      computedInputs: { id: ({ctx, args}) => ( ctx.userId ) 
-    },
+      computedInputs: {
+        id: ({ctx, args}) => ctx.userId
+      }
     })
     // t.pr
     t.crud.deleteOneuser({ alias: 'deleteOneuser' })

@@ -2975,7 +2975,7 @@ type Query {
   storeDocument(where: store_documentWhereUniqueInput!): store_document
   storeDocuments(after: store_documentWhereUniqueInput, before: store_documentWhereUniqueInput, first: Int, last: Int, orderBy: [store_documentOrderByInput!], where: store_documentWhereInput): [store_document!]!
   stores(after: storeWhereUniqueInput, before: storeWhereUniqueInput, first: Int, last: Int, orderBy: [storeOrderByInput!], where: storeWhereInput): [store!]!
-  storesWithOffers: [store!]!
+  storesWithOffers(after: storeWhereUniqueInput, before: storeWhereUniqueInput, first: Int, last: Int, orderBy: [storeOrderByInput!], where: storeWhereInput): [store!]!
   ticket(where: ticketWhereUniqueInput!): ticket
   ticketHistories(after: ticket_historyWhereUniqueInput, before: ticket_historyWhereUniqueInput, first: Int, last: Int, orderBy: [ticket_historyOrderByInput!], where: ticket_historyWhereInput): [ticket_history!]!
   ticketHistory(where: ticket_historyWhereUniqueInput!): ticket_history
@@ -4837,7 +4837,6 @@ input userOrderByInput {
 
 input userUpdateInput {
   active: NullableBoolFieldUpdateOperationsInput
-  id: StringFieldUpdateOperationsInput
   mobile: NullableFloatFieldUpdateOperationsInput
   name: NullableStringFieldUpdateOperationsInput
   order: orderUpdateManyWithoutUserInput
