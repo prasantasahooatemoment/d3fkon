@@ -4,7 +4,7 @@ export const userQuery = extendType({
   type: 'Query',
   definition(t) {
     t.crud.users({ filtering: true, ordering: true, alias: 'user',computedInputs:{
-      where: ({args, ctx, info})=> ({
+      where: ({args, ctx, info}) => ({
         id:{equals:ctx.userId}
       })
     } })
