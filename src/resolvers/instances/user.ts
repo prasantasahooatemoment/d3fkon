@@ -4,7 +4,7 @@ export const user = objectType({
     name:'user',
     definition(t){
      t.model.active()
-	// t.model.id()
+	t.model.id()
 	t.model.mobile()
 	t.model.name()
 	t.field('orderCount',{
