@@ -6,6 +6,7 @@ type address {
   city: String
   country: String
   created_at: DateTime
+  displayAddress: String!
   driver(after: driverWhereUniqueInput, before: driverWhereUniqueInput, first: Int, last: Int): [driver!]!
   id: String!
   lat: Float
@@ -763,7 +764,7 @@ input driver_documentUpdateInput {
 input driver_documentUpdateManyDataInput {
   created_at: NullableDateTimeFieldUpdateOperationsInput
   id: StringFieldUpdateOperationsInput
-  type: NullableEnumdocument_typesFieldUpdateOperationsInput
+  type: document_types
   url: NullableStringFieldUpdateOperationsInput
 }
 
@@ -795,7 +796,7 @@ input driver_documentUpdateManyWithWhereNestedInput {
 input driver_documentUpdateWithoutDriverDataInput {
   created_at: NullableDateTimeFieldUpdateOperationsInput
   id: StringFieldUpdateOperationsInput
-  type: NullableEnumdocument_typesFieldUpdateOperationsInput
+  type: document_types
   url: NullableStringFieldUpdateOperationsInput
 }
 
@@ -1168,6 +1169,7 @@ type MobileAuthPayload {
 }
 
 type Mutation {
+  createAddress(data: addressCreateInput!): address!
   createOneaddress(data: addressCreateInput!): address!
   createOnebankDetail(data: bank_detailCreateInput!): bank_detail!
   createOnedriver(data: driverCreateInput!): driver!
@@ -1345,18 +1347,6 @@ input NullableDateTimeFieldUpdateOperationsInput {
   set: DateTime
 }
 
-input NullableEnumdocument_typesFieldUpdateOperationsInput {
-  set: document_types
-}
-
-input NullableEnumorder_statusFieldUpdateOperationsInput {
-  set: order_status
-}
-
-input NullableEnumticket_typesFieldUpdateOperationsInput {
-  set: ticket_types
-}
-
 input NullableFloatFieldUpdateOperationsInput {
   set: Float
 }
@@ -1370,10 +1360,12 @@ type order {
   created_at: DateTime
   driver: driver
   driver_id: String
+  drop_address: address
   drop_address_id: String
   id: String!
   order_products(after: order_productsWhereUniqueInput, before: order_productsWhereUniqueInput, first: Int, last: Int): [order_products!]!
   otp: String
+  pickup_address: address
   pickup_address_id: String
   ref_no: String
   shipping_cost: Float
@@ -1897,7 +1889,7 @@ input orderUpdateManyDataInput {
   otp: NullableStringFieldUpdateOperationsInput
   ref_no: NullableStringFieldUpdateOperationsInput
   shipping_cost: NullableFloatFieldUpdateOperationsInput
-  status: NullableEnumorder_statusFieldUpdateOperationsInput
+  status: order_status
   total_commission: NullableFloatFieldUpdateOperationsInput
 }
 
@@ -2012,7 +2004,7 @@ input orderUpdateWithoutAddress_addressToorder_drop_address_idDataInput {
   otp: NullableStringFieldUpdateOperationsInput
   ref_no: NullableStringFieldUpdateOperationsInput
   shipping_cost: NullableFloatFieldUpdateOperationsInput
-  status: NullableEnumorder_statusFieldUpdateOperationsInput
+  status: order_status
   store: storeUpdateOneWithoutOrderInput
   total_commission: NullableFloatFieldUpdateOperationsInput
   transaction: transactionUpdateManyWithoutOrderInput
@@ -2029,7 +2021,7 @@ input orderUpdateWithoutAddress_addressToorder_pickup_address_idDataInput {
   otp: NullableStringFieldUpdateOperationsInput
   ref_no: NullableStringFieldUpdateOperationsInput
   shipping_cost: NullableFloatFieldUpdateOperationsInput
-  status: NullableEnumorder_statusFieldUpdateOperationsInput
+  status: order_status
   store: storeUpdateOneWithoutOrderInput
   total_commission: NullableFloatFieldUpdateOperationsInput
   transaction: transactionUpdateManyWithoutOrderInput
@@ -2046,7 +2038,7 @@ input orderUpdateWithoutDriverDataInput {
   otp: NullableStringFieldUpdateOperationsInput
   ref_no: NullableStringFieldUpdateOperationsInput
   shipping_cost: NullableFloatFieldUpdateOperationsInput
-  status: NullableEnumorder_statusFieldUpdateOperationsInput
+  status: order_status
   store: storeUpdateOneWithoutOrderInput
   total_commission: NullableFloatFieldUpdateOperationsInput
   transaction: transactionUpdateManyWithoutOrderInput
@@ -2063,7 +2055,7 @@ input orderUpdateWithoutOrder_productsDataInput {
   otp: NullableStringFieldUpdateOperationsInput
   ref_no: NullableStringFieldUpdateOperationsInput
   shipping_cost: NullableFloatFieldUpdateOperationsInput
-  status: NullableEnumorder_statusFieldUpdateOperationsInput
+  status: order_status
   store: storeUpdateOneWithoutOrderInput
   total_commission: NullableFloatFieldUpdateOperationsInput
   transaction: transactionUpdateManyWithoutOrderInput
@@ -2081,7 +2073,7 @@ input orderUpdateWithoutStoreDataInput {
   otp: NullableStringFieldUpdateOperationsInput
   ref_no: NullableStringFieldUpdateOperationsInput
   shipping_cost: NullableFloatFieldUpdateOperationsInput
-  status: NullableEnumorder_statusFieldUpdateOperationsInput
+  status: order_status
   total_commission: NullableFloatFieldUpdateOperationsInput
   transaction: transactionUpdateManyWithoutOrderInput
   user: userUpdateOneWithoutOrderInput
@@ -2098,7 +2090,7 @@ input orderUpdateWithoutTransactionDataInput {
   otp: NullableStringFieldUpdateOperationsInput
   ref_no: NullableStringFieldUpdateOperationsInput
   shipping_cost: NullableFloatFieldUpdateOperationsInput
-  status: NullableEnumorder_statusFieldUpdateOperationsInput
+  status: order_status
   store: storeUpdateOneWithoutOrderInput
   total_commission: NullableFloatFieldUpdateOperationsInput
   user: userUpdateOneWithoutOrderInput
@@ -2115,7 +2107,7 @@ input orderUpdateWithoutUserDataInput {
   otp: NullableStringFieldUpdateOperationsInput
   ref_no: NullableStringFieldUpdateOperationsInput
   shipping_cost: NullableFloatFieldUpdateOperationsInput
-  status: NullableEnumorder_statusFieldUpdateOperationsInput
+  status: order_status
   store: storeUpdateOneWithoutOrderInput
   total_commission: NullableFloatFieldUpdateOperationsInput
   transaction: transactionUpdateManyWithoutOrderInput
@@ -2222,6 +2214,7 @@ type OTP {
 
 type product {
   active: Boolean
+  avgRating: Float!
   cost_price: Float
   created_at: DateTime
   description: String
@@ -2989,7 +2982,7 @@ type Query {
   tickets(after: ticketWhereUniqueInput, before: ticketWhereUniqueInput, first: Int, last: Int, orderBy: [ticketOrderByInput!], where: ticketWhereInput): [ticket!]!
   transaction(where: transactionWhereUniqueInput!): transaction
   transactions(after: transactionWhereUniqueInput, before: transactionWhereUniqueInput, first: Int, last: Int, orderBy: [transactionOrderByInput!], where: transactionWhereInput): [transaction!]!
-  user(where: userWhereUniqueInput!): user
+  user: user!
   userAddresses(after: user_addressesWhereUniqueInput, before: user_addressesWhereUniqueInput, first: Int, last: Int, orderBy: [user_addressesOrderByInput!], where: user_addressesWhereInput): [user_addresses!]!
   users(after: userWhereUniqueInput, before: userWhereUniqueInput, first: Int, last: Int, orderBy: [userOrderByInput!], where: userWhereInput): [user!]!
 }
@@ -4174,7 +4167,7 @@ input ticketUpdateManyDataInput {
   id: StringFieldUpdateOperationsInput
   name: NullableStringFieldUpdateOperationsInput
   open: NullableBoolFieldUpdateOperationsInput
-  type: NullableEnumticket_typesFieldUpdateOperationsInput
+  type: ticket_types
 }
 
 input ticketUpdateManyMutationInput {
@@ -4246,7 +4239,7 @@ input ticketUpdateWithoutDriverDataInput {
   open: NullableBoolFieldUpdateOperationsInput
   store: storeUpdateOneWithoutTicketInput
   ticket_history: ticket_historyUpdateManyWithoutTicketInput
-  type: NullableEnumticket_typesFieldUpdateOperationsInput
+  type: ticket_types
   user: userUpdateOneWithoutTicketInput
 }
 
@@ -4257,7 +4250,7 @@ input ticketUpdateWithoutStoreDataInput {
   name: NullableStringFieldUpdateOperationsInput
   open: NullableBoolFieldUpdateOperationsInput
   ticket_history: ticket_historyUpdateManyWithoutTicketInput
-  type: NullableEnumticket_typesFieldUpdateOperationsInput
+  type: ticket_types
   user: userUpdateOneWithoutTicketInput
 }
 
@@ -4268,7 +4261,7 @@ input ticketUpdateWithoutTicket_historyDataInput {
   name: NullableStringFieldUpdateOperationsInput
   open: NullableBoolFieldUpdateOperationsInput
   store: storeUpdateOneWithoutTicketInput
-  type: NullableEnumticket_typesFieldUpdateOperationsInput
+  type: ticket_types
   user: userUpdateOneWithoutTicketInput
 }
 
@@ -4280,7 +4273,7 @@ input ticketUpdateWithoutUserDataInput {
   open: NullableBoolFieldUpdateOperationsInput
   store: storeUpdateOneWithoutTicketInput
   ticket_history: ticket_historyUpdateManyWithoutTicketInput
-  type: NullableEnumticket_typesFieldUpdateOperationsInput
+  type: ticket_types
 }
 
 input ticketUpdateWithWhereUniqueWithoutDriverInput {

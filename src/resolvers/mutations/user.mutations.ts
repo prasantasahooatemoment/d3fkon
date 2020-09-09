@@ -9,10 +9,8 @@ export const userMutations = extendType({
     })
     t.crud.updateOneuser({
       alias: 'updateOneuser',
-      computedInputs: { where: ({ctx, args}) => ({
-        user:{
+      computedInputs: { user: ({ctx, args}) => ({
           id:ctx.userId
-        }
       }) 
     },
     })

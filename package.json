@@ -4,7 +4,7 @@
     "start": "node dist/server",
     "clean": "rm -rf dist",
     "preinstall": "npx npm-force-resolutions",
-   "build": "npm -s run clean && npm -s run generate && tsc",
+    "build": "npm -s run clean && npm -s run generate && tsc",
     "generate": "npm -s run generate:prisma && npm -s run generate:nexus",
     "generate:prisma": "prisma generate",
     "generate:nexus": "ts-node --transpile-only src/schema",
@@ -24,7 +24,7 @@
     "graphql-shield": "^7.3.2",
     "graphql-yoga": "1.18.3",
     "jsonwebtoken": "^8.5.1",
-    "nexus-plugin-prisma": "^0.18.0",
+    "nexus-plugin-prisma": "^0.18.2",
     "sendotp": "^1.2.9",
     "tslib": "^2.0.0"
   },
