@@ -238,6 +238,8 @@ export interface NexusGenInputs {
     lng?: number | null; // Float
     mobile?: number | null; // Float
     name?: string | null; // String
+    order_addressToorder_drop_address_id?: NexusGenInputs['orderCreateManyWithoutAddress_addressToorder_drop_address_idInput'] | null; // orderCreateManyWithoutAddress_addressToorder_drop_address_idInput
+    order_addressToorder_pickup_address_id?: NexusGenInputs['orderCreateManyWithoutAddress_addressToorder_pickup_address_idInput'] | null; // orderCreateManyWithoutAddress_addressToorder_pickup_address_idInput
     pincode?: number | null; // Float
     region?: string | null; // String
     store?: NexusGenInputs['storeCreateManyWithoutAddressInput'] | null; // storeCreateManyWithoutAddressInput
@@ -249,6 +251,16 @@ export interface NexusGenInputs {
     connect?: NexusGenInputs['addressWhereUniqueInput'] | null; // addressWhereUniqueInput
     connectOrCreate?: NexusGenInputs['addressCreateOrConnectWithoutdriverInput'] | null; // addressCreateOrConnectWithoutdriverInput
     create?: NexusGenInputs['addressCreateWithoutDriverInput'] | null; // addressCreateWithoutDriverInput
+  }
+  addressCreateOneWithoutOrder_addressToorder_drop_address_idInput: { // input type
+    connect?: NexusGenInputs['addressWhereUniqueInput'] | null; // addressWhereUniqueInput
+    connectOrCreate?: NexusGenInputs['addressCreateOrConnectWithoutorderInput'] | null; // addressCreateOrConnectWithoutorderInput
+    create?: NexusGenInputs['addressCreateWithoutOrder_addressToorder_drop_address_idInput'] | null; // addressCreateWithoutOrder_addressToorder_drop_address_idInput
+  }
+  addressCreateOneWithoutOrder_addressToorder_pickup_address_idInput: { // input type
+    connect?: NexusGenInputs['addressWhereUniqueInput'] | null; // addressWhereUniqueInput
+    connectOrCreate?: NexusGenInputs['addressCreateOrConnectWithoutorderInput'] | null; // addressCreateOrConnectWithoutorderInput
+    create?: NexusGenInputs['addressCreateWithoutOrder_addressToorder_pickup_address_idInput'] | null; // addressCreateWithoutOrder_addressToorder_pickup_address_idInput
   }
   addressCreateOneWithoutStoreInput: { // input type
     connect?: NexusGenInputs['addressWhereUniqueInput'] | null; // addressWhereUniqueInput
@@ -262,6 +274,10 @@ export interface NexusGenInputs {
   }
   addressCreateOrConnectWithoutdriverInput: { // input type
     create: NexusGenInputs['addressCreateWithoutDriverInput']; // addressCreateWithoutDriverInput!
+    where: NexusGenInputs['addressWhereUniqueInput']; // addressWhereUniqueInput!
+  }
+  addressCreateOrConnectWithoutorderInput: { // input type
+    create: NexusGenInputs['addressCreateWithoutOrder_addressToorder_drop_address_idInput']; // addressCreateWithoutOrder_addressToorder_drop_address_idInput!
     where: NexusGenInputs['addressWhereUniqueInput']; // addressWhereUniqueInput!
   }
   addressCreateOrConnectWithoutstoreInput: { // input type
@@ -281,6 +297,44 @@ export interface NexusGenInputs {
     lng?: number | null; // Float
     mobile?: number | null; // Float
     name?: string | null; // String
+    order_addressToorder_drop_address_id?: NexusGenInputs['orderCreateManyWithoutAddress_addressToorder_drop_address_idInput'] | null; // orderCreateManyWithoutAddress_addressToorder_drop_address_idInput
+    order_addressToorder_pickup_address_id?: NexusGenInputs['orderCreateManyWithoutAddress_addressToorder_pickup_address_idInput'] | null; // orderCreateManyWithoutAddress_addressToorder_pickup_address_idInput
+    pincode?: number | null; // Float
+    region?: string | null; // String
+    store?: NexusGenInputs['storeCreateManyWithoutAddressInput'] | null; // storeCreateManyWithoutAddressInput
+    street_one?: string | null; // String
+    street_two?: string | null; // String
+    user_addresses?: NexusGenInputs['user_addressesCreateManyWithoutAddressInput'] | null; // user_addressesCreateManyWithoutAddressInput
+  }
+  addressCreateWithoutOrder_addressToorder_drop_address_idInput: { // input type
+    city?: string | null; // String
+    country?: string | null; // String
+    created_at?: NexusGenScalars['DateTime'] | null; // DateTime
+    driver?: NexusGenInputs['driverCreateManyWithoutAddressInput'] | null; // driverCreateManyWithoutAddressInput
+    id?: string | null; // String
+    lat?: number | null; // Float
+    lng?: number | null; // Float
+    mobile?: number | null; // Float
+    name?: string | null; // String
+    order_addressToorder_pickup_address_id?: NexusGenInputs['orderCreateManyWithoutAddress_addressToorder_pickup_address_idInput'] | null; // orderCreateManyWithoutAddress_addressToorder_pickup_address_idInput
+    pincode?: number | null; // Float
+    region?: string | null; // String
+    store?: NexusGenInputs['storeCreateManyWithoutAddressInput'] | null; // storeCreateManyWithoutAddressInput
+    street_one?: string | null; // String
+    street_two?: string | null; // String
+    user_addresses?: NexusGenInputs['user_addressesCreateManyWithoutAddressInput'] | null; // user_addressesCreateManyWithoutAddressInput
+  }
+  addressCreateWithoutOrder_addressToorder_pickup_address_idInput: { // input type
+    city?: string | null; // String
+    country?: string | null; // String
+    created_at?: NexusGenScalars['DateTime'] | null; // DateTime
+    driver?: NexusGenInputs['driverCreateManyWithoutAddressInput'] | null; // driverCreateManyWithoutAddressInput
+    id?: string | null; // String
+    lat?: number | null; // Float
+    lng?: number | null; // Float
+    mobile?: number | null; // Float
+    name?: string | null; // String
+    order_addressToorder_drop_address_id?: NexusGenInputs['orderCreateManyWithoutAddress_addressToorder_drop_address_idInput'] | null; // orderCreateManyWithoutAddress_addressToorder_drop_address_idInput
     pincode?: number | null; // Float
     region?: string | null; // String
     store?: NexusGenInputs['storeCreateManyWithoutAddressInput'] | null; // storeCreateManyWithoutAddressInput
@@ -298,6 +352,8 @@ export interface NexusGenInputs {
     lng?: number | null; // Float
     mobile?: number | null; // Float
     name?: string | null; // String
+    order_addressToorder_drop_address_id?: NexusGenInputs['orderCreateManyWithoutAddress_addressToorder_drop_address_idInput'] | null; // orderCreateManyWithoutAddress_addressToorder_drop_address_idInput
+    order_addressToorder_pickup_address_id?: NexusGenInputs['orderCreateManyWithoutAddress_addressToorder_pickup_address_idInput'] | null; // orderCreateManyWithoutAddress_addressToorder_pickup_address_idInput
     pincode?: number | null; // Float
     region?: string | null; // String
     street_one?: string | null; // String
@@ -314,6 +370,8 @@ export interface NexusGenInputs {
     lng?: number | null; // Float
     mobile?: number | null; // Float
     name?: string | null; // String
+    order_addressToorder_drop_address_id?: NexusGenInputs['orderCreateManyWithoutAddress_addressToorder_drop_address_idInput'] | null; // orderCreateManyWithoutAddress_addressToorder_drop_address_idInput
+    order_addressToorder_pickup_address_id?: NexusGenInputs['orderCreateManyWithoutAddress_addressToorder_pickup_address_idInput'] | null; // orderCreateManyWithoutAddress_addressToorder_pickup_address_idInput
     pincode?: number | null; // Float
     region?: string | null; // String
     store?: NexusGenInputs['storeCreateManyWithoutAddressInput'] | null; // storeCreateManyWithoutAddressInput
@@ -344,6 +402,8 @@ export interface NexusGenInputs {
     lng?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
     mobile?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
     name?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    order_addressToorder_drop_address_id?: NexusGenInputs['orderUpdateManyWithoutAddress_addressToorder_drop_address_idInput'] | null; // orderUpdateManyWithoutAddress_addressToorder_drop_address_idInput
+    order_addressToorder_pickup_address_id?: NexusGenInputs['orderUpdateManyWithoutAddress_addressToorder_pickup_address_idInput'] | null; // orderUpdateManyWithoutAddress_addressToorder_pickup_address_idInput
     pincode?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
     region?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     store?: NexusGenInputs['storeUpdateManyWithoutAddressInput'] | null; // storeUpdateManyWithoutAddressInput
@@ -374,6 +434,24 @@ export interface NexusGenInputs {
     update?: NexusGenInputs['addressUpdateWithoutDriverDataInput'] | null; // addressUpdateWithoutDriverDataInput
     upsert?: NexusGenInputs['addressUpsertWithoutDriverInput'] | null; // addressUpsertWithoutDriverInput
   }
+  addressUpdateOneWithoutOrder_addressToorder_drop_address_idInput: { // input type
+    connect?: NexusGenInputs['addressWhereUniqueInput'] | null; // addressWhereUniqueInput
+    connectOrCreate?: NexusGenInputs['addressCreateOrConnectWithoutorderInput'] | null; // addressCreateOrConnectWithoutorderInput
+    create?: NexusGenInputs['addressCreateWithoutOrder_addressToorder_drop_address_idInput'] | null; // addressCreateWithoutOrder_addressToorder_drop_address_idInput
+    delete?: boolean | null; // Boolean
+    disconnect?: boolean | null; // Boolean
+    update?: NexusGenInputs['addressUpdateWithoutOrder_addressToorder_drop_address_idDataInput'] | null; // addressUpdateWithoutOrder_addressToorder_drop_address_idDataInput
+    upsert?: NexusGenInputs['addressUpsertWithoutOrder_addressToorder_drop_address_idInput'] | null; // addressUpsertWithoutOrder_addressToorder_drop_address_idInput
+  }
+  addressUpdateOneWithoutOrder_addressToorder_pickup_address_idInput: { // input type
+    connect?: NexusGenInputs['addressWhereUniqueInput'] | null; // addressWhereUniqueInput
+    connectOrCreate?: NexusGenInputs['addressCreateOrConnectWithoutorderInput'] | null; // addressCreateOrConnectWithoutorderInput
+    create?: NexusGenInputs['addressCreateWithoutOrder_addressToorder_pickup_address_idInput'] | null; // addressCreateWithoutOrder_addressToorder_pickup_address_idInput
+    delete?: boolean | null; // Boolean
+    disconnect?: boolean | null; // Boolean
+    update?: NexusGenInputs['addressUpdateWithoutOrder_addressToorder_pickup_address_idDataInput'] | null; // addressUpdateWithoutOrder_addressToorder_pickup_address_idDataInput
+    upsert?: NexusGenInputs['addressUpsertWithoutOrder_addressToorder_pickup_address_idInput'] | null; // addressUpsertWithoutOrder_addressToorder_pickup_address_idInput
+  }
   addressUpdateOneWithoutStoreInput: { // input type
     connect?: NexusGenInputs['addressWhereUniqueInput'] | null; // addressWhereUniqueInput
     connectOrCreate?: NexusGenInputs['addressCreateOrConnectWithoutstoreInput'] | null; // addressCreateOrConnectWithoutstoreInput
@@ -401,6 +479,44 @@ export interface NexusGenInputs {
     lng?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
     mobile?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
     name?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    order_addressToorder_drop_address_id?: NexusGenInputs['orderUpdateManyWithoutAddress_addressToorder_drop_address_idInput'] | null; // orderUpdateManyWithoutAddress_addressToorder_drop_address_idInput
+    order_addressToorder_pickup_address_id?: NexusGenInputs['orderUpdateManyWithoutAddress_addressToorder_pickup_address_idInput'] | null; // orderUpdateManyWithoutAddress_addressToorder_pickup_address_idInput
+    pincode?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
+    region?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    store?: NexusGenInputs['storeUpdateManyWithoutAddressInput'] | null; // storeUpdateManyWithoutAddressInput
+    street_one?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    street_two?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    user_addresses?: NexusGenInputs['user_addressesUpdateManyWithoutAddressInput'] | null; // user_addressesUpdateManyWithoutAddressInput
+  }
+  addressUpdateWithoutOrder_addressToorder_drop_address_idDataInput: { // input type
+    city?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    country?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    created_at?: NexusGenInputs['NullableDateTimeFieldUpdateOperationsInput'] | null; // NullableDateTimeFieldUpdateOperationsInput
+    driver?: NexusGenInputs['driverUpdateManyWithoutAddressInput'] | null; // driverUpdateManyWithoutAddressInput
+    id?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    lat?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
+    lng?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
+    mobile?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
+    name?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    order_addressToorder_pickup_address_id?: NexusGenInputs['orderUpdateManyWithoutAddress_addressToorder_pickup_address_idInput'] | null; // orderUpdateManyWithoutAddress_addressToorder_pickup_address_idInput
+    pincode?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
+    region?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    store?: NexusGenInputs['storeUpdateManyWithoutAddressInput'] | null; // storeUpdateManyWithoutAddressInput
+    street_one?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    street_two?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    user_addresses?: NexusGenInputs['user_addressesUpdateManyWithoutAddressInput'] | null; // user_addressesUpdateManyWithoutAddressInput
+  }
+  addressUpdateWithoutOrder_addressToorder_pickup_address_idDataInput: { // input type
+    city?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    country?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    created_at?: NexusGenInputs['NullableDateTimeFieldUpdateOperationsInput'] | null; // NullableDateTimeFieldUpdateOperationsInput
+    driver?: NexusGenInputs['driverUpdateManyWithoutAddressInput'] | null; // driverUpdateManyWithoutAddressInput
+    id?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    lat?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
+    lng?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
+    mobile?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
+    name?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    order_addressToorder_drop_address_id?: NexusGenInputs['orderUpdateManyWithoutAddress_addressToorder_drop_address_idInput'] | null; // orderUpdateManyWithoutAddress_addressToorder_drop_address_idInput
     pincode?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
     region?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     store?: NexusGenInputs['storeUpdateManyWithoutAddressInput'] | null; // storeUpdateManyWithoutAddressInput
@@ -418,6 +534,8 @@ export interface NexusGenInputs {
     lng?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
     mobile?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
     name?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    order_addressToorder_drop_address_id?: NexusGenInputs['orderUpdateManyWithoutAddress_addressToorder_drop_address_idInput'] | null; // orderUpdateManyWithoutAddress_addressToorder_drop_address_idInput
+    order_addressToorder_pickup_address_id?: NexusGenInputs['orderUpdateManyWithoutAddress_addressToorder_pickup_address_idInput'] | null; // orderUpdateManyWithoutAddress_addressToorder_pickup_address_idInput
     pincode?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
     region?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     street_one?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
@@ -434,6 +552,8 @@ export interface NexusGenInputs {
     lng?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
     mobile?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
     name?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    order_addressToorder_drop_address_id?: NexusGenInputs['orderUpdateManyWithoutAddress_addressToorder_drop_address_idInput'] | null; // orderUpdateManyWithoutAddress_addressToorder_drop_address_idInput
+    order_addressToorder_pickup_address_id?: NexusGenInputs['orderUpdateManyWithoutAddress_addressToorder_pickup_address_idInput'] | null; // orderUpdateManyWithoutAddress_addressToorder_pickup_address_idInput
     pincode?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
     region?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     store?: NexusGenInputs['storeUpdateManyWithoutAddressInput'] | null; // storeUpdateManyWithoutAddressInput
@@ -443,6 +563,14 @@ export interface NexusGenInputs {
   addressUpsertWithoutDriverInput: { // input type
     create: NexusGenInputs['addressCreateWithoutDriverInput']; // addressCreateWithoutDriverInput!
     update: NexusGenInputs['addressUpdateWithoutDriverDataInput']; // addressUpdateWithoutDriverDataInput!
+  }
+  addressUpsertWithoutOrder_addressToorder_drop_address_idInput: { // input type
+    create: NexusGenInputs['addressCreateWithoutOrder_addressToorder_drop_address_idInput']; // addressCreateWithoutOrder_addressToorder_drop_address_idInput!
+    update: NexusGenInputs['addressUpdateWithoutOrder_addressToorder_drop_address_idDataInput']; // addressUpdateWithoutOrder_addressToorder_drop_address_idDataInput!
+  }
+  addressUpsertWithoutOrder_addressToorder_pickup_address_idInput: { // input type
+    create: NexusGenInputs['addressCreateWithoutOrder_addressToorder_pickup_address_idInput']; // addressCreateWithoutOrder_addressToorder_pickup_address_idInput!
+    update: NexusGenInputs['addressUpdateWithoutOrder_addressToorder_pickup_address_idDataInput']; // addressUpdateWithoutOrder_addressToorder_pickup_address_idDataInput!
   }
   addressUpsertWithoutStoreInput: { // input type
     create: NexusGenInputs['addressCreateWithoutStoreInput']; // addressCreateWithoutStoreInput!
@@ -465,6 +593,8 @@ export interface NexusGenInputs {
     name?: NexusGenInputs['StringNullableFilter'] | null; // StringNullableFilter
     NOT?: NexusGenInputs['addressWhereInput'][] | null; // [addressWhereInput!]
     OR?: NexusGenInputs['addressWhereInput'][] | null; // [addressWhereInput!]
+    order_addressToorder_drop_address_id?: NexusGenInputs['OrderListRelationFilter'] | null; // OrderListRelationFilter
+    order_addressToorder_pickup_address_id?: NexusGenInputs['OrderListRelationFilter'] | null; // OrderListRelationFilter
     pincode?: NexusGenInputs['FloatNullableFilter'] | null; // FloatNullableFilter
     region?: NexusGenInputs['StringNullableFilter'] | null; // StringNullableFilter
     store?: NexusGenInputs['StoreListRelationFilter'] | null; // StoreListRelationFilter
@@ -1033,6 +1163,8 @@ export interface NexusGenInputs {
   }
   orderCreateInput: { // input type
     active?: boolean | null; // Boolean
+    address_addressToorder_drop_address_id?: NexusGenInputs['addressCreateOneWithoutOrder_addressToorder_drop_address_idInput'] | null; // addressCreateOneWithoutOrder_addressToorder_drop_address_idInput
+    address_addressToorder_pickup_address_id?: NexusGenInputs['addressCreateOneWithoutOrder_addressToorder_pickup_address_idInput'] | null; // addressCreateOneWithoutOrder_addressToorder_pickup_address_idInput
     created_at?: NexusGenScalars['DateTime'] | null; // DateTime
     driver?: NexusGenInputs['driverCreateOneWithoutOrderInput'] | null; // driverCreateOneWithoutOrderInput
     id?: string | null; // String
@@ -1043,6 +1175,16 @@ export interface NexusGenInputs {
     total_commission?: number | null; // Float
     transaction?: NexusGenInputs['transactionCreateManyWithoutOrderInput'] | null; // transactionCreateManyWithoutOrderInput
     user?: NexusGenInputs['userCreateOneWithoutOrderInput'] | null; // userCreateOneWithoutOrderInput
+  }
+  orderCreateManyWithoutAddress_addressToorder_drop_address_idInput: { // input type
+    connect?: NexusGenInputs['orderWhereUniqueInput'][] | null; // [orderWhereUniqueInput!]
+    connectOrCreate?: NexusGenInputs['orderCreateOrConnectWithoutaddressInput'][] | null; // [orderCreateOrConnectWithoutaddressInput!]
+    create?: NexusGenInputs['orderCreateWithoutAddress_addressToorder_drop_address_idInput'][] | null; // [orderCreateWithoutAddress_addressToorder_drop_address_idInput!]
+  }
+  orderCreateManyWithoutAddress_addressToorder_pickup_address_idInput: { // input type
+    connect?: NexusGenInputs['orderWhereUniqueInput'][] | null; // [orderWhereUniqueInput!]
+    connectOrCreate?: NexusGenInputs['orderCreateOrConnectWithoutaddressInput'][] | null; // [orderCreateOrConnectWithoutaddressInput!]
+    create?: NexusGenInputs['orderCreateWithoutAddress_addressToorder_pickup_address_idInput'][] | null; // [orderCreateWithoutAddress_addressToorder_pickup_address_idInput!]
   }
   orderCreateManyWithoutDriverInput: { // input type
     connect?: NexusGenInputs['orderWhereUniqueInput'][] | null; // [orderWhereUniqueInput!]
@@ -1069,6 +1211,10 @@ export interface NexusGenInputs {
     connectOrCreate?: NexusGenInputs['orderCreateOrConnectWithouttransactionInput'] | null; // orderCreateOrConnectWithouttransactionInput
     create?: NexusGenInputs['orderCreateWithoutTransactionInput'] | null; // orderCreateWithoutTransactionInput
   }
+  orderCreateOrConnectWithoutaddressInput: { // input type
+    create: NexusGenInputs['orderCreateWithoutAddress_addressToorder_drop_address_idInput']; // orderCreateWithoutAddress_addressToorder_drop_address_idInput!
+    where: NexusGenInputs['orderWhereUniqueInput']; // orderWhereUniqueInput!
+  }
   orderCreateOrConnectWithoutdriverInput: { // input type
     create: NexusGenInputs['orderCreateWithoutDriverInput']; // orderCreateWithoutDriverInput!
     where: NexusGenInputs['orderWhereUniqueInput']; // orderWhereUniqueInput!
@@ -1089,8 +1235,42 @@ export interface NexusGenInputs {
     create: NexusGenInputs['orderCreateWithoutUserInput']; // orderCreateWithoutUserInput!
     where: NexusGenInputs['orderWhereUniqueInput']; // orderWhereUniqueInput!
   }
+  orderCreateWithoutAddress_addressToorder_drop_address_idInput: { // input type
+    active?: boolean | null; // Boolean
+    address_addressToorder_pickup_address_id?: NexusGenInputs['addressCreateOneWithoutOrder_addressToorder_pickup_address_idInput'] | null; // addressCreateOneWithoutOrder_addressToorder_pickup_address_idInput
+    created_at?: NexusGenScalars['DateTime'] | null; // DateTime
+    driver?: NexusGenInputs['driverCreateOneWithoutOrderInput'] | null; // driverCreateOneWithoutOrderInput
+    id?: string | null; // String
+    order_products?: NexusGenInputs['order_productsCreateManyWithoutOrderInput'] | null; // order_productsCreateManyWithoutOrderInput
+    otp?: string | null; // String
+    ref_no?: string | null; // String
+    shipping_cost?: number | null; // Float
+    status?: NexusGenEnums['order_status'] | null; // order_status
+    store?: NexusGenInputs['storeCreateOneWithoutOrderInput'] | null; // storeCreateOneWithoutOrderInput
+    total_commission?: number | null; // Float
+    transaction?: NexusGenInputs['transactionCreateManyWithoutOrderInput'] | null; // transactionCreateManyWithoutOrderInput
+    user?: NexusGenInputs['userCreateOneWithoutOrderInput'] | null; // userCreateOneWithoutOrderInput
+  }
+  orderCreateWithoutAddress_addressToorder_pickup_address_idInput: { // input type
+    active?: boolean | null; // Boolean
+    address_addressToorder_drop_address_id?: NexusGenInputs['addressCreateOneWithoutOrder_addressToorder_drop_address_idInput'] | null; // addressCreateOneWithoutOrder_addressToorder_drop_address_idInput
+    created_at?: NexusGenScalars['DateTime'] | null; // DateTime
+    driver?: NexusGenInputs['driverCreateOneWithoutOrderInput'] | null; // driverCreateOneWithoutOrderInput
+    id?: string | null; // String
+    order_products?: NexusGenInputs['order_productsCreateManyWithoutOrderInput'] | null; // order_productsCreateManyWithoutOrderInput
+    otp?: string | null; // String
+    ref_no?: string | null; // String
+    shipping_cost?: number | null; // Float
+    status?: NexusGenEnums['order_status'] | null; // order_status
+    store?: NexusGenInputs['storeCreateOneWithoutOrderInput'] | null; // storeCreateOneWithoutOrderInput
+    total_commission?: number | null; // Float
+    transaction?: NexusGenInputs['transactionCreateManyWithoutOrderInput'] | null; // transactionCreateManyWithoutOrderInput
+    user?: NexusGenInputs['userCreateOneWithoutOrderInput'] | null; // userCreateOneWithoutOrderInput
+  }
   orderCreateWithoutDriverInput: { // input type
     active?: boolean | null; // Boolean
+    address_addressToorder_drop_address_id?: NexusGenInputs['addressCreateOneWithoutOrder_addressToorder_drop_address_idInput'] | null; // addressCreateOneWithoutOrder_addressToorder_drop_address_idInput
+    address_addressToorder_pickup_address_id?: NexusGenInputs['addressCreateOneWithoutOrder_addressToorder_pickup_address_idInput'] | null; // addressCreateOneWithoutOrder_addressToorder_pickup_address_idInput
     created_at?: NexusGenScalars['DateTime'] | null; // DateTime
     id?: string | null; // String
     order_products?: NexusGenInputs['order_productsCreateManyWithoutOrderInput'] | null; // order_productsCreateManyWithoutOrderInput
@@ -1105,6 +1285,8 @@ export interface NexusGenInputs {
   }
   orderCreateWithoutOrder_productsInput: { // input type
     active?: boolean | null; // Boolean
+    address_addressToorder_drop_address_id?: NexusGenInputs['addressCreateOneWithoutOrder_addressToorder_drop_address_idInput'] | null; // addressCreateOneWithoutOrder_addressToorder_drop_address_idInput
+    address_addressToorder_pickup_address_id?: NexusGenInputs['addressCreateOneWithoutOrder_addressToorder_pickup_address_idInput'] | null; // addressCreateOneWithoutOrder_addressToorder_pickup_address_idInput
     created_at?: NexusGenScalars['DateTime'] | null; // DateTime
     driver?: NexusGenInputs['driverCreateOneWithoutOrderInput'] | null; // driverCreateOneWithoutOrderInput
     id?: string | null; // String
@@ -1119,6 +1301,8 @@ export interface NexusGenInputs {
   }
   orderCreateWithoutStoreInput: { // input type
     active?: boolean | null; // Boolean
+    address_addressToorder_drop_address_id?: NexusGenInputs['addressCreateOneWithoutOrder_addressToorder_drop_address_idInput'] | null; // addressCreateOneWithoutOrder_addressToorder_drop_address_idInput
+    address_addressToorder_pickup_address_id?: NexusGenInputs['addressCreateOneWithoutOrder_addressToorder_pickup_address_idInput'] | null; // addressCreateOneWithoutOrder_addressToorder_pickup_address_idInput
     created_at?: NexusGenScalars['DateTime'] | null; // DateTime
     driver?: NexusGenInputs['driverCreateOneWithoutOrderInput'] | null; // driverCreateOneWithoutOrderInput
     id?: string | null; // String
@@ -1133,6 +1317,8 @@ export interface NexusGenInputs {
   }
   orderCreateWithoutTransactionInput: { // input type
     active?: boolean | null; // Boolean
+    address_addressToorder_drop_address_id?: NexusGenInputs['addressCreateOneWithoutOrder_addressToorder_drop_address_idInput'] | null; // addressCreateOneWithoutOrder_addressToorder_drop_address_idInput
+    address_addressToorder_pickup_address_id?: NexusGenInputs['addressCreateOneWithoutOrder_addressToorder_pickup_address_idInput'] | null; // addressCreateOneWithoutOrder_addressToorder_pickup_address_idInput
     created_at?: NexusGenScalars['DateTime'] | null; // DateTime
     driver?: NexusGenInputs['driverCreateOneWithoutOrderInput'] | null; // driverCreateOneWithoutOrderInput
     id?: string | null; // String
@@ -1147,6 +1333,8 @@ export interface NexusGenInputs {
   }
   orderCreateWithoutUserInput: { // input type
     active?: boolean | null; // Boolean
+    address_addressToorder_drop_address_id?: NexusGenInputs['addressCreateOneWithoutOrder_addressToorder_drop_address_idInput'] | null; // addressCreateOneWithoutOrder_addressToorder_drop_address_idInput
+    address_addressToorder_pickup_address_id?: NexusGenInputs['addressCreateOneWithoutOrder_addressToorder_pickup_address_idInput'] | null; // addressCreateOneWithoutOrder_addressToorder_pickup_address_idInput
     created_at?: NexusGenScalars['DateTime'] | null; // DateTime
     driver?: NexusGenInputs['driverCreateOneWithoutOrderInput'] | null; // driverCreateOneWithoutOrderInput
     id?: string | null; // String
@@ -1163,8 +1351,10 @@ export interface NexusGenInputs {
     active?: NexusGenEnums['SortOrder'] | null; // SortOrder
     created_at?: NexusGenEnums['SortOrder'] | null; // SortOrder
     driver_id?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    drop_address_id?: NexusGenEnums['SortOrder'] | null; // SortOrder
     id?: NexusGenEnums['SortOrder'] | null; // SortOrder
     otp?: NexusGenEnums['SortOrder'] | null; // SortOrder
+    pickup_address_id?: NexusGenEnums['SortOrder'] | null; // SortOrder
     ref_no?: NexusGenEnums['SortOrder'] | null; // SortOrder
     shipping_cost?: NexusGenEnums['SortOrder'] | null; // SortOrder
     status?: NexusGenEnums['SortOrder'] | null; // SortOrder
@@ -1177,10 +1367,12 @@ export interface NexusGenInputs {
     AND?: NexusGenInputs['orderScalarWhereInput'][] | null; // [orderScalarWhereInput!]
     created_at?: NexusGenInputs['DateTimeNullableFilter'] | null; // DateTimeNullableFilter
     driver_id?: NexusGenInputs['StringNullableFilter'] | null; // StringNullableFilter
+    drop_address_id?: NexusGenInputs['StringNullableFilter'] | null; // StringNullableFilter
     id?: NexusGenInputs['StringFilter'] | null; // StringFilter
     NOT?: NexusGenInputs['orderScalarWhereInput'][] | null; // [orderScalarWhereInput!]
     OR?: NexusGenInputs['orderScalarWhereInput'][] | null; // [orderScalarWhereInput!]
     otp?: NexusGenInputs['StringNullableFilter'] | null; // StringNullableFilter
+    pickup_address_id?: NexusGenInputs['StringNullableFilter'] | null; // StringNullableFilter
     ref_no?: NexusGenInputs['StringNullableFilter'] | null; // StringNullableFilter
     shipping_cost?: NexusGenInputs['FloatNullableFilter'] | null; // FloatNullableFilter
     status?: NexusGenEnums['order_status'] | null; // order_status
@@ -1190,6 +1382,8 @@ export interface NexusGenInputs {
   }
   orderUpdateInput: { // input type
     active?: NexusGenInputs['NullableBoolFieldUpdateOperationsInput'] | null; // NullableBoolFieldUpdateOperationsInput
+    address_addressToorder_drop_address_id?: NexusGenInputs['addressUpdateOneWithoutOrder_addressToorder_drop_address_idInput'] | null; // addressUpdateOneWithoutOrder_addressToorder_drop_address_idInput
+    address_addressToorder_pickup_address_id?: NexusGenInputs['addressUpdateOneWithoutOrder_addressToorder_pickup_address_idInput'] | null; // addressUpdateOneWithoutOrder_addressToorder_pickup_address_idInput
     created_at?: NexusGenInputs['NullableDateTimeFieldUpdateOperationsInput'] | null; // NullableDateTimeFieldUpdateOperationsInput
     driver?: NexusGenInputs['driverUpdateOneWithoutOrderInput'] | null; // driverUpdateOneWithoutOrderInput
     id?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
@@ -1226,6 +1420,30 @@ export interface NexusGenInputs {
   orderUpdateManyWithWhereNestedInput: { // input type
     data: NexusGenInputs['orderUpdateManyDataInput']; // orderUpdateManyDataInput!
     where: NexusGenInputs['orderScalarWhereInput']; // orderScalarWhereInput!
+  }
+  orderUpdateManyWithoutAddress_addressToorder_drop_address_idInput: { // input type
+    connect?: NexusGenInputs['orderWhereUniqueInput'][] | null; // [orderWhereUniqueInput!]
+    connectOrCreate?: NexusGenInputs['orderCreateOrConnectWithoutaddressInput'][] | null; // [orderCreateOrConnectWithoutaddressInput!]
+    create?: NexusGenInputs['orderCreateWithoutAddress_addressToorder_drop_address_idInput'][] | null; // [orderCreateWithoutAddress_addressToorder_drop_address_idInput!]
+    delete?: NexusGenInputs['orderWhereUniqueInput'][] | null; // [orderWhereUniqueInput!]
+    deleteMany?: NexusGenInputs['orderScalarWhereInput'][] | null; // [orderScalarWhereInput!]
+    disconnect?: NexusGenInputs['orderWhereUniqueInput'][] | null; // [orderWhereUniqueInput!]
+    set?: NexusGenInputs['orderWhereUniqueInput'][] | null; // [orderWhereUniqueInput!]
+    update?: NexusGenInputs['orderUpdateWithWhereUniqueWithoutAddress_addressToorder_drop_address_idInput'][] | null; // [orderUpdateWithWhereUniqueWithoutAddress_addressToorder_drop_address_idInput!]
+    updateMany?: NexusGenInputs['orderUpdateManyWithWhereNestedInput'][] | null; // [orderUpdateManyWithWhereNestedInput!]
+    upsert?: NexusGenInputs['orderUpsertWithWhereUniqueWithoutAddress_addressToorder_drop_address_idInput'][] | null; // [orderUpsertWithWhereUniqueWithoutAddress_addressToorder_drop_address_idInput!]
+  }
+  orderUpdateManyWithoutAddress_addressToorder_pickup_address_idInput: { // input type
+    connect?: NexusGenInputs['orderWhereUniqueInput'][] | null; // [orderWhereUniqueInput!]
+    connectOrCreate?: NexusGenInputs['orderCreateOrConnectWithoutaddressInput'][] | null; // [orderCreateOrConnectWithoutaddressInput!]
+    create?: NexusGenInputs['orderCreateWithoutAddress_addressToorder_pickup_address_idInput'][] | null; // [orderCreateWithoutAddress_addressToorder_pickup_address_idInput!]
+    delete?: NexusGenInputs['orderWhereUniqueInput'][] | null; // [orderWhereUniqueInput!]
+    deleteMany?: NexusGenInputs['orderScalarWhereInput'][] | null; // [orderScalarWhereInput!]
+    disconnect?: NexusGenInputs['orderWhereUniqueInput'][] | null; // [orderWhereUniqueInput!]
+    set?: NexusGenInputs['orderWhereUniqueInput'][] | null; // [orderWhereUniqueInput!]
+    update?: NexusGenInputs['orderUpdateWithWhereUniqueWithoutAddress_addressToorder_pickup_address_idInput'][] | null; // [orderUpdateWithWhereUniqueWithoutAddress_addressToorder_pickup_address_idInput!]
+    updateMany?: NexusGenInputs['orderUpdateManyWithWhereNestedInput'][] | null; // [orderUpdateManyWithWhereNestedInput!]
+    upsert?: NexusGenInputs['orderUpsertWithWhereUniqueWithoutAddress_addressToorder_pickup_address_idInput'][] | null; // [orderUpsertWithWhereUniqueWithoutAddress_addressToorder_pickup_address_idInput!]
   }
   orderUpdateManyWithoutDriverInput: { // input type
     connect?: NexusGenInputs['orderWhereUniqueInput'][] | null; // [orderWhereUniqueInput!]
@@ -1281,6 +1499,14 @@ export interface NexusGenInputs {
     update?: NexusGenInputs['orderUpdateWithoutTransactionDataInput'] | null; // orderUpdateWithoutTransactionDataInput
     upsert?: NexusGenInputs['orderUpsertWithoutTransactionInput'] | null; // orderUpsertWithoutTransactionInput
   }
+  orderUpdateWithWhereUniqueWithoutAddress_addressToorder_drop_address_idInput: { // input type
+    data: NexusGenInputs['orderUpdateWithoutAddress_addressToorder_drop_address_idDataInput']; // orderUpdateWithoutAddress_addressToorder_drop_address_idDataInput!
+    where: NexusGenInputs['orderWhereUniqueInput']; // orderWhereUniqueInput!
+  }
+  orderUpdateWithWhereUniqueWithoutAddress_addressToorder_pickup_address_idInput: { // input type
+    data: NexusGenInputs['orderUpdateWithoutAddress_addressToorder_pickup_address_idDataInput']; // orderUpdateWithoutAddress_addressToorder_pickup_address_idDataInput!
+    where: NexusGenInputs['orderWhereUniqueInput']; // orderWhereUniqueInput!
+  }
   orderUpdateWithWhereUniqueWithoutDriverInput: { // input type
     data: NexusGenInputs['orderUpdateWithoutDriverDataInput']; // orderUpdateWithoutDriverDataInput!
     where: NexusGenInputs['orderWhereUniqueInput']; // orderWhereUniqueInput!
@@ -1293,8 +1519,42 @@ export interface NexusGenInputs {
     data: NexusGenInputs['orderUpdateWithoutUserDataInput']; // orderUpdateWithoutUserDataInput!
     where: NexusGenInputs['orderWhereUniqueInput']; // orderWhereUniqueInput!
   }
+  orderUpdateWithoutAddress_addressToorder_drop_address_idDataInput: { // input type
+    active?: NexusGenInputs['NullableBoolFieldUpdateOperationsInput'] | null; // NullableBoolFieldUpdateOperationsInput
+    address_addressToorder_pickup_address_id?: NexusGenInputs['addressUpdateOneWithoutOrder_addressToorder_pickup_address_idInput'] | null; // addressUpdateOneWithoutOrder_addressToorder_pickup_address_idInput
+    created_at?: NexusGenInputs['NullableDateTimeFieldUpdateOperationsInput'] | null; // NullableDateTimeFieldUpdateOperationsInput
+    driver?: NexusGenInputs['driverUpdateOneWithoutOrderInput'] | null; // driverUpdateOneWithoutOrderInput
+    id?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    order_products?: NexusGenInputs['order_productsUpdateManyWithoutOrderInput'] | null; // order_productsUpdateManyWithoutOrderInput
+    otp?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    ref_no?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    shipping_cost?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
+    status?: NexusGenInputs['NullableEnumorder_statusFieldUpdateOperationsInput'] | null; // NullableEnumorder_statusFieldUpdateOperationsInput
+    store?: NexusGenInputs['storeUpdateOneWithoutOrderInput'] | null; // storeUpdateOneWithoutOrderInput
+    total_commission?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
+    transaction?: NexusGenInputs['transactionUpdateManyWithoutOrderInput'] | null; // transactionUpdateManyWithoutOrderInput
+    user?: NexusGenInputs['userUpdateOneWithoutOrderInput'] | null; // userUpdateOneWithoutOrderInput
+  }
+  orderUpdateWithoutAddress_addressToorder_pickup_address_idDataInput: { // input type
+    active?: NexusGenInputs['NullableBoolFieldUpdateOperationsInput'] | null; // NullableBoolFieldUpdateOperationsInput
+    address_addressToorder_drop_address_id?: NexusGenInputs['addressUpdateOneWithoutOrder_addressToorder_drop_address_idInput'] | null; // addressUpdateOneWithoutOrder_addressToorder_drop_address_idInput
+    created_at?: NexusGenInputs['NullableDateTimeFieldUpdateOperationsInput'] | null; // NullableDateTimeFieldUpdateOperationsInput
+    driver?: NexusGenInputs['driverUpdateOneWithoutOrderInput'] | null; // driverUpdateOneWithoutOrderInput
+    id?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    order_products?: NexusGenInputs['order_productsUpdateManyWithoutOrderInput'] | null; // order_productsUpdateManyWithoutOrderInput
+    otp?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    ref_no?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    shipping_cost?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
+    status?: NexusGenInputs['NullableEnumorder_statusFieldUpdateOperationsInput'] | null; // NullableEnumorder_statusFieldUpdateOperationsInput
+    store?: NexusGenInputs['storeUpdateOneWithoutOrderInput'] | null; // storeUpdateOneWithoutOrderInput
+    total_commission?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
+    transaction?: NexusGenInputs['transactionUpdateManyWithoutOrderInput'] | null; // transactionUpdateManyWithoutOrderInput
+    user?: NexusGenInputs['userUpdateOneWithoutOrderInput'] | null; // userUpdateOneWithoutOrderInput
+  }
   orderUpdateWithoutDriverDataInput: { // input type
     active?: NexusGenInputs['NullableBoolFieldUpdateOperationsInput'] | null; // NullableBoolFieldUpdateOperationsInput
+    address_addressToorder_drop_address_id?: NexusGenInputs['addressUpdateOneWithoutOrder_addressToorder_drop_address_idInput'] | null; // addressUpdateOneWithoutOrder_addressToorder_drop_address_idInput
+    address_addressToorder_pickup_address_id?: NexusGenInputs['addressUpdateOneWithoutOrder_addressToorder_pickup_address_idInput'] | null; // addressUpdateOneWithoutOrder_addressToorder_pickup_address_idInput
     created_at?: NexusGenInputs['NullableDateTimeFieldUpdateOperationsInput'] | null; // NullableDateTimeFieldUpdateOperationsInput
     id?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
     order_products?: NexusGenInputs['order_productsUpdateManyWithoutOrderInput'] | null; // order_productsUpdateManyWithoutOrderInput
@@ -1309,6 +1569,8 @@ export interface NexusGenInputs {
   }
   orderUpdateWithoutOrder_productsDataInput: { // input type
     active?: NexusGenInputs['NullableBoolFieldUpdateOperationsInput'] | null; // NullableBoolFieldUpdateOperationsInput
+    address_addressToorder_drop_address_id?: NexusGenInputs['addressUpdateOneWithoutOrder_addressToorder_drop_address_idInput'] | null; // addressUpdateOneWithoutOrder_addressToorder_drop_address_idInput
+    address_addressToorder_pickup_address_id?: NexusGenInputs['addressUpdateOneWithoutOrder_addressToorder_pickup_address_idInput'] | null; // addressUpdateOneWithoutOrder_addressToorder_pickup_address_idInput
     created_at?: NexusGenInputs['NullableDateTimeFieldUpdateOperationsInput'] | null; // NullableDateTimeFieldUpdateOperationsInput
     driver?: NexusGenInputs['driverUpdateOneWithoutOrderInput'] | null; // driverUpdateOneWithoutOrderInput
     id?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
@@ -1323,6 +1585,8 @@ export interface NexusGenInputs {
   }
   orderUpdateWithoutStoreDataInput: { // input type
     active?: NexusGenInputs['NullableBoolFieldUpdateOperationsInput'] | null; // NullableBoolFieldUpdateOperationsInput
+    address_addressToorder_drop_address_id?: NexusGenInputs['addressUpdateOneWithoutOrder_addressToorder_drop_address_idInput'] | null; // addressUpdateOneWithoutOrder_addressToorder_drop_address_idInput
+    address_addressToorder_pickup_address_id?: NexusGenInputs['addressUpdateOneWithoutOrder_addressToorder_pickup_address_idInput'] | null; // addressUpdateOneWithoutOrder_addressToorder_pickup_address_idInput
     created_at?: NexusGenInputs['NullableDateTimeFieldUpdateOperationsInput'] | null; // NullableDateTimeFieldUpdateOperationsInput
     driver?: NexusGenInputs['driverUpdateOneWithoutOrderInput'] | null; // driverUpdateOneWithoutOrderInput
     id?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
@@ -1337,6 +1601,8 @@ export interface NexusGenInputs {
   }
   orderUpdateWithoutTransactionDataInput: { // input type
     active?: NexusGenInputs['NullableBoolFieldUpdateOperationsInput'] | null; // NullableBoolFieldUpdateOperationsInput
+    address_addressToorder_drop_address_id?: NexusGenInputs['addressUpdateOneWithoutOrder_addressToorder_drop_address_idInput'] | null; // addressUpdateOneWithoutOrder_addressToorder_drop_address_idInput
+    address_addressToorder_pickup_address_id?: NexusGenInputs['addressUpdateOneWithoutOrder_addressToorder_pickup_address_idInput'] | null; // addressUpdateOneWithoutOrder_addressToorder_pickup_address_idInput
     created_at?: NexusGenInputs['NullableDateTimeFieldUpdateOperationsInput'] | null; // NullableDateTimeFieldUpdateOperationsInput
     driver?: NexusGenInputs['driverUpdateOneWithoutOrderInput'] | null; // driverUpdateOneWithoutOrderInput
     id?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
@@ -1351,6 +1617,8 @@ export interface NexusGenInputs {
   }
   orderUpdateWithoutUserDataInput: { // input type
     active?: NexusGenInputs['NullableBoolFieldUpdateOperationsInput'] | null; // NullableBoolFieldUpdateOperationsInput
+    address_addressToorder_drop_address_id?: NexusGenInputs['addressUpdateOneWithoutOrder_addressToorder_drop_address_idInput'] | null; // addressUpdateOneWithoutOrder_addressToorder_drop_address_idInput
+    address_addressToorder_pickup_address_id?: NexusGenInputs['addressUpdateOneWithoutOrder_addressToorder_pickup_address_idInput'] | null; // addressUpdateOneWithoutOrder_addressToorder_pickup_address_idInput
     created_at?: NexusGenInputs['NullableDateTimeFieldUpdateOperationsInput'] | null; // NullableDateTimeFieldUpdateOperationsInput
     driver?: NexusGenInputs['driverUpdateOneWithoutOrderInput'] | null; // driverUpdateOneWithoutOrderInput
     id?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
@@ -1362,6 +1630,16 @@ export interface NexusGenInputs {
     store?: NexusGenInputs['storeUpdateOneWithoutOrderInput'] | null; // storeUpdateOneWithoutOrderInput
     total_commission?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
     transaction?: NexusGenInputs['transactionUpdateManyWithoutOrderInput'] | null; // transactionUpdateManyWithoutOrderInput
+  }
+  orderUpsertWithWhereUniqueWithoutAddress_addressToorder_drop_address_idInput: { // input type
+    create: NexusGenInputs['orderCreateWithoutAddress_addressToorder_drop_address_idInput']; // orderCreateWithoutAddress_addressToorder_drop_address_idInput!
+    update: NexusGenInputs['orderUpdateWithoutAddress_addressToorder_drop_address_idDataInput']; // orderUpdateWithoutAddress_addressToorder_drop_address_idDataInput!
+    where: NexusGenInputs['orderWhereUniqueInput']; // orderWhereUniqueInput!
+  }
+  orderUpsertWithWhereUniqueWithoutAddress_addressToorder_pickup_address_idInput: { // input type
+    create: NexusGenInputs['orderCreateWithoutAddress_addressToorder_pickup_address_idInput']; // orderCreateWithoutAddress_addressToorder_pickup_address_idInput!
+    update: NexusGenInputs['orderUpdateWithoutAddress_addressToorder_pickup_address_idDataInput']; // orderUpdateWithoutAddress_addressToorder_pickup_address_idDataInput!
+    where: NexusGenInputs['orderWhereUniqueInput']; // orderWhereUniqueInput!
   }
   orderUpsertWithWhereUniqueWithoutDriverInput: { // input type
     create: NexusGenInputs['orderCreateWithoutDriverInput']; // orderCreateWithoutDriverInput!
@@ -1388,15 +1666,19 @@ export interface NexusGenInputs {
   }
   orderWhereInput: { // input type
     active?: NexusGenInputs['BoolNullableFilter'] | null; // BoolNullableFilter
+    address_addressToorder_drop_address_id?: NexusGenInputs['addressWhereInput'] | null; // addressWhereInput
+    address_addressToorder_pickup_address_id?: NexusGenInputs['addressWhereInput'] | null; // addressWhereInput
     AND?: NexusGenInputs['orderWhereInput'][] | null; // [orderWhereInput!]
     created_at?: NexusGenInputs['DateTimeNullableFilter'] | null; // DateTimeNullableFilter
     driver?: NexusGenInputs['driverWhereInput'] | null; // driverWhereInput
     driver_id?: NexusGenInputs['StringNullableFilter'] | null; // StringNullableFilter
+    drop_address_id?: NexusGenInputs['StringNullableFilter'] | null; // StringNullableFilter
     id?: NexusGenInputs['StringFilter'] | null; // StringFilter
     NOT?: NexusGenInputs['orderWhereInput'][] | null; // [orderWhereInput!]
     OR?: NexusGenInputs['orderWhereInput'][] | null; // [orderWhereInput!]
     order_products?: NexusGenInputs['Order_productsListRelationFilter'] | null; // Order_productsListRelationFilter
     otp?: NexusGenInputs['StringNullableFilter'] | null; // StringNullableFilter
+    pickup_address_id?: NexusGenInputs['StringNullableFilter'] | null; // StringNullableFilter
     ref_no?: NexusGenInputs['StringNullableFilter'] | null; // StringNullableFilter
     shipping_cost?: NexusGenInputs['FloatNullableFilter'] | null; // FloatNullableFilter
     status?: NexusGenEnums['order_status'] | null; // order_status
@@ -3866,8 +4148,10 @@ export interface NexusGenRootTypes {
     active?: boolean | null; // Boolean
     created_at?: NexusGenScalars['DateTime'] | null; // DateTime
     driver_id?: string | null; // String
+    drop_address_id?: string | null; // String
     id: string; // String!
     otp?: string | null; // String
+    pickup_address_id?: string | null; // String
     ref_no?: string | null; // String
     shipping_cost?: number | null; // Float
     status?: NexusGenEnums['order_status'] | null; // order_status
@@ -4013,24 +4297,35 @@ export interface NexusGenAllTypes extends NexusGenRootTypes {
   User_addressesListRelationFilter: NexusGenInputs['User_addressesListRelationFilter'];
   addressCreateInput: NexusGenInputs['addressCreateInput'];
   addressCreateOneWithoutDriverInput: NexusGenInputs['addressCreateOneWithoutDriverInput'];
+  addressCreateOneWithoutOrder_addressToorder_drop_address_idInput: NexusGenInputs['addressCreateOneWithoutOrder_addressToorder_drop_address_idInput'];
+  addressCreateOneWithoutOrder_addressToorder_pickup_address_idInput: NexusGenInputs['addressCreateOneWithoutOrder_addressToorder_pickup_address_idInput'];
   addressCreateOneWithoutStoreInput: NexusGenInputs['addressCreateOneWithoutStoreInput'];
   addressCreateOneWithoutUser_addressesInput: NexusGenInputs['addressCreateOneWithoutUser_addressesInput'];
   addressCreateOrConnectWithoutdriverInput: NexusGenInputs['addressCreateOrConnectWithoutdriverInput'];
+  addressCreateOrConnectWithoutorderInput: NexusGenInputs['addressCreateOrConnectWithoutorderInput'];
   addressCreateOrConnectWithoutstoreInput: NexusGenInputs['addressCreateOrConnectWithoutstoreInput'];
   addressCreateOrConnectWithoutuser_addressesInput: NexusGenInputs['addressCreateOrConnectWithoutuser_addressesInput'];
   addressCreateWithoutDriverInput: NexusGenInputs['addressCreateWithoutDriverInput'];
+  addressCreateWithoutOrder_addressToorder_drop_address_idInput: NexusGenInputs['addressCreateWithoutOrder_addressToorder_drop_address_idInput'];
+  addressCreateWithoutOrder_addressToorder_pickup_address_idInput: NexusGenInputs['addressCreateWithoutOrder_addressToorder_pickup_address_idInput'];
   addressCreateWithoutStoreInput: NexusGenInputs['addressCreateWithoutStoreInput'];
   addressCreateWithoutUser_addressesInput: NexusGenInputs['addressCreateWithoutUser_addressesInput'];
   addressOrderByInput: NexusGenInputs['addressOrderByInput'];
   addressUpdateInput: NexusGenInputs['addressUpdateInput'];
   addressUpdateManyMutationInput: NexusGenInputs['addressUpdateManyMutationInput'];
   addressUpdateOneWithoutDriverInput: NexusGenInputs['addressUpdateOneWithoutDriverInput'];
+  addressUpdateOneWithoutOrder_addressToorder_drop_address_idInput: NexusGenInputs['addressUpdateOneWithoutOrder_addressToorder_drop_address_idInput'];
+  addressUpdateOneWithoutOrder_addressToorder_pickup_address_idInput: NexusGenInputs['addressUpdateOneWithoutOrder_addressToorder_pickup_address_idInput'];
   addressUpdateOneWithoutStoreInput: NexusGenInputs['addressUpdateOneWithoutStoreInput'];
   addressUpdateOneWithoutUser_addressesInput: NexusGenInputs['addressUpdateOneWithoutUser_addressesInput'];
   addressUpdateWithoutDriverDataInput: NexusGenInputs['addressUpdateWithoutDriverDataInput'];
+  addressUpdateWithoutOrder_addressToorder_drop_address_idDataInput: NexusGenInputs['addressUpdateWithoutOrder_addressToorder_drop_address_idDataInput'];
+  addressUpdateWithoutOrder_addressToorder_pickup_address_idDataInput: NexusGenInputs['addressUpdateWithoutOrder_addressToorder_pickup_address_idDataInput'];
   addressUpdateWithoutStoreDataInput: NexusGenInputs['addressUpdateWithoutStoreDataInput'];
   addressUpdateWithoutUser_addressesDataInput: NexusGenInputs['addressUpdateWithoutUser_addressesDataInput'];
   addressUpsertWithoutDriverInput: NexusGenInputs['addressUpsertWithoutDriverInput'];
+  addressUpsertWithoutOrder_addressToorder_drop_address_idInput: NexusGenInputs['addressUpsertWithoutOrder_addressToorder_drop_address_idInput'];
+  addressUpsertWithoutOrder_addressToorder_pickup_address_idInput: NexusGenInputs['addressUpsertWithoutOrder_addressToorder_pickup_address_idInput'];
   addressUpsertWithoutStoreInput: NexusGenInputs['addressUpsertWithoutStoreInput'];
   addressUpsertWithoutUser_addressesInput: NexusGenInputs['addressUpsertWithoutUser_addressesInput'];
   addressWhereInput: NexusGenInputs['addressWhereInput'];
@@ -4115,16 +4410,21 @@ export interface NexusGenAllTypes extends NexusGenRootTypes {
   driver_documentWhereInput: NexusGenInputs['driver_documentWhereInput'];
   driver_documentWhereUniqueInput: NexusGenInputs['driver_documentWhereUniqueInput'];
   orderCreateInput: NexusGenInputs['orderCreateInput'];
+  orderCreateManyWithoutAddress_addressToorder_drop_address_idInput: NexusGenInputs['orderCreateManyWithoutAddress_addressToorder_drop_address_idInput'];
+  orderCreateManyWithoutAddress_addressToorder_pickup_address_idInput: NexusGenInputs['orderCreateManyWithoutAddress_addressToorder_pickup_address_idInput'];
   orderCreateManyWithoutDriverInput: NexusGenInputs['orderCreateManyWithoutDriverInput'];
   orderCreateManyWithoutStoreInput: NexusGenInputs['orderCreateManyWithoutStoreInput'];
   orderCreateManyWithoutUserInput: NexusGenInputs['orderCreateManyWithoutUserInput'];
   orderCreateOneWithoutOrder_productsInput: NexusGenInputs['orderCreateOneWithoutOrder_productsInput'];
   orderCreateOneWithoutTransactionInput: NexusGenInputs['orderCreateOneWithoutTransactionInput'];
+  orderCreateOrConnectWithoutaddressInput: NexusGenInputs['orderCreateOrConnectWithoutaddressInput'];
   orderCreateOrConnectWithoutdriverInput: NexusGenInputs['orderCreateOrConnectWithoutdriverInput'];
   orderCreateOrConnectWithoutorder_productsInput: NexusGenInputs['orderCreateOrConnectWithoutorder_productsInput'];
   orderCreateOrConnectWithoutstoreInput: NexusGenInputs['orderCreateOrConnectWithoutstoreInput'];
   orderCreateOrConnectWithouttransactionInput: NexusGenInputs['orderCreateOrConnectWithouttransactionInput'];
   orderCreateOrConnectWithoutuserInput: NexusGenInputs['orderCreateOrConnectWithoutuserInput'];
+  orderCreateWithoutAddress_addressToorder_drop_address_idInput: NexusGenInputs['orderCreateWithoutAddress_addressToorder_drop_address_idInput'];
+  orderCreateWithoutAddress_addressToorder_pickup_address_idInput: NexusGenInputs['orderCreateWithoutAddress_addressToorder_pickup_address_idInput'];
   orderCreateWithoutDriverInput: NexusGenInputs['orderCreateWithoutDriverInput'];
   orderCreateWithoutOrder_productsInput: NexusGenInputs['orderCreateWithoutOrder_productsInput'];
   orderCreateWithoutStoreInput: NexusGenInputs['orderCreateWithoutStoreInput'];
@@ -4136,19 +4436,27 @@ export interface NexusGenAllTypes extends NexusGenRootTypes {
   orderUpdateManyDataInput: NexusGenInputs['orderUpdateManyDataInput'];
   orderUpdateManyMutationInput: NexusGenInputs['orderUpdateManyMutationInput'];
   orderUpdateManyWithWhereNestedInput: NexusGenInputs['orderUpdateManyWithWhereNestedInput'];
+  orderUpdateManyWithoutAddress_addressToorder_drop_address_idInput: NexusGenInputs['orderUpdateManyWithoutAddress_addressToorder_drop_address_idInput'];
+  orderUpdateManyWithoutAddress_addressToorder_pickup_address_idInput: NexusGenInputs['orderUpdateManyWithoutAddress_addressToorder_pickup_address_idInput'];
   orderUpdateManyWithoutDriverInput: NexusGenInputs['orderUpdateManyWithoutDriverInput'];
   orderUpdateManyWithoutStoreInput: NexusGenInputs['orderUpdateManyWithoutStoreInput'];
   orderUpdateManyWithoutUserInput: NexusGenInputs['orderUpdateManyWithoutUserInput'];
   orderUpdateOneWithoutOrder_productsInput: NexusGenInputs['orderUpdateOneWithoutOrder_productsInput'];
   orderUpdateOneWithoutTransactionInput: NexusGenInputs['orderUpdateOneWithoutTransactionInput'];
+  orderUpdateWithWhereUniqueWithoutAddress_addressToorder_drop_address_idInput: NexusGenInputs['orderUpdateWithWhereUniqueWithoutAddress_addressToorder_drop_address_idInput'];
+  orderUpdateWithWhereUniqueWithoutAddress_addressToorder_pickup_address_idInput: NexusGenInputs['orderUpdateWithWhereUniqueWithoutAddress_addressToorder_pickup_address_idInput'];
   orderUpdateWithWhereUniqueWithoutDriverInput: NexusGenInputs['orderUpdateWithWhereUniqueWithoutDriverInput'];
   orderUpdateWithWhereUniqueWithoutStoreInput: NexusGenInputs['orderUpdateWithWhereUniqueWithoutStoreInput'];
   orderUpdateWithWhereUniqueWithoutUserInput: NexusGenInputs['orderUpdateWithWhereUniqueWithoutUserInput'];
+  orderUpdateWithoutAddress_addressToorder_drop_address_idDataInput: NexusGenInputs['orderUpdateWithoutAddress_addressToorder_drop_address_idDataInput'];
+  orderUpdateWithoutAddress_addressToorder_pickup_address_idDataInput: NexusGenInputs['orderUpdateWithoutAddress_addressToorder_pickup_address_idDataInput'];
   orderUpdateWithoutDriverDataInput: NexusGenInputs['orderUpdateWithoutDriverDataInput'];
   orderUpdateWithoutOrder_productsDataInput: NexusGenInputs['orderUpdateWithoutOrder_productsDataInput'];
   orderUpdateWithoutStoreDataInput: NexusGenInputs['orderUpdateWithoutStoreDataInput'];
   orderUpdateWithoutTransactionDataInput: NexusGenInputs['orderUpdateWithoutTransactionDataInput'];
   orderUpdateWithoutUserDataInput: NexusGenInputs['orderUpdateWithoutUserDataInput'];
+  orderUpsertWithWhereUniqueWithoutAddress_addressToorder_drop_address_idInput: NexusGenInputs['orderUpsertWithWhereUniqueWithoutAddress_addressToorder_drop_address_idInput'];
+  orderUpsertWithWhereUniqueWithoutAddress_addressToorder_pickup_address_idInput: NexusGenInputs['orderUpsertWithWhereUniqueWithoutAddress_addressToorder_pickup_address_idInput'];
   orderUpsertWithWhereUniqueWithoutDriverInput: NexusGenInputs['orderUpsertWithWhereUniqueWithoutDriverInput'];
   orderUpsertWithWhereUniqueWithoutStoreInput: NexusGenInputs['orderUpsertWithWhereUniqueWithoutStoreInput'];
   orderUpsertWithWhereUniqueWithoutUserInput: NexusGenInputs['orderUpsertWithWhereUniqueWithoutUserInput'];
@@ -4655,6 +4963,7 @@ export interface NexusGenFieldTypes {
     storeDocument: NexusGenRootTypes['store_document'] | null; // store_document
     storeDocuments: NexusGenRootTypes['store_document'][]; // [store_document!]!
     stores: NexusGenRootTypes['store'][]; // [store!]!
+    storesWithOffers: NexusGenRootTypes['store'][]; // [store!]!
     ticket: NexusGenRootTypes['ticket'] | null; // ticket
     ticketHistories: NexusGenRootTypes['ticket_history'][]; // [ticket_history!]!
     ticketHistory: NexusGenRootTypes['ticket_history'] | null; // ticket_history
@@ -4721,9 +5030,11 @@ export interface NexusGenFieldTypes {
     created_at: NexusGenScalars['DateTime'] | null; // DateTime
     driver: NexusGenRootTypes['driver'] | null; // driver
     driver_id: string | null; // String
+    drop_address_id: string | null; // String
     id: string; // String!
     order_products: NexusGenRootTypes['order_products'][]; // [order_products!]!
     otp: string | null; // String
+    pickup_address_id: string | null; // String
     ref_no: string | null; // String
     shipping_cost: number | null; // Float
     status: NexusGenEnums['order_status'] | null; // order_status
@@ -5594,6 +5905,7 @@ export interface NexusGenArgTypes {
       before?: NexusGenInputs['productWhereUniqueInput'] | null; // productWhereUniqueInput
       first?: number | null; // Int
       last?: number | null; // Int
+      where?: NexusGenInputs['productWhereInput'] | null; // productWhereInput
     }
     store_document: { // args
       after?: NexusGenInputs['store_documentWhereUniqueInput'] | null; // store_documentWhereUniqueInput
@@ -5657,7 +5969,7 @@ export interface NexusGenInheritedFields {}
 
 export type NexusGenObjectNames = "BatchPayload" | "MobileAuthPayload" | "Mutation" | "OTP" | "Query" | "address" | "bank_detail" | "driver" | "driver_document" | "imageObj" | "order" | "order_products" | "product" | "product_image" | "product_sizes" | "rating" | "searchObj" | "size" | "store" | "store_document" | "ticket" | "ticket_history" | "transaction" | "user" | "user_addresses";
 
-export type NexusGenInputNames = "Bank_detailListRelationFilter" | "BoolNullableFilter" | "DateTimeNullableFilter" | "DriverListRelationFilter" | "Driver_documentListRelationFilter" | "FloatNullableFilter" | "NestedBoolNullableFilter" | "NestedDateTimeNullableFilter" | "NestedFloatNullableFilter" | "NestedStringFilter" | "NestedStringNullableFilter" | "NullableBoolFieldUpdateOperationsInput" | "NullableDateTimeFieldUpdateOperationsInput" | "NullableEnumdocument_typesFieldUpdateOperationsInput" | "NullableEnumorder_statusFieldUpdateOperationsInput" | "NullableEnumticket_typesFieldUpdateOperationsInput" | "NullableFloatFieldUpdateOperationsInput" | "NullableStringFieldUpdateOperationsInput" | "OrderListRelationFilter" | "Order_productsListRelationFilter" | "ProductListRelationFilter" | "Product_imageListRelationFilter" | "Product_sizesListRelationFilter" | "RatingListRelationFilter" | "StoreListRelationFilter" | "Store_documentListRelationFilter" | "StringFieldUpdateOperationsInput" | "StringFilter" | "StringNullableFilter" | "TicketListRelationFilter" | "Ticket_historyListRelationFilter" | "TransactionListRelationFilter" | "User_addressesListRelationFilter" | "addressCreateInput" | "addressCreateOneWithoutDriverInput" | "addressCreateOneWithoutStoreInput" | "addressCreateOneWithoutUser_addressesInput" | "addressCreateOrConnectWithoutdriverInput" | "addressCreateOrConnectWithoutstoreInput" | "addressCreateOrConnectWithoutuser_addressesInput" | "addressCreateWithoutDriverInput" | "addressCreateWithoutStoreInput" | "addressCreateWithoutUser_addressesInput" | "addressOrderByInput" | "addressUpdateInput" | "addressUpdateManyMutationInput" | "addressUpdateOneWithoutDriverInput" | "addressUpdateOneWithoutStoreInput" | "addressUpdateOneWithoutUser_addressesInput" | "addressUpdateWithoutDriverDataInput" | "addressUpdateWithoutStoreDataInput" | "addressUpdateWithoutUser_addressesDataInput" | "addressUpsertWithoutDriverInput" | "addressUpsertWithoutStoreInput" | "addressUpsertWithoutUser_addressesInput" | "addressWhereInput" | "addressWhereUniqueInput" | "bank_detailCreateInput" | "bank_detailCreateManyWithoutDriverInput" | "bank_detailCreateManyWithoutStoreInput" | "bank_detailCreateOrConnectWithoutdriverInput" | "bank_detailCreateOrConnectWithoutstoreInput" | "bank_detailCreateWithoutDriverInput" | "bank_detailCreateWithoutStoreInput" | "bank_detailOrderByInput" | "bank_detailScalarWhereInput" | "bank_detailUpdateInput" | "bank_detailUpdateManyDataInput" | "bank_detailUpdateManyMutationInput" | "bank_detailUpdateManyWithWhereNestedInput" | "bank_detailUpdateManyWithoutDriverInput" | "bank_detailUpdateManyWithoutStoreInput" | "bank_detailUpdateWithWhereUniqueWithoutDriverInput" | "bank_detailUpdateWithWhereUniqueWithoutStoreInput" | "bank_detailUpdateWithoutDriverDataInput" | "bank_detailUpdateWithoutStoreDataInput" | "bank_detailUpsertWithWhereUniqueWithoutDriverInput" | "bank_detailUpsertWithWhereUniqueWithoutStoreInput" | "bank_detailWhereInput" | "bank_detailWhereUniqueInput" | "driverCreateInput" | "driverCreateManyWithoutAddressInput" | "driverCreateOneWithoutBank_detailInput" | "driverCreateOneWithoutDriver_documentInput" | "driverCreateOneWithoutOrderInput" | "driverCreateOneWithoutTicketInput" | "driverCreateOrConnectWithoutaddressInput" | "driverCreateOrConnectWithoutbank_detailInput" | "driverCreateOrConnectWithoutdriver_documentInput" | "driverCreateOrConnectWithoutorderInput" | "driverCreateOrConnectWithoutticketInput" | "driverCreateWithoutAddressInput" | "driverCreateWithoutBank_detailInput" | "driverCreateWithoutDriver_documentInput" | "driverCreateWithoutOrderInput" | "driverCreateWithoutTicketInput" | "driverOrderByInput" | "driverScalarWhereInput" | "driverUpdateInput" | "driverUpdateManyDataInput" | "driverUpdateManyMutationInput" | "driverUpdateManyWithWhereNestedInput" | "driverUpdateManyWithoutAddressInput" | "driverUpdateOneWithoutBank_detailInput" | "driverUpdateOneWithoutDriver_documentInput" | "driverUpdateOneWithoutOrderInput" | "driverUpdateOneWithoutTicketInput" | "driverUpdateWithWhereUniqueWithoutAddressInput" | "driverUpdateWithoutAddressDataInput" | "driverUpdateWithoutBank_detailDataInput" | "driverUpdateWithoutDriver_documentDataInput" | "driverUpdateWithoutOrderDataInput" | "driverUpdateWithoutTicketDataInput" | "driverUpsertWithWhereUniqueWithoutAddressInput" | "driverUpsertWithoutBank_detailInput" | "driverUpsertWithoutDriver_documentInput" | "driverUpsertWithoutOrderInput" | "driverUpsertWithoutTicketInput" | "driverWhereInput" | "driverWhereUniqueInput" | "driver_documentCreateInput" | "driver_documentCreateManyWithoutDriverInput" | "driver_documentCreateOrConnectWithoutdriverInput" | "driver_documentCreateWithoutDriverInput" | "driver_documentOrderByInput" | "driver_documentScalarWhereInput" | "driver_documentUpdateInput" | "driver_documentUpdateManyDataInput" | "driver_documentUpdateManyMutationInput" | "driver_documentUpdateManyWithWhereNestedInput" | "driver_documentUpdateManyWithoutDriverInput" | "driver_documentUpdateWithWhereUniqueWithoutDriverInput" | "driver_documentUpdateWithoutDriverDataInput" | "driver_documentUpsertWithWhereUniqueWithoutDriverInput" | "driver_documentWhereInput" | "driver_documentWhereUniqueInput" | "orderCreateInput" | "orderCreateManyWithoutDriverInput" | "orderCreateManyWithoutStoreInput" | "orderCreateManyWithoutUserInput" | "orderCreateOneWithoutOrder_productsInput" | "orderCreateOneWithoutTransactionInput" | "orderCreateOrConnectWithoutdriverInput" | "orderCreateOrConnectWithoutorder_productsInput" | "orderCreateOrConnectWithoutstoreInput" | "orderCreateOrConnectWithouttransactionInput" | "orderCreateOrConnectWithoutuserInput" | "orderCreateWithoutDriverInput" | "orderCreateWithoutOrder_productsInput" | "orderCreateWithoutStoreInput" | "orderCreateWithoutTransactionInput" | "orderCreateWithoutUserInput" | "orderOrderByInput" | "orderScalarWhereInput" | "orderUpdateInput" | "orderUpdateManyDataInput" | "orderUpdateManyMutationInput" | "orderUpdateManyWithWhereNestedInput" | "orderUpdateManyWithoutDriverInput" | "orderUpdateManyWithoutStoreInput" | "orderUpdateManyWithoutUserInput" | "orderUpdateOneWithoutOrder_productsInput" | "orderUpdateOneWithoutTransactionInput" | "orderUpdateWithWhereUniqueWithoutDriverInput" | "orderUpdateWithWhereUniqueWithoutStoreInput" | "orderUpdateWithWhereUniqueWithoutUserInput" | "orderUpdateWithoutDriverDataInput" | "orderUpdateWithoutOrder_productsDataInput" | "orderUpdateWithoutStoreDataInput" | "orderUpdateWithoutTransactionDataInput" | "orderUpdateWithoutUserDataInput" | "orderUpsertWithWhereUniqueWithoutDriverInput" | "orderUpsertWithWhereUniqueWithoutStoreInput" | "orderUpsertWithWhereUniqueWithoutUserInput" | "orderUpsertWithoutOrder_productsInput" | "orderUpsertWithoutTransactionInput" | "orderWhereInput" | "orderWhereUniqueInput" | "order_productsCreateInput" | "order_productsCreateManyWithoutOrderInput" | "order_productsCreateManyWithoutProductInput" | "order_productsCreateOrConnectWithoutorderInput" | "order_productsCreateOrConnectWithoutproductInput" | "order_productsCreateWithoutOrderInput" | "order_productsCreateWithoutProductInput" | "order_productsOrderByInput" | "order_productsScalarWhereInput" | "order_productsUpdateInput" | "order_productsUpdateManyDataInput" | "order_productsUpdateManyMutationInput" | "order_productsUpdateManyWithWhereNestedInput" | "order_productsUpdateManyWithoutOrderInput" | "order_productsUpdateManyWithoutProductInput" | "order_productsUpdateWithWhereUniqueWithoutOrderInput" | "order_productsUpdateWithWhereUniqueWithoutProductInput" | "order_productsUpdateWithoutOrderDataInput" | "order_productsUpdateWithoutProductDataInput" | "order_productsUpsertWithWhereUniqueWithoutOrderInput" | "order_productsUpsertWithWhereUniqueWithoutProductInput" | "order_productsWhereInput" | "order_productsWhereUniqueInput" | "productCreateInput" | "productCreateManyWithoutStoreInput" | "productCreateOneWithoutOrder_productsInput" | "productCreateOneWithoutProduct_imageInput" | "productCreateOneWithoutProduct_sizesInput" | "productCreateOneWithoutRatingInput" | "productCreateOrConnectWithoutorder_productsInput" | "productCreateOrConnectWithoutproduct_imageInput" | "productCreateOrConnectWithoutproduct_sizesInput" | "productCreateOrConnectWithoutratingInput" | "productCreateOrConnectWithoutstoreInput" | "productCreateWithoutOrder_productsInput" | "productCreateWithoutProduct_imageInput" | "productCreateWithoutProduct_sizesInput" | "productCreateWithoutRatingInput" | "productCreateWithoutStoreInput" | "productOrderByInput" | "productScalarWhereInput" | "productUpdateInput" | "productUpdateManyDataInput" | "productUpdateManyMutationInput" | "productUpdateManyWithWhereNestedInput" | "productUpdateManyWithoutStoreInput" | "productUpdateOneWithoutOrder_productsInput" | "productUpdateOneWithoutProduct_imageInput" | "productUpdateOneWithoutProduct_sizesInput" | "productUpdateOneWithoutRatingInput" | "productUpdateWithWhereUniqueWithoutStoreInput" | "productUpdateWithoutOrder_productsDataInput" | "productUpdateWithoutProduct_imageDataInput" | "productUpdateWithoutProduct_sizesDataInput" | "productUpdateWithoutRatingDataInput" | "productUpdateWithoutStoreDataInput" | "productUpsertWithWhereUniqueWithoutStoreInput" | "productUpsertWithoutOrder_productsInput" | "productUpsertWithoutProduct_imageInput" | "productUpsertWithoutProduct_sizesInput" | "productUpsertWithoutRatingInput" | "productWhereInput" | "productWhereUniqueInput" | "product_imageCreateInput" | "product_imageCreateManyWithoutProductInput" | "product_imageCreateOrConnectWithoutproductInput" | "product_imageCreateWithoutProductInput" | "product_imageOrderByInput" | "product_imageScalarWhereInput" | "product_imageUpdateInput" | "product_imageUpdateManyDataInput" | "product_imageUpdateManyMutationInput" | "product_imageUpdateManyWithWhereNestedInput" | "product_imageUpdateManyWithoutProductInput" | "product_imageUpdateWithWhereUniqueWithoutProductInput" | "product_imageUpdateWithoutProductDataInput" | "product_imageUpsertWithWhereUniqueWithoutProductInput" | "product_imageWhereInput" | "product_imageWhereUniqueInput" | "product_sizesCreateInput" | "product_sizesCreateManyWithoutProductInput" | "product_sizesCreateManyWithoutSizeInput" | "product_sizesCreateOrConnectWithoutproductInput" | "product_sizesCreateOrConnectWithoutsizeInput" | "product_sizesCreateWithoutProductInput" | "product_sizesCreateWithoutSizeInput" | "product_sizesOrderByInput" | "product_sizesScalarWhereInput" | "product_sizesUpdateInput" | "product_sizesUpdateManyDataInput" | "product_sizesUpdateManyMutationInput" | "product_sizesUpdateManyWithWhereNestedInput" | "product_sizesUpdateManyWithoutProductInput" | "product_sizesUpdateManyWithoutSizeInput" | "product_sizesUpdateWithWhereUniqueWithoutProductInput" | "product_sizesUpdateWithWhereUniqueWithoutSizeInput" | "product_sizesUpdateWithoutProductDataInput" | "product_sizesUpdateWithoutSizeDataInput" | "product_sizesUpsertWithWhereUniqueWithoutProductInput" | "product_sizesUpsertWithWhereUniqueWithoutSizeInput" | "product_sizesWhereInput" | "product_sizesWhereUniqueInput" | "ratingCreateInput" | "ratingCreateManyWithoutProductInput" | "ratingCreateManyWithoutUserInput" | "ratingCreateOrConnectWithoutproductInput" | "ratingCreateOrConnectWithoutuserInput" | "ratingCreateWithoutProductInput" | "ratingCreateWithoutUserInput" | "ratingOrderByInput" | "ratingScalarWhereInput" | "ratingUpdateInput" | "ratingUpdateManyDataInput" | "ratingUpdateManyMutationInput" | "ratingUpdateManyWithWhereNestedInput" | "ratingUpdateManyWithoutProductInput" | "ratingUpdateManyWithoutUserInput" | "ratingUpdateWithWhereUniqueWithoutProductInput" | "ratingUpdateWithWhereUniqueWithoutUserInput" | "ratingUpdateWithoutProductDataInput" | "ratingUpdateWithoutUserDataInput" | "ratingUpsertWithWhereUniqueWithoutProductInput" | "ratingUpsertWithWhereUniqueWithoutUserInput" | "ratingWhereInput" | "ratingWhereUniqueInput" | "sizeCreateInput" | "sizeCreateOneWithoutProduct_sizesInput" | "sizeCreateOrConnectWithoutproduct_sizesInput" | "sizeCreateWithoutProduct_sizesInput" | "sizeOrderByInput" | "sizeUpdateInput" | "sizeUpdateManyMutationInput" | "sizeUpdateOneWithoutProduct_sizesInput" | "sizeUpdateWithoutProduct_sizesDataInput" | "sizeUpsertWithoutProduct_sizesInput" | "sizeWhereInput" | "sizeWhereUniqueInput" | "storeCreateInput" | "storeCreateManyWithoutAddressInput" | "storeCreateOneWithoutBank_detailInput" | "storeCreateOneWithoutOrderInput" | "storeCreateOneWithoutProductInput" | "storeCreateOneWithoutStore_documentInput" | "storeCreateOneWithoutTicketInput" | "storeCreateOrConnectWithoutaddressInput" | "storeCreateOrConnectWithoutbank_detailInput" | "storeCreateOrConnectWithoutorderInput" | "storeCreateOrConnectWithoutproductInput" | "storeCreateOrConnectWithoutstore_documentInput" | "storeCreateOrConnectWithoutticketInput" | "storeCreateWithoutAddressInput" | "storeCreateWithoutBank_detailInput" | "storeCreateWithoutOrderInput" | "storeCreateWithoutProductInput" | "storeCreateWithoutStore_documentInput" | "storeCreateWithoutTicketInput" | "storeOrderByInput" | "storeScalarWhereInput" | "storeUpdateInput" | "storeUpdateManyDataInput" | "storeUpdateManyMutationInput" | "storeUpdateManyWithWhereNestedInput" | "storeUpdateManyWithoutAddressInput" | "storeUpdateOneWithoutBank_detailInput" | "storeUpdateOneWithoutOrderInput" | "storeUpdateOneWithoutProductInput" | "storeUpdateOneWithoutStore_documentInput" | "storeUpdateOneWithoutTicketInput" | "storeUpdateWithWhereUniqueWithoutAddressInput" | "storeUpdateWithoutAddressDataInput" | "storeUpdateWithoutBank_detailDataInput" | "storeUpdateWithoutOrderDataInput" | "storeUpdateWithoutProductDataInput" | "storeUpdateWithoutStore_documentDataInput" | "storeUpdateWithoutTicketDataInput" | "storeUpsertWithWhereUniqueWithoutAddressInput" | "storeUpsertWithoutBank_detailInput" | "storeUpsertWithoutOrderInput" | "storeUpsertWithoutProductInput" | "storeUpsertWithoutStore_documentInput" | "storeUpsertWithoutTicketInput" | "storeWhereInput" | "storeWhereUniqueInput" | "store_documentCreateInput" | "store_documentCreateManyWithoutStoreInput" | "store_documentCreateOrConnectWithoutstoreInput" | "store_documentCreateWithoutStoreInput" | "store_documentOrderByInput" | "store_documentScalarWhereInput" | "store_documentUpdateInput" | "store_documentUpdateManyDataInput" | "store_documentUpdateManyMutationInput" | "store_documentUpdateManyWithWhereNestedInput" | "store_documentUpdateManyWithoutStoreInput" | "store_documentUpdateWithWhereUniqueWithoutStoreInput" | "store_documentUpdateWithoutStoreDataInput" | "store_documentUpsertWithWhereUniqueWithoutStoreInput" | "store_documentWhereInput" | "store_documentWhereUniqueInput" | "ticketCreateInput" | "ticketCreateManyWithoutDriverInput" | "ticketCreateManyWithoutStoreInput" | "ticketCreateManyWithoutUserInput" | "ticketCreateOneWithoutTicket_historyInput" | "ticketCreateOrConnectWithoutdriverInput" | "ticketCreateOrConnectWithoutstoreInput" | "ticketCreateOrConnectWithoutticket_historyInput" | "ticketCreateOrConnectWithoutuserInput" | "ticketCreateWithoutDriverInput" | "ticketCreateWithoutStoreInput" | "ticketCreateWithoutTicket_historyInput" | "ticketCreateWithoutUserInput" | "ticketOrderByInput" | "ticketScalarWhereInput" | "ticketUpdateInput" | "ticketUpdateManyDataInput" | "ticketUpdateManyMutationInput" | "ticketUpdateManyWithWhereNestedInput" | "ticketUpdateManyWithoutDriverInput" | "ticketUpdateManyWithoutStoreInput" | "ticketUpdateManyWithoutUserInput" | "ticketUpdateOneWithoutTicket_historyInput" | "ticketUpdateWithWhereUniqueWithoutDriverInput" | "ticketUpdateWithWhereUniqueWithoutStoreInput" | "ticketUpdateWithWhereUniqueWithoutUserInput" | "ticketUpdateWithoutDriverDataInput" | "ticketUpdateWithoutStoreDataInput" | "ticketUpdateWithoutTicket_historyDataInput" | "ticketUpdateWithoutUserDataInput" | "ticketUpsertWithWhereUniqueWithoutDriverInput" | "ticketUpsertWithWhereUniqueWithoutStoreInput" | "ticketUpsertWithWhereUniqueWithoutUserInput" | "ticketUpsertWithoutTicket_historyInput" | "ticketWhereInput" | "ticketWhereUniqueInput" | "ticket_historyCreateInput" | "ticket_historyCreateManyWithoutTicketInput" | "ticket_historyCreateOrConnectWithoutticketInput" | "ticket_historyCreateWithoutTicketInput" | "ticket_historyOrderByInput" | "ticket_historyScalarWhereInput" | "ticket_historyUpdateInput" | "ticket_historyUpdateManyDataInput" | "ticket_historyUpdateManyMutationInput" | "ticket_historyUpdateManyWithWhereNestedInput" | "ticket_historyUpdateManyWithoutTicketInput" | "ticket_historyUpdateWithWhereUniqueWithoutTicketInput" | "ticket_historyUpdateWithoutTicketDataInput" | "ticket_historyUpsertWithWhereUniqueWithoutTicketInput" | "ticket_historyWhereInput" | "ticket_historyWhereUniqueInput" | "transactionCreateInput" | "transactionCreateManyWithoutOrderInput" | "transactionCreateManyWithoutUserInput" | "transactionCreateOrConnectWithoutorderInput" | "transactionCreateOrConnectWithoutuserInput" | "transactionCreateWithoutOrderInput" | "transactionCreateWithoutUserInput" | "transactionOrderByInput" | "transactionScalarWhereInput" | "transactionUpdateInput" | "transactionUpdateManyDataInput" | "transactionUpdateManyMutationInput" | "transactionUpdateManyWithWhereNestedInput" | "transactionUpdateManyWithoutOrderInput" | "transactionUpdateManyWithoutUserInput" | "transactionUpdateWithWhereUniqueWithoutOrderInput" | "transactionUpdateWithWhereUniqueWithoutUserInput" | "transactionUpdateWithoutOrderDataInput" | "transactionUpdateWithoutUserDataInput" | "transactionUpsertWithWhereUniqueWithoutOrderInput" | "transactionUpsertWithWhereUniqueWithoutUserInput" | "transactionWhereInput" | "transactionWhereUniqueInput" | "userCreateInput" | "userCreateOneWithoutOrderInput" | "userCreateOneWithoutRatingInput" | "userCreateOneWithoutTicketInput" | "userCreateOneWithoutTransactionInput" | "userCreateOneWithoutUser_addressesInput" | "userCreateOrConnectWithoutorderInput" | "userCreateOrConnectWithoutratingInput" | "userCreateOrConnectWithoutticketInput" | "userCreateOrConnectWithouttransactionInput" | "userCreateOrConnectWithoutuser_addressesInput" | "userCreateWithoutOrderInput" | "userCreateWithoutRatingInput" | "userCreateWithoutTicketInput" | "userCreateWithoutTransactionInput" | "userCreateWithoutUser_addressesInput" | "userOrderByInput" | "userUpdateInput" | "userUpdateManyMutationInput" | "userUpdateOneWithoutOrderInput" | "userUpdateOneWithoutRatingInput" | "userUpdateOneWithoutTicketInput" | "userUpdateOneWithoutTransactionInput" | "userUpdateOneWithoutUser_addressesInput" | "userUpdateWithoutOrderDataInput" | "userUpdateWithoutRatingDataInput" | "userUpdateWithoutTicketDataInput" | "userUpdateWithoutTransactionDataInput" | "userUpdateWithoutUser_addressesDataInput" | "userUpsertWithoutOrderInput" | "userUpsertWithoutRatingInput" | "userUpsertWithoutTicketInput" | "userUpsertWithoutTransactionInput" | "userUpsertWithoutUser_addressesInput" | "userWhereInput" | "userWhereUniqueInput" | "user_addressesCreateInput" | "user_addressesCreateManyWithoutAddressInput" | "user_addressesCreateManyWithoutUserInput" | "user_addressesCreateOrConnectWithoutaddressInput" | "user_addressesCreateOrConnectWithoutuserInput" | "user_addressesCreateWithoutAddressInput" | "user_addressesCreateWithoutUserInput" | "user_addressesOrderByInput" | "user_addressesScalarWhereInput" | "user_addressesUpdateInput" | "user_addressesUpdateManyDataInput" | "user_addressesUpdateManyMutationInput" | "user_addressesUpdateManyWithWhereNestedInput" | "user_addressesUpdateManyWithoutAddressInput" | "user_addressesUpdateManyWithoutUserInput" | "user_addressesUpdateWithWhereUniqueWithoutAddressInput" | "user_addressesUpdateWithWhereUniqueWithoutUserInput" | "user_addressesUpdateWithoutAddressDataInput" | "user_addressesUpdateWithoutUserDataInput" | "user_addressesUpsertWithWhereUniqueWithoutAddressInput" | "user_addressesUpsertWithWhereUniqueWithoutUserInput" | "user_addressesWhereInput" | "user_addressesWhereUniqueInput";
+export type NexusGenInputNames = "Bank_detailListRelationFilter" | "BoolNullableFilter" | "DateTimeNullableFilter" | "DriverListRelationFilter" | "Driver_documentListRelationFilter" | "FloatNullableFilter" | "NestedBoolNullableFilter" | "NestedDateTimeNullableFilter" | "NestedFloatNullableFilter" | "NestedStringFilter" | "NestedStringNullableFilter" | "NullableBoolFieldUpdateOperationsInput" | "NullableDateTimeFieldUpdateOperationsInput" | "NullableEnumdocument_typesFieldUpdateOperationsInput" | "NullableEnumorder_statusFieldUpdateOperationsInput" | "NullableEnumticket_typesFieldUpdateOperationsInput" | "NullableFloatFieldUpdateOperationsInput" | "NullableStringFieldUpdateOperationsInput" | "OrderListRelationFilter" | "Order_productsListRelationFilter" | "ProductListRelationFilter" | "Product_imageListRelationFilter" | "Product_sizesListRelationFilter" | "RatingListRelationFilter" | "StoreListRelationFilter" | "Store_documentListRelationFilter" | "StringFieldUpdateOperationsInput" | "StringFilter" | "StringNullableFilter" | "TicketListRelationFilter" | "Ticket_historyListRelationFilter" | "TransactionListRelationFilter" | "User_addressesListRelationFilter" | "addressCreateInput" | "addressCreateOneWithoutDriverInput" | "addressCreateOneWithoutOrder_addressToorder_drop_address_idInput" | "addressCreateOneWithoutOrder_addressToorder_pickup_address_idInput" | "addressCreateOneWithoutStoreInput" | "addressCreateOneWithoutUser_addressesInput" | "addressCreateOrConnectWithoutdriverInput" | "addressCreateOrConnectWithoutorderInput" | "addressCreateOrConnectWithoutstoreInput" | "addressCreateOrConnectWithoutuser_addressesInput" | "addressCreateWithoutDriverInput" | "addressCreateWithoutOrder_addressToorder_drop_address_idInput" | "addressCreateWithoutOrder_addressToorder_pickup_address_idInput" | "addressCreateWithoutStoreInput" | "addressCreateWithoutUser_addressesInput" | "addressOrderByInput" | "addressUpdateInput" | "addressUpdateManyMutationInput" | "addressUpdateOneWithoutDriverInput" | "addressUpdateOneWithoutOrder_addressToorder_drop_address_idInput" | "addressUpdateOneWithoutOrder_addressToorder_pickup_address_idInput" | "addressUpdateOneWithoutStoreInput" | "addressUpdateOneWithoutUser_addressesInput" | "addressUpdateWithoutDriverDataInput" | "addressUpdateWithoutOrder_addressToorder_drop_address_idDataInput" | "addressUpdateWithoutOrder_addressToorder_pickup_address_idDataInput" | "addressUpdateWithoutStoreDataInput" | "addressUpdateWithoutUser_addressesDataInput" | "addressUpsertWithoutDriverInput" | "addressUpsertWithoutOrder_addressToorder_drop_address_idInput" | "addressUpsertWithoutOrder_addressToorder_pickup_address_idInput" | "addressUpsertWithoutStoreInput" | "addressUpsertWithoutUser_addressesInput" | "addressWhereInput" | "addressWhereUniqueInput" | "bank_detailCreateInput" | "bank_detailCreateManyWithoutDriverInput" | "bank_detailCreateManyWithoutStoreInput" | "bank_detailCreateOrConnectWithoutdriverInput" | "bank_detailCreateOrConnectWithoutstoreInput" | "bank_detailCreateWithoutDriverInput" | "bank_detailCreateWithoutStoreInput" | "bank_detailOrderByInput" | "bank_detailScalarWhereInput" | "bank_detailUpdateInput" | "bank_detailUpdateManyDataInput" | "bank_detailUpdateManyMutationInput" | "bank_detailUpdateManyWithWhereNestedInput" | "bank_detailUpdateManyWithoutDriverInput" | "bank_detailUpdateManyWithoutStoreInput" | "bank_detailUpdateWithWhereUniqueWithoutDriverInput" | "bank_detailUpdateWithWhereUniqueWithoutStoreInput" | "bank_detailUpdateWithoutDriverDataInput" | "bank_detailUpdateWithoutStoreDataInput" | "bank_detailUpsertWithWhereUniqueWithoutDriverInput" | "bank_detailUpsertWithWhereUniqueWithoutStoreInput" | "bank_detailWhereInput" | "bank_detailWhereUniqueInput" | "driverCreateInput" | "driverCreateManyWithoutAddressInput" | "driverCreateOneWithoutBank_detailInput" | "driverCreateOneWithoutDriver_documentInput" | "driverCreateOneWithoutOrderInput" | "driverCreateOneWithoutTicketInput" | "driverCreateOrConnectWithoutaddressInput" | "driverCreateOrConnectWithoutbank_detailInput" | "driverCreateOrConnectWithoutdriver_documentInput" | "driverCreateOrConnectWithoutorderInput" | "driverCreateOrConnectWithoutticketInput" | "driverCreateWithoutAddressInput" | "driverCreateWithoutBank_detailInput" | "driverCreateWithoutDriver_documentInput" | "driverCreateWithoutOrderInput" | "driverCreateWithoutTicketInput" | "driverOrderByInput" | "driverScalarWhereInput" | "driverUpdateInput" | "driverUpdateManyDataInput" | "driverUpdateManyMutationInput" | "driverUpdateManyWithWhereNestedInput" | "driverUpdateManyWithoutAddressInput" | "driverUpdateOneWithoutBank_detailInput" | "driverUpdateOneWithoutDriver_documentInput" | "driverUpdateOneWithoutOrderInput" | "driverUpdateOneWithoutTicketInput" | "driverUpdateWithWhereUniqueWithoutAddressInput" | "driverUpdateWithoutAddressDataInput" | "driverUpdateWithoutBank_detailDataInput" | "driverUpdateWithoutDriver_documentDataInput" | "driverUpdateWithoutOrderDataInput" | "driverUpdateWithoutTicketDataInput" | "driverUpsertWithWhereUniqueWithoutAddressInput" | "driverUpsertWithoutBank_detailInput" | "driverUpsertWithoutDriver_documentInput" | "driverUpsertWithoutOrderInput" | "driverUpsertWithoutTicketInput" | "driverWhereInput" | "driverWhereUniqueInput" | "driver_documentCreateInput" | "driver_documentCreateManyWithoutDriverInput" | "driver_documentCreateOrConnectWithoutdriverInput" | "driver_documentCreateWithoutDriverInput" | "driver_documentOrderByInput" | "driver_documentScalarWhereInput" | "driver_documentUpdateInput" | "driver_documentUpdateManyDataInput" | "driver_documentUpdateManyMutationInput" | "driver_documentUpdateManyWithWhereNestedInput" | "driver_documentUpdateManyWithoutDriverInput" | "driver_documentUpdateWithWhereUniqueWithoutDriverInput" | "driver_documentUpdateWithoutDriverDataInput" | "driver_documentUpsertWithWhereUniqueWithoutDriverInput" | "driver_documentWhereInput" | "driver_documentWhereUniqueInput" | "orderCreateInput" | "orderCreateManyWithoutAddress_addressToorder_drop_address_idInput" | "orderCreateManyWithoutAddress_addressToorder_pickup_address_idInput" | "orderCreateManyWithoutDriverInput" | "orderCreateManyWithoutStoreInput" | "orderCreateManyWithoutUserInput" | "orderCreateOneWithoutOrder_productsInput" | "orderCreateOneWithoutTransactionInput" | "orderCreateOrConnectWithoutaddressInput" | "orderCreateOrConnectWithoutdriverInput" | "orderCreateOrConnectWithoutorder_productsInput" | "orderCreateOrConnectWithoutstoreInput" | "orderCreateOrConnectWithouttransactionInput" | "orderCreateOrConnectWithoutuserInput" | "orderCreateWithoutAddress_addressToorder_drop_address_idInput" | "orderCreateWithoutAddress_addressToorder_pickup_address_idInput" | "orderCreateWithoutDriverInput" | "orderCreateWithoutOrder_productsInput" | "orderCreateWithoutStoreInput" | "orderCreateWithoutTransactionInput" | "orderCreateWithoutUserInput" | "orderOrderByInput" | "orderScalarWhereInput" | "orderUpdateInput" | "orderUpdateManyDataInput" | "orderUpdateManyMutationInput" | "orderUpdateManyWithWhereNestedInput" | "orderUpdateManyWithoutAddress_addressToorder_drop_address_idInput" | "orderUpdateManyWithoutAddress_addressToorder_pickup_address_idInput" | "orderUpdateManyWithoutDriverInput" | "orderUpdateManyWithoutStoreInput" | "orderUpdateManyWithoutUserInput" | "orderUpdateOneWithoutOrder_productsInput" | "orderUpdateOneWithoutTransactionInput" | "orderUpdateWithWhereUniqueWithoutAddress_addressToorder_drop_address_idInput" | "orderUpdateWithWhereUniqueWithoutAddress_addressToorder_pickup_address_idInput" | "orderUpdateWithWhereUniqueWithoutDriverInput" | "orderUpdateWithWhereUniqueWithoutStoreInput" | "orderUpdateWithWhereUniqueWithoutUserInput" | "orderUpdateWithoutAddress_addressToorder_drop_address_idDataInput" | "orderUpdateWithoutAddress_addressToorder_pickup_address_idDataInput" | "orderUpdateWithoutDriverDataInput" | "orderUpdateWithoutOrder_productsDataInput" | "orderUpdateWithoutStoreDataInput" | "orderUpdateWithoutTransactionDataInput" | "orderUpdateWithoutUserDataInput" | "orderUpsertWithWhereUniqueWithoutAddress_addressToorder_drop_address_idInput" | "orderUpsertWithWhereUniqueWithoutAddress_addressToorder_pickup_address_idInput" | "orderUpsertWithWhereUniqueWithoutDriverInput" | "orderUpsertWithWhereUniqueWithoutStoreInput" | "orderUpsertWithWhereUniqueWithoutUserInput" | "orderUpsertWithoutOrder_productsInput" | "orderUpsertWithoutTransactionInput" | "orderWhereInput" | "orderWhereUniqueInput" | "order_productsCreateInput" | "order_productsCreateManyWithoutOrderInput" | "order_productsCreateManyWithoutProductInput" | "order_productsCreateOrConnectWithoutorderInput" | "order_productsCreateOrConnectWithoutproductInput" | "order_productsCreateWithoutOrderInput" | "order_productsCreateWithoutProductInput" | "order_productsOrderByInput" | "order_productsScalarWhereInput" | "order_productsUpdateInput" | "order_productsUpdateManyDataInput" | "order_productsUpdateManyMutationInput" | "order_productsUpdateManyWithWhereNestedInput" | "order_productsUpdateManyWithoutOrderInput" | "order_productsUpdateManyWithoutProductInput" | "order_productsUpdateWithWhereUniqueWithoutOrderInput" | "order_productsUpdateWithWhereUniqueWithoutProductInput" | "order_productsUpdateWithoutOrderDataInput" | "order_productsUpdateWithoutProductDataInput" | "order_productsUpsertWithWhereUniqueWithoutOrderInput" | "order_productsUpsertWithWhereUniqueWithoutProductInput" | "order_productsWhereInput" | "order_productsWhereUniqueInput" | "productCreateInput" | "productCreateManyWithoutStoreInput" | "productCreateOneWithoutOrder_productsInput" | "productCreateOneWithoutProduct_imageInput" | "productCreateOneWithoutProduct_sizesInput" | "productCreateOneWithoutRatingInput" | "productCreateOrConnectWithoutorder_productsInput" | "productCreateOrConnectWithoutproduct_imageInput" | "productCreateOrConnectWithoutproduct_sizesInput" | "productCreateOrConnectWithoutratingInput" | "productCreateOrConnectWithoutstoreInput" | "productCreateWithoutOrder_productsInput" | "productCreateWithoutProduct_imageInput" | "productCreateWithoutProduct_sizesInput" | "productCreateWithoutRatingInput" | "productCreateWithoutStoreInput" | "productOrderByInput" | "productScalarWhereInput" | "productUpdateInput" | "productUpdateManyDataInput" | "productUpdateManyMutationInput" | "productUpdateManyWithWhereNestedInput" | "productUpdateManyWithoutStoreInput" | "productUpdateOneWithoutOrder_productsInput" | "productUpdateOneWithoutProduct_imageInput" | "productUpdateOneWithoutProduct_sizesInput" | "productUpdateOneWithoutRatingInput" | "productUpdateWithWhereUniqueWithoutStoreInput" | "productUpdateWithoutOrder_productsDataInput" | "productUpdateWithoutProduct_imageDataInput" | "productUpdateWithoutProduct_sizesDataInput" | "productUpdateWithoutRatingDataInput" | "productUpdateWithoutStoreDataInput" | "productUpsertWithWhereUniqueWithoutStoreInput" | "productUpsertWithoutOrder_productsInput" | "productUpsertWithoutProduct_imageInput" | "productUpsertWithoutProduct_sizesInput" | "productUpsertWithoutRatingInput" | "productWhereInput" | "productWhereUniqueInput" | "product_imageCreateInput" | "product_imageCreateManyWithoutProductInput" | "product_imageCreateOrConnectWithoutproductInput" | "product_imageCreateWithoutProductInput" | "product_imageOrderByInput" | "product_imageScalarWhereInput" | "product_imageUpdateInput" | "product_imageUpdateManyDataInput" | "product_imageUpdateManyMutationInput" | "product_imageUpdateManyWithWhereNestedInput" | "product_imageUpdateManyWithoutProductInput" | "product_imageUpdateWithWhereUniqueWithoutProductInput" | "product_imageUpdateWithoutProductDataInput" | "product_imageUpsertWithWhereUniqueWithoutProductInput" | "product_imageWhereInput" | "product_imageWhereUniqueInput" | "product_sizesCreateInput" | "product_sizesCreateManyWithoutProductInput" | "product_sizesCreateManyWithoutSizeInput" | "product_sizesCreateOrConnectWithoutproductInput" | "product_sizesCreateOrConnectWithoutsizeInput" | "product_sizesCreateWithoutProductInput" | "product_sizesCreateWithoutSizeInput" | "product_sizesOrderByInput" | "product_sizesScalarWhereInput" | "product_sizesUpdateInput" | "product_sizesUpdateManyDataInput" | "product_sizesUpdateManyMutationInput" | "product_sizesUpdateManyWithWhereNestedInput" | "product_sizesUpdateManyWithoutProductInput" | "product_sizesUpdateManyWithoutSizeInput" | "product_sizesUpdateWithWhereUniqueWithoutProductInput" | "product_sizesUpdateWithWhereUniqueWithoutSizeInput" | "product_sizesUpdateWithoutProductDataInput" | "product_sizesUpdateWithoutSizeDataInput" | "product_sizesUpsertWithWhereUniqueWithoutProductInput" | "product_sizesUpsertWithWhereUniqueWithoutSizeInput" | "product_sizesWhereInput" | "product_sizesWhereUniqueInput" | "ratingCreateInput" | "ratingCreateManyWithoutProductInput" | "ratingCreateManyWithoutUserInput" | "ratingCreateOrConnectWithoutproductInput" | "ratingCreateOrConnectWithoutuserInput" | "ratingCreateWithoutProductInput" | "ratingCreateWithoutUserInput" | "ratingOrderByInput" | "ratingScalarWhereInput" | "ratingUpdateInput" | "ratingUpdateManyDataInput" | "ratingUpdateManyMutationInput" | "ratingUpdateManyWithWhereNestedInput" | "ratingUpdateManyWithoutProductInput" | "ratingUpdateManyWithoutUserInput" | "ratingUpdateWithWhereUniqueWithoutProductInput" | "ratingUpdateWithWhereUniqueWithoutUserInput" | "ratingUpdateWithoutProductDataInput" | "ratingUpdateWithoutUserDataInput" | "ratingUpsertWithWhereUniqueWithoutProductInput" | "ratingUpsertWithWhereUniqueWithoutUserInput" | "ratingWhereInput" | "ratingWhereUniqueInput" | "sizeCreateInput" | "sizeCreateOneWithoutProduct_sizesInput" | "sizeCreateOrConnectWithoutproduct_sizesInput" | "sizeCreateWithoutProduct_sizesInput" | "sizeOrderByInput" | "sizeUpdateInput" | "sizeUpdateManyMutationInput" | "sizeUpdateOneWithoutProduct_sizesInput" | "sizeUpdateWithoutProduct_sizesDataInput" | "sizeUpsertWithoutProduct_sizesInput" | "sizeWhereInput" | "sizeWhereUniqueInput" | "storeCreateInput" | "storeCreateManyWithoutAddressInput" | "storeCreateOneWithoutBank_detailInput" | "storeCreateOneWithoutOrderInput" | "storeCreateOneWithoutProductInput" | "storeCreateOneWithoutStore_documentInput" | "storeCreateOneWithoutTicketInput" | "storeCreateOrConnectWithoutaddressInput" | "storeCreateOrConnectWithoutbank_detailInput" | "storeCreateOrConnectWithoutorderInput" | "storeCreateOrConnectWithoutproductInput" | "storeCreateOrConnectWithoutstore_documentInput" | "storeCreateOrConnectWithoutticketInput" | "storeCreateWithoutAddressInput" | "storeCreateWithoutBank_detailInput" | "storeCreateWithoutOrderInput" | "storeCreateWithoutProductInput" | "storeCreateWithoutStore_documentInput" | "storeCreateWithoutTicketInput" | "storeOrderByInput" | "storeScalarWhereInput" | "storeUpdateInput" | "storeUpdateManyDataInput" | "storeUpdateManyMutationInput" | "storeUpdateManyWithWhereNestedInput" | "storeUpdateManyWithoutAddressInput" | "storeUpdateOneWithoutBank_detailInput" | "storeUpdateOneWithoutOrderInput" | "storeUpdateOneWithoutProductInput" | "storeUpdateOneWithoutStore_documentInput" | "storeUpdateOneWithoutTicketInput" | "storeUpdateWithWhereUniqueWithoutAddressInput" | "storeUpdateWithoutAddressDataInput" | "storeUpdateWithoutBank_detailDataInput" | "storeUpdateWithoutOrderDataInput" | "storeUpdateWithoutProductDataInput" | "storeUpdateWithoutStore_documentDataInput" | "storeUpdateWithoutTicketDataInput" | "storeUpsertWithWhereUniqueWithoutAddressInput" | "storeUpsertWithoutBank_detailInput" | "storeUpsertWithoutOrderInput" | "storeUpsertWithoutProductInput" | "storeUpsertWithoutStore_documentInput" | "storeUpsertWithoutTicketInput" | "storeWhereInput" | "storeWhereUniqueInput" | "store_documentCreateInput" | "store_documentCreateManyWithoutStoreInput" | "store_documentCreateOrConnectWithoutstoreInput" | "store_documentCreateWithoutStoreInput" | "store_documentOrderByInput" | "store_documentScalarWhereInput" | "store_documentUpdateInput" | "store_documentUpdateManyDataInput" | "store_documentUpdateManyMutationInput" | "store_documentUpdateManyWithWhereNestedInput" | "store_documentUpdateManyWithoutStoreInput" | "store_documentUpdateWithWhereUniqueWithoutStoreInput" | "store_documentUpdateWithoutStoreDataInput" | "store_documentUpsertWithWhereUniqueWithoutStoreInput" | "store_documentWhereInput" | "store_documentWhereUniqueInput" | "ticketCreateInput" | "ticketCreateManyWithoutDriverInput" | "ticketCreateManyWithoutStoreInput" | "ticketCreateManyWithoutUserInput" | "ticketCreateOneWithoutTicket_historyInput" | "ticketCreateOrConnectWithoutdriverInput" | "ticketCreateOrConnectWithoutstoreInput" | "ticketCreateOrConnectWithoutticket_historyInput" | "ticketCreateOrConnectWithoutuserInput" | "ticketCreateWithoutDriverInput" | "ticketCreateWithoutStoreInput" | "ticketCreateWithoutTicket_historyInput" | "ticketCreateWithoutUserInput" | "ticketOrderByInput" | "ticketScalarWhereInput" | "ticketUpdateInput" | "ticketUpdateManyDataInput" | "ticketUpdateManyMutationInput" | "ticketUpdateManyWithWhereNestedInput" | "ticketUpdateManyWithoutDriverInput" | "ticketUpdateManyWithoutStoreInput" | "ticketUpdateManyWithoutUserInput" | "ticketUpdateOneWithoutTicket_historyInput" | "ticketUpdateWithWhereUniqueWithoutDriverInput" | "ticketUpdateWithWhereUniqueWithoutStoreInput" | "ticketUpdateWithWhereUniqueWithoutUserInput" | "ticketUpdateWithoutDriverDataInput" | "ticketUpdateWithoutStoreDataInput" | "ticketUpdateWithoutTicket_historyDataInput" | "ticketUpdateWithoutUserDataInput" | "ticketUpsertWithWhereUniqueWithoutDriverInput" | "ticketUpsertWithWhereUniqueWithoutStoreInput" | "ticketUpsertWithWhereUniqueWithoutUserInput" | "ticketUpsertWithoutTicket_historyInput" | "ticketWhereInput" | "ticketWhereUniqueInput" | "ticket_historyCreateInput" | "ticket_historyCreateManyWithoutTicketInput" | "ticket_historyCreateOrConnectWithoutticketInput" | "ticket_historyCreateWithoutTicketInput" | "ticket_historyOrderByInput" | "ticket_historyScalarWhereInput" | "ticket_historyUpdateInput" | "ticket_historyUpdateManyDataInput" | "ticket_historyUpdateManyMutationInput" | "ticket_historyUpdateManyWithWhereNestedInput" | "ticket_historyUpdateManyWithoutTicketInput" | "ticket_historyUpdateWithWhereUniqueWithoutTicketInput" | "ticket_historyUpdateWithoutTicketDataInput" | "ticket_historyUpsertWithWhereUniqueWithoutTicketInput" | "ticket_historyWhereInput" | "ticket_historyWhereUniqueInput" | "transactionCreateInput" | "transactionCreateManyWithoutOrderInput" | "transactionCreateManyWithoutUserInput" | "transactionCreateOrConnectWithoutorderInput" | "transactionCreateOrConnectWithoutuserInput" | "transactionCreateWithoutOrderInput" | "transactionCreateWithoutUserInput" | "transactionOrderByInput" | "transactionScalarWhereInput" | "transactionUpdateInput" | "transactionUpdateManyDataInput" | "transactionUpdateManyMutationInput" | "transactionUpdateManyWithWhereNestedInput" | "transactionUpdateManyWithoutOrderInput" | "transactionUpdateManyWithoutUserInput" | "transactionUpdateWithWhereUniqueWithoutOrderInput" | "transactionUpdateWithWhereUniqueWithoutUserInput" | "transactionUpdateWithoutOrderDataInput" | "transactionUpdateWithoutUserDataInput" | "transactionUpsertWithWhereUniqueWithoutOrderInput" | "transactionUpsertWithWhereUniqueWithoutUserInput" | "transactionWhereInput" | "transactionWhereUniqueInput" | "userCreateInput" | "userCreateOneWithoutOrderInput" | "userCreateOneWithoutRatingInput" | "userCreateOneWithoutTicketInput" | "userCreateOneWithoutTransactionInput" | "userCreateOneWithoutUser_addressesInput" | "userCreateOrConnectWithoutorderInput" | "userCreateOrConnectWithoutratingInput" | "userCreateOrConnectWithoutticketInput" | "userCreateOrConnectWithouttransactionInput" | "userCreateOrConnectWithoutuser_addressesInput" | "userCreateWithoutOrderInput" | "userCreateWithoutRatingInput" | "userCreateWithoutTicketInput" | "userCreateWithoutTransactionInput" | "userCreateWithoutUser_addressesInput" | "userOrderByInput" | "userUpdateInput" | "userUpdateManyMutationInput" | "userUpdateOneWithoutOrderInput" | "userUpdateOneWithoutRatingInput" | "userUpdateOneWithoutTicketInput" | "userUpdateOneWithoutTransactionInput" | "userUpdateOneWithoutUser_addressesInput" | "userUpdateWithoutOrderDataInput" | "userUpdateWithoutRatingDataInput" | "userUpdateWithoutTicketDataInput" | "userUpdateWithoutTransactionDataInput" | "userUpdateWithoutUser_addressesDataInput" | "userUpsertWithoutOrderInput" | "userUpsertWithoutRatingInput" | "userUpsertWithoutTicketInput" | "userUpsertWithoutTransactionInput" | "userUpsertWithoutUser_addressesInput" | "userWhereInput" | "userWhereUniqueInput" | "user_addressesCreateInput" | "user_addressesCreateManyWithoutAddressInput" | "user_addressesCreateManyWithoutUserInput" | "user_addressesCreateOrConnectWithoutaddressInput" | "user_addressesCreateOrConnectWithoutuserInput" | "user_addressesCreateWithoutAddressInput" | "user_addressesCreateWithoutUserInput" | "user_addressesOrderByInput" | "user_addressesScalarWhereInput" | "user_addressesUpdateInput" | "user_addressesUpdateManyDataInput" | "user_addressesUpdateManyMutationInput" | "user_addressesUpdateManyWithWhereNestedInput" | "user_addressesUpdateManyWithoutAddressInput" | "user_addressesUpdateManyWithoutUserInput" | "user_addressesUpdateWithWhereUniqueWithoutAddressInput" | "user_addressesUpdateWithWhereUniqueWithoutUserInput" | "user_addressesUpdateWithoutAddressDataInput" | "user_addressesUpdateWithoutUserDataInput" | "user_addressesUpsertWithWhereUniqueWithoutAddressInput" | "user_addressesUpsertWithWhereUniqueWithoutUserInput" | "user_addressesWhereInput" | "user_addressesWhereUniqueInput";
 
 export type NexusGenEnumNames = "QueryMode" | "SortOrder" | "document_types" | "order_status" | "ticket_types";
 

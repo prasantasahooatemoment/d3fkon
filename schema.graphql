@@ -30,6 +30,8 @@ input addressCreateInput {
   lng: Float
   mobile: Float
   name: String
+  order_addressToorder_drop_address_id: orderCreateManyWithoutAddress_addressToorder_drop_address_idInput
+  order_addressToorder_pickup_address_id: orderCreateManyWithoutAddress_addressToorder_pickup_address_idInput
   pincode: Float
   region: String
   store: storeCreateManyWithoutAddressInput
@@ -42,6 +44,18 @@ input addressCreateOneWithoutDriverInput {
   connect: addressWhereUniqueInput
   connectOrCreate: addressCreateOrConnectWithoutdriverInput
   create: addressCreateWithoutDriverInput
+}
+
+input addressCreateOneWithoutOrder_addressToorder_drop_address_idInput {
+  connect: addressWhereUniqueInput
+  connectOrCreate: addressCreateOrConnectWithoutorderInput
+  create: addressCreateWithoutOrder_addressToorder_drop_address_idInput
+}
+
+input addressCreateOneWithoutOrder_addressToorder_pickup_address_idInput {
+  connect: addressWhereUniqueInput
+  connectOrCreate: addressCreateOrConnectWithoutorderInput
+  create: addressCreateWithoutOrder_addressToorder_pickup_address_idInput
 }
 
 input addressCreateOneWithoutStoreInput {
@@ -58,6 +72,11 @@ input addressCreateOneWithoutUser_addressesInput {
 
 input addressCreateOrConnectWithoutdriverInput {
   create: addressCreateWithoutDriverInput!
+  where: addressWhereUniqueInput!
+}
+
+input addressCreateOrConnectWithoutorderInput {
+  create: addressCreateWithoutOrder_addressToorder_drop_address_idInput!
   where: addressWhereUniqueInput!
 }
 
@@ -80,6 +99,46 @@ input addressCreateWithoutDriverInput {
   lng: Float
   mobile: Float
   name: String
+  order_addressToorder_drop_address_id: orderCreateManyWithoutAddress_addressToorder_drop_address_idInput
+  order_addressToorder_pickup_address_id: orderCreateManyWithoutAddress_addressToorder_pickup_address_idInput
+  pincode: Float
+  region: String
+  store: storeCreateManyWithoutAddressInput
+  street_one: String
+  street_two: String
+  user_addresses: user_addressesCreateManyWithoutAddressInput
+}
+
+input addressCreateWithoutOrder_addressToorder_drop_address_idInput {
+  city: String
+  country: String
+  created_at: DateTime
+  driver: driverCreateManyWithoutAddressInput
+  id: String
+  lat: Float
+  lng: Float
+  mobile: Float
+  name: String
+  order_addressToorder_pickup_address_id: orderCreateManyWithoutAddress_addressToorder_pickup_address_idInput
+  pincode: Float
+  region: String
+  store: storeCreateManyWithoutAddressInput
+  street_one: String
+  street_two: String
+  user_addresses: user_addressesCreateManyWithoutAddressInput
+}
+
+input addressCreateWithoutOrder_addressToorder_pickup_address_idInput {
+  city: String
+  country: String
+  created_at: DateTime
+  driver: driverCreateManyWithoutAddressInput
+  id: String
+  lat: Float
+  lng: Float
+  mobile: Float
+  name: String
+  order_addressToorder_drop_address_id: orderCreateManyWithoutAddress_addressToorder_drop_address_idInput
   pincode: Float
   region: String
   store: storeCreateManyWithoutAddressInput
@@ -98,6 +157,8 @@ input addressCreateWithoutStoreInput {
   lng: Float
   mobile: Float
   name: String
+  order_addressToorder_drop_address_id: orderCreateManyWithoutAddress_addressToorder_drop_address_idInput
+  order_addressToorder_pickup_address_id: orderCreateManyWithoutAddress_addressToorder_pickup_address_idInput
   pincode: Float
   region: String
   street_one: String
@@ -115,6 +176,8 @@ input addressCreateWithoutUser_addressesInput {
   lng: Float
   mobile: Float
   name: String
+  order_addressToorder_drop_address_id: orderCreateManyWithoutAddress_addressToorder_drop_address_idInput
+  order_addressToorder_pickup_address_id: orderCreateManyWithoutAddress_addressToorder_pickup_address_idInput
   pincode: Float
   region: String
   store: storeCreateManyWithoutAddressInput
@@ -147,6 +210,8 @@ input addressUpdateInput {
   lng: NullableFloatFieldUpdateOperationsInput
   mobile: NullableFloatFieldUpdateOperationsInput
   name: NullableStringFieldUpdateOperationsInput
+  order_addressToorder_drop_address_id: orderUpdateManyWithoutAddress_addressToorder_drop_address_idInput
+  order_addressToorder_pickup_address_id: orderUpdateManyWithoutAddress_addressToorder_pickup_address_idInput
   pincode: NullableFloatFieldUpdateOperationsInput
   region: NullableStringFieldUpdateOperationsInput
   store: storeUpdateManyWithoutAddressInput
@@ -180,6 +245,26 @@ input addressUpdateOneWithoutDriverInput {
   upsert: addressUpsertWithoutDriverInput
 }
 
+input addressUpdateOneWithoutOrder_addressToorder_drop_address_idInput {
+  connect: addressWhereUniqueInput
+  connectOrCreate: addressCreateOrConnectWithoutorderInput
+  create: addressCreateWithoutOrder_addressToorder_drop_address_idInput
+  delete: Boolean
+  disconnect: Boolean
+  update: addressUpdateWithoutOrder_addressToorder_drop_address_idDataInput
+  upsert: addressUpsertWithoutOrder_addressToorder_drop_address_idInput
+}
+
+input addressUpdateOneWithoutOrder_addressToorder_pickup_address_idInput {
+  connect: addressWhereUniqueInput
+  connectOrCreate: addressCreateOrConnectWithoutorderInput
+  create: addressCreateWithoutOrder_addressToorder_pickup_address_idInput
+  delete: Boolean
+  disconnect: Boolean
+  update: addressUpdateWithoutOrder_addressToorder_pickup_address_idDataInput
+  upsert: addressUpsertWithoutOrder_addressToorder_pickup_address_idInput
+}
+
 input addressUpdateOneWithoutStoreInput {
   connect: addressWhereUniqueInput
   connectOrCreate: addressCreateOrConnectWithoutstoreInput
@@ -209,6 +294,46 @@ input addressUpdateWithoutDriverDataInput {
   lng: NullableFloatFieldUpdateOperationsInput
   mobile: NullableFloatFieldUpdateOperationsInput
   name: NullableStringFieldUpdateOperationsInput
+  order_addressToorder_drop_address_id: orderUpdateManyWithoutAddress_addressToorder_drop_address_idInput
+  order_addressToorder_pickup_address_id: orderUpdateManyWithoutAddress_addressToorder_pickup_address_idInput
+  pincode: NullableFloatFieldUpdateOperationsInput
+  region: NullableStringFieldUpdateOperationsInput
+  store: storeUpdateManyWithoutAddressInput
+  street_one: NullableStringFieldUpdateOperationsInput
+  street_two: NullableStringFieldUpdateOperationsInput
+  user_addresses: user_addressesUpdateManyWithoutAddressInput
+}
+
+input addressUpdateWithoutOrder_addressToorder_drop_address_idDataInput {
+  city: NullableStringFieldUpdateOperationsInput
+  country: NullableStringFieldUpdateOperationsInput
+  created_at: NullableDateTimeFieldUpdateOperationsInput
+  driver: driverUpdateManyWithoutAddressInput
+  id: StringFieldUpdateOperationsInput
+  lat: NullableFloatFieldUpdateOperationsInput
+  lng: NullableFloatFieldUpdateOperationsInput
+  mobile: NullableFloatFieldUpdateOperationsInput
+  name: NullableStringFieldUpdateOperationsInput
+  order_addressToorder_pickup_address_id: orderUpdateManyWithoutAddress_addressToorder_pickup_address_idInput
+  pincode: NullableFloatFieldUpdateOperationsInput
+  region: NullableStringFieldUpdateOperationsInput
+  store: storeUpdateManyWithoutAddressInput
+  street_one: NullableStringFieldUpdateOperationsInput
+  street_two: NullableStringFieldUpdateOperationsInput
+  user_addresses: user_addressesUpdateManyWithoutAddressInput
+}
+
+input addressUpdateWithoutOrder_addressToorder_pickup_address_idDataInput {
+  city: NullableStringFieldUpdateOperationsInput
+  country: NullableStringFieldUpdateOperationsInput
+  created_at: NullableDateTimeFieldUpdateOperationsInput
+  driver: driverUpdateManyWithoutAddressInput
+  id: StringFieldUpdateOperationsInput
+  lat: NullableFloatFieldUpdateOperationsInput
+  lng: NullableFloatFieldUpdateOperationsInput
+  mobile: NullableFloatFieldUpdateOperationsInput
+  name: NullableStringFieldUpdateOperationsInput
+  order_addressToorder_drop_address_id: orderUpdateManyWithoutAddress_addressToorder_drop_address_idInput
   pincode: NullableFloatFieldUpdateOperationsInput
   region: NullableStringFieldUpdateOperationsInput
   store: storeUpdateManyWithoutAddressInput
@@ -227,6 +352,8 @@ input addressUpdateWithoutStoreDataInput {
   lng: NullableFloatFieldUpdateOperationsInput
   mobile: NullableFloatFieldUpdateOperationsInput
   name: NullableStringFieldUpdateOperationsInput
+  order_addressToorder_drop_address_id: orderUpdateManyWithoutAddress_addressToorder_drop_address_idInput
+  order_addressToorder_pickup_address_id: orderUpdateManyWithoutAddress_addressToorder_pickup_address_idInput
   pincode: NullableFloatFieldUpdateOperationsInput
   region: NullableStringFieldUpdateOperationsInput
   street_one: NullableStringFieldUpdateOperationsInput
@@ -244,6 +371,8 @@ input addressUpdateWithoutUser_addressesDataInput {
   lng: NullableFloatFieldUpdateOperationsInput
   mobile: NullableFloatFieldUpdateOperationsInput
   name: NullableStringFieldUpdateOperationsInput
+  order_addressToorder_drop_address_id: orderUpdateManyWithoutAddress_addressToorder_drop_address_idInput
+  order_addressToorder_pickup_address_id: orderUpdateManyWithoutAddress_addressToorder_pickup_address_idInput
   pincode: NullableFloatFieldUpdateOperationsInput
   region: NullableStringFieldUpdateOperationsInput
   store: storeUpdateManyWithoutAddressInput
@@ -254,6 +383,16 @@ input addressUpdateWithoutUser_addressesDataInput {
 input addressUpsertWithoutDriverInput {
   create: addressCreateWithoutDriverInput!
   update: addressUpdateWithoutDriverDataInput!
+}
+
+input addressUpsertWithoutOrder_addressToorder_drop_address_idInput {
+  create: addressCreateWithoutOrder_addressToorder_drop_address_idInput!
+  update: addressUpdateWithoutOrder_addressToorder_drop_address_idDataInput!
+}
+
+input addressUpsertWithoutOrder_addressToorder_pickup_address_idInput {
+  create: addressCreateWithoutOrder_addressToorder_pickup_address_idInput!
+  update: addressUpdateWithoutOrder_addressToorder_pickup_address_idDataInput!
 }
 
 input addressUpsertWithoutStoreInput {
@@ -279,6 +418,8 @@ input addressWhereInput {
   name: StringNullableFilter
   NOT: [addressWhereInput!]
   OR: [addressWhereInput!]
+  order_addressToorder_drop_address_id: OrderListRelationFilter
+  order_addressToorder_pickup_address_id: OrderListRelationFilter
   pincode: FloatNullableFilter
   region: StringNullableFilter
   store: StoreListRelationFilter
@@ -1229,9 +1370,11 @@ type order {
   created_at: DateTime
   driver: driver
   driver_id: String
+  drop_address_id: String
   id: String!
   order_products(after: order_productsWhereUniqueInput, before: order_productsWhereUniqueInput, first: Int, last: Int): [order_products!]!
   otp: String
+  pickup_address_id: String
   ref_no: String
   shipping_cost: Float
   status: order_status
@@ -1483,6 +1626,8 @@ enum order_status {
 
 input orderCreateInput {
   active: Boolean
+  address_addressToorder_drop_address_id: addressCreateOneWithoutOrder_addressToorder_drop_address_idInput
+  address_addressToorder_pickup_address_id: addressCreateOneWithoutOrder_addressToorder_pickup_address_idInput
   created_at: DateTime
   driver: driverCreateOneWithoutOrderInput
   id: String
@@ -1493,6 +1638,18 @@ input orderCreateInput {
   total_commission: Float
   transaction: transactionCreateManyWithoutOrderInput
   user: userCreateOneWithoutOrderInput
+}
+
+input orderCreateManyWithoutAddress_addressToorder_drop_address_idInput {
+  connect: [orderWhereUniqueInput!]
+  connectOrCreate: [orderCreateOrConnectWithoutaddressInput!]
+  create: [orderCreateWithoutAddress_addressToorder_drop_address_idInput!]
+}
+
+input orderCreateManyWithoutAddress_addressToorder_pickup_address_idInput {
+  connect: [orderWhereUniqueInput!]
+  connectOrCreate: [orderCreateOrConnectWithoutaddressInput!]
+  create: [orderCreateWithoutAddress_addressToorder_pickup_address_idInput!]
 }
 
 input orderCreateManyWithoutDriverInput {
@@ -1525,6 +1682,11 @@ input orderCreateOneWithoutTransactionInput {
   create: orderCreateWithoutTransactionInput
 }
 
+input orderCreateOrConnectWithoutaddressInput {
+  create: orderCreateWithoutAddress_addressToorder_drop_address_idInput!
+  where: orderWhereUniqueInput!
+}
+
 input orderCreateOrConnectWithoutdriverInput {
   create: orderCreateWithoutDriverInput!
   where: orderWhereUniqueInput!
@@ -1550,8 +1712,44 @@ input orderCreateOrConnectWithoutuserInput {
   where: orderWhereUniqueInput!
 }
 
+input orderCreateWithoutAddress_addressToorder_drop_address_idInput {
+  active: Boolean
+  address_addressToorder_pickup_address_id: addressCreateOneWithoutOrder_addressToorder_pickup_address_idInput
+  created_at: DateTime
+  driver: driverCreateOneWithoutOrderInput
+  id: String
+  order_products: order_productsCreateManyWithoutOrderInput
+  otp: String
+  ref_no: String
+  shipping_cost: Float
+  status: order_status
+  store: storeCreateOneWithoutOrderInput
+  total_commission: Float
+  transaction: transactionCreateManyWithoutOrderInput
+  user: userCreateOneWithoutOrderInput
+}
+
+input orderCreateWithoutAddress_addressToorder_pickup_address_idInput {
+  active: Boolean
+  address_addressToorder_drop_address_id: addressCreateOneWithoutOrder_addressToorder_drop_address_idInput
+  created_at: DateTime
+  driver: driverCreateOneWithoutOrderInput
+  id: String
+  order_products: order_productsCreateManyWithoutOrderInput
+  otp: String
+  ref_no: String
+  shipping_cost: Float
+  status: order_status
+  store: storeCreateOneWithoutOrderInput
+  total_commission: Float
+  transaction: transactionCreateManyWithoutOrderInput
+  user: userCreateOneWithoutOrderInput
+}
+
 input orderCreateWithoutDriverInput {
   active: Boolean
+  address_addressToorder_drop_address_id: addressCreateOneWithoutOrder_addressToorder_drop_address_idInput
+  address_addressToorder_pickup_address_id: addressCreateOneWithoutOrder_addressToorder_pickup_address_idInput
   created_at: DateTime
   id: String
   order_products: order_productsCreateManyWithoutOrderInput
@@ -1567,6 +1765,8 @@ input orderCreateWithoutDriverInput {
 
 input orderCreateWithoutOrder_productsInput {
   active: Boolean
+  address_addressToorder_drop_address_id: addressCreateOneWithoutOrder_addressToorder_drop_address_idInput
+  address_addressToorder_pickup_address_id: addressCreateOneWithoutOrder_addressToorder_pickup_address_idInput
   created_at: DateTime
   driver: driverCreateOneWithoutOrderInput
   id: String
@@ -1582,6 +1782,8 @@ input orderCreateWithoutOrder_productsInput {
 
 input orderCreateWithoutStoreInput {
   active: Boolean
+  address_addressToorder_drop_address_id: addressCreateOneWithoutOrder_addressToorder_drop_address_idInput
+  address_addressToorder_pickup_address_id: addressCreateOneWithoutOrder_addressToorder_pickup_address_idInput
   created_at: DateTime
   driver: driverCreateOneWithoutOrderInput
   id: String
@@ -1597,6 +1799,8 @@ input orderCreateWithoutStoreInput {
 
 input orderCreateWithoutTransactionInput {
   active: Boolean
+  address_addressToorder_drop_address_id: addressCreateOneWithoutOrder_addressToorder_drop_address_idInput
+  address_addressToorder_pickup_address_id: addressCreateOneWithoutOrder_addressToorder_pickup_address_idInput
   created_at: DateTime
   driver: driverCreateOneWithoutOrderInput
   id: String
@@ -1612,6 +1816,8 @@ input orderCreateWithoutTransactionInput {
 
 input orderCreateWithoutUserInput {
   active: Boolean
+  address_addressToorder_drop_address_id: addressCreateOneWithoutOrder_addressToorder_drop_address_idInput
+  address_addressToorder_pickup_address_id: addressCreateOneWithoutOrder_addressToorder_pickup_address_idInput
   created_at: DateTime
   driver: driverCreateOneWithoutOrderInput
   id: String
@@ -1635,8 +1841,10 @@ input orderOrderByInput {
   active: SortOrder
   created_at: SortOrder
   driver_id: SortOrder
+  drop_address_id: SortOrder
   id: SortOrder
   otp: SortOrder
+  pickup_address_id: SortOrder
   ref_no: SortOrder
   shipping_cost: SortOrder
   status: SortOrder
@@ -1650,10 +1858,12 @@ input orderScalarWhereInput {
   AND: [orderScalarWhereInput!]
   created_at: DateTimeNullableFilter
   driver_id: StringNullableFilter
+  drop_address_id: StringNullableFilter
   id: StringFilter
   NOT: [orderScalarWhereInput!]
   OR: [orderScalarWhereInput!]
   otp: StringNullableFilter
+  pickup_address_id: StringNullableFilter
   ref_no: StringNullableFilter
   shipping_cost: FloatNullableFilter
   status: order_status
@@ -1664,6 +1874,8 @@ input orderScalarWhereInput {
 
 input orderUpdateInput {
   active: NullableBoolFieldUpdateOperationsInput
+  address_addressToorder_drop_address_id: addressUpdateOneWithoutOrder_addressToorder_drop_address_idInput
+  address_addressToorder_pickup_address_id: addressUpdateOneWithoutOrder_addressToorder_pickup_address_idInput
   created_at: NullableDateTimeFieldUpdateOperationsInput
   driver: driverUpdateOneWithoutOrderInput
   id: StringFieldUpdateOperationsInput
@@ -1698,6 +1910,32 @@ input orderUpdateManyMutationInput {
   shipping_cost: NullableFloatFieldUpdateOperationsInput
   status: order_status
   total_commission: NullableFloatFieldUpdateOperationsInput
+}
+
+input orderUpdateManyWithoutAddress_addressToorder_drop_address_idInput {
+  connect: [orderWhereUniqueInput!]
+  connectOrCreate: [orderCreateOrConnectWithoutaddressInput!]
+  create: [orderCreateWithoutAddress_addressToorder_drop_address_idInput!]
+  delete: [orderWhereUniqueInput!]
+  deleteMany: [orderScalarWhereInput!]
+  disconnect: [orderWhereUniqueInput!]
+  set: [orderWhereUniqueInput!]
+  update: [orderUpdateWithWhereUniqueWithoutAddress_addressToorder_drop_address_idInput!]
+  updateMany: [orderUpdateManyWithWhereNestedInput!]
+  upsert: [orderUpsertWithWhereUniqueWithoutAddress_addressToorder_drop_address_idInput!]
+}
+
+input orderUpdateManyWithoutAddress_addressToorder_pickup_address_idInput {
+  connect: [orderWhereUniqueInput!]
+  connectOrCreate: [orderCreateOrConnectWithoutaddressInput!]
+  create: [orderCreateWithoutAddress_addressToorder_pickup_address_idInput!]
+  delete: [orderWhereUniqueInput!]
+  deleteMany: [orderScalarWhereInput!]
+  disconnect: [orderWhereUniqueInput!]
+  set: [orderWhereUniqueInput!]
+  update: [orderUpdateWithWhereUniqueWithoutAddress_addressToorder_pickup_address_idInput!]
+  updateMany: [orderUpdateManyWithWhereNestedInput!]
+  upsert: [orderUpsertWithWhereUniqueWithoutAddress_addressToorder_pickup_address_idInput!]
 }
 
 input orderUpdateManyWithoutDriverInput {
@@ -1764,8 +2002,44 @@ input orderUpdateOneWithoutTransactionInput {
   upsert: orderUpsertWithoutTransactionInput
 }
 
+input orderUpdateWithoutAddress_addressToorder_drop_address_idDataInput {
+  active: NullableBoolFieldUpdateOperationsInput
+  address_addressToorder_pickup_address_id: addressUpdateOneWithoutOrder_addressToorder_pickup_address_idInput
+  created_at: NullableDateTimeFieldUpdateOperationsInput
+  driver: driverUpdateOneWithoutOrderInput
+  id: StringFieldUpdateOperationsInput
+  order_products: order_productsUpdateManyWithoutOrderInput
+  otp: NullableStringFieldUpdateOperationsInput
+  ref_no: NullableStringFieldUpdateOperationsInput
+  shipping_cost: NullableFloatFieldUpdateOperationsInput
+  status: NullableEnumorder_statusFieldUpdateOperationsInput
+  store: storeUpdateOneWithoutOrderInput
+  total_commission: NullableFloatFieldUpdateOperationsInput
+  transaction: transactionUpdateManyWithoutOrderInput
+  user: userUpdateOneWithoutOrderInput
+}
+
+input orderUpdateWithoutAddress_addressToorder_pickup_address_idDataInput {
+  active: NullableBoolFieldUpdateOperationsInput
+  address_addressToorder_drop_address_id: addressUpdateOneWithoutOrder_addressToorder_drop_address_idInput
+  created_at: NullableDateTimeFieldUpdateOperationsInput
+  driver: driverUpdateOneWithoutOrderInput
+  id: StringFieldUpdateOperationsInput
+  order_products: order_productsUpdateManyWithoutOrderInput
+  otp: NullableStringFieldUpdateOperationsInput
+  ref_no: NullableStringFieldUpdateOperationsInput
+  shipping_cost: NullableFloatFieldUpdateOperationsInput
+  status: NullableEnumorder_statusFieldUpdateOperationsInput
+  store: storeUpdateOneWithoutOrderInput
+  total_commission: NullableFloatFieldUpdateOperationsInput
+  transaction: transactionUpdateManyWithoutOrderInput
+  user: userUpdateOneWithoutOrderInput
+}
+
 input orderUpdateWithoutDriverDataInput {
   active: NullableBoolFieldUpdateOperationsInput
+  address_addressToorder_drop_address_id: addressUpdateOneWithoutOrder_addressToorder_drop_address_idInput
+  address_addressToorder_pickup_address_id: addressUpdateOneWithoutOrder_addressToorder_pickup_address_idInput
   created_at: NullableDateTimeFieldUpdateOperationsInput
   id: StringFieldUpdateOperationsInput
   order_products: order_productsUpdateManyWithoutOrderInput
@@ -1781,6 +2055,8 @@ input orderUpdateWithoutDriverDataInput {
 
 input orderUpdateWithoutOrder_productsDataInput {
   active: NullableBoolFieldUpdateOperationsInput
+  address_addressToorder_drop_address_id: addressUpdateOneWithoutOrder_addressToorder_drop_address_idInput
+  address_addressToorder_pickup_address_id: addressUpdateOneWithoutOrder_addressToorder_pickup_address_idInput
   created_at: NullableDateTimeFieldUpdateOperationsInput
   driver: driverUpdateOneWithoutOrderInput
   id: StringFieldUpdateOperationsInput
@@ -1796,6 +2072,8 @@ input orderUpdateWithoutOrder_productsDataInput {
 
 input orderUpdateWithoutStoreDataInput {
   active: NullableBoolFieldUpdateOperationsInput
+  address_addressToorder_drop_address_id: addressUpdateOneWithoutOrder_addressToorder_drop_address_idInput
+  address_addressToorder_pickup_address_id: addressUpdateOneWithoutOrder_addressToorder_pickup_address_idInput
   created_at: NullableDateTimeFieldUpdateOperationsInput
   driver: driverUpdateOneWithoutOrderInput
   id: StringFieldUpdateOperationsInput
@@ -1811,6 +2089,8 @@ input orderUpdateWithoutStoreDataInput {
 
 input orderUpdateWithoutTransactionDataInput {
   active: NullableBoolFieldUpdateOperationsInput
+  address_addressToorder_drop_address_id: addressUpdateOneWithoutOrder_addressToorder_drop_address_idInput
+  address_addressToorder_pickup_address_id: addressUpdateOneWithoutOrder_addressToorder_pickup_address_idInput
   created_at: NullableDateTimeFieldUpdateOperationsInput
   driver: driverUpdateOneWithoutOrderInput
   id: StringFieldUpdateOperationsInput
@@ -1826,6 +2106,8 @@ input orderUpdateWithoutTransactionDataInput {
 
 input orderUpdateWithoutUserDataInput {
   active: NullableBoolFieldUpdateOperationsInput
+  address_addressToorder_drop_address_id: addressUpdateOneWithoutOrder_addressToorder_drop_address_idInput
+  address_addressToorder_pickup_address_id: addressUpdateOneWithoutOrder_addressToorder_pickup_address_idInput
   created_at: NullableDateTimeFieldUpdateOperationsInput
   driver: driverUpdateOneWithoutOrderInput
   id: StringFieldUpdateOperationsInput
@@ -1837,6 +2119,16 @@ input orderUpdateWithoutUserDataInput {
   store: storeUpdateOneWithoutOrderInput
   total_commission: NullableFloatFieldUpdateOperationsInput
   transaction: transactionUpdateManyWithoutOrderInput
+}
+
+input orderUpdateWithWhereUniqueWithoutAddress_addressToorder_drop_address_idInput {
+  data: orderUpdateWithoutAddress_addressToorder_drop_address_idDataInput!
+  where: orderWhereUniqueInput!
+}
+
+input orderUpdateWithWhereUniqueWithoutAddress_addressToorder_pickup_address_idInput {
+  data: orderUpdateWithoutAddress_addressToorder_pickup_address_idDataInput!
+  where: orderWhereUniqueInput!
 }
 
 input orderUpdateWithWhereUniqueWithoutDriverInput {
@@ -1864,6 +2156,18 @@ input orderUpsertWithoutTransactionInput {
   update: orderUpdateWithoutTransactionDataInput!
 }
 
+input orderUpsertWithWhereUniqueWithoutAddress_addressToorder_drop_address_idInput {
+  create: orderCreateWithoutAddress_addressToorder_drop_address_idInput!
+  update: orderUpdateWithoutAddress_addressToorder_drop_address_idDataInput!
+  where: orderWhereUniqueInput!
+}
+
+input orderUpsertWithWhereUniqueWithoutAddress_addressToorder_pickup_address_idInput {
+  create: orderCreateWithoutAddress_addressToorder_pickup_address_idInput!
+  update: orderUpdateWithoutAddress_addressToorder_pickup_address_idDataInput!
+  where: orderWhereUniqueInput!
+}
+
 input orderUpsertWithWhereUniqueWithoutDriverInput {
   create: orderCreateWithoutDriverInput!
   update: orderUpdateWithoutDriverDataInput!
@@ -1884,15 +2188,19 @@ input orderUpsertWithWhereUniqueWithoutUserInput {
 
 input orderWhereInput {
   active: BoolNullableFilter
+  address_addressToorder_drop_address_id: addressWhereInput
+  address_addressToorder_pickup_address_id: addressWhereInput
   AND: [orderWhereInput!]
   created_at: DateTimeNullableFilter
   driver: driverWhereInput
   driver_id: StringNullableFilter
+  drop_address_id: StringNullableFilter
   id: StringFilter
   NOT: [orderWhereInput!]
   OR: [orderWhereInput!]
   order_products: Order_productsListRelationFilter
   otp: StringNullableFilter
+  pickup_address_id: StringNullableFilter
   ref_no: StringNullableFilter
   shipping_cost: FloatNullableFilter
   status: order_status
@@ -2674,6 +2982,7 @@ type Query {
   storeDocument(where: store_documentWhereUniqueInput!): store_document
   storeDocuments(after: store_documentWhereUniqueInput, before: store_documentWhereUniqueInput, first: Int, last: Int, orderBy: [store_documentOrderByInput!], where: store_documentWhereInput): [store_document!]!
   stores(after: storeWhereUniqueInput, before: storeWhereUniqueInput, first: Int, last: Int, orderBy: [storeOrderByInput!], where: storeWhereInput): [store!]!
+  storesWithOffers: [store!]!
   ticket(where: ticketWhereUniqueInput!): ticket
   ticketHistories(after: ticket_historyWhereUniqueInput, before: ticket_historyWhereUniqueInput, first: Int, last: Int, orderBy: [ticket_historyOrderByInput!], where: ticket_historyWhereInput): [ticket_history!]!
   ticketHistory(where: ticket_historyWhereUniqueInput!): ticket_history
@@ -2980,7 +3289,7 @@ type store {
   name: String
   order(after: orderWhereUniqueInput, before: orderWhereUniqueInput, first: Int, last: Int): [order!]!
   popularity: Int!
-  product(after: productWhereUniqueInput, before: productWhereUniqueInput, first: Int, last: Int): [product!]!
+  product(after: productWhereUniqueInput, before: productWhereUniqueInput, first: Int, last: Int, where: productWhereInput): [product!]!
   store_document(after: store_documentWhereUniqueInput, before: store_documentWhereUniqueInput, first: Int, last: Int): [store_document!]!
   ticket(after: ticketWhereUniqueInput, before: ticketWhereUniqueInput, first: Int, last: Int): [ticket!]!
 }

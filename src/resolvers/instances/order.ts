@@ -26,9 +26,13 @@ export const order = objectType({
 	t.model.store_id()
 	t.model.driver()
 	t.model.pickup_address_id()
-	t.model.pickup_address()
+	t.model.address_addressToorder_pickup_address_id({
+		alias:"pickup_address"
+	})
+	t.model.address_addressToorder_drop_address_id({
+		alias:"drop_address"
+	})
 	t.model.drop_address_id()
-	t.model.drop_address()
 	t.model.user()
 	t.model.order_products()
 	t.model.transaction()

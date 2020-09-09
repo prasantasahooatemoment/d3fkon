@@ -9,21 +9,23 @@ datasource db {
 }
 
 model address {
-  id             String           @default(dbgenerated()) @id
-  name           String?
-  street_one     String?
-  street_two     String?
-  city           String?          @default("Bangalore")
-  country        String?          @default("India")
-  region         String?          @default("Karnataka")
-  pincode        Float?
-  lat            Float?
-  lng            Float?
-  mobile         Float?           @unique
-  created_at     DateTime?        @default(now())
-  driver         driver[]         @relation("addressTodriver_address_id")
-  store          store[]          @relation("addressTostore_address_id")
-  user_addresses user_addresses[] @relation("addressTouser_addresses_address_id")
+  id                                     String           @default(dbgenerated()) @id
+  name                                   String?
+  street_one                             String?
+  street_two                             String?
+  city                                   String?          @default("Bangalore")
+  country                                String?          @default("India")
+  region                                 String?          @default("Karnataka")
+  pincode                                Float?
+  lat                                    Float?
+  lng                                    Float?
+  mobile                                 Float?           @unique
+  created_at                             DateTime?        @default(now())
+  driver                                 driver[]         @relation("addressTodriver_address_id")
+  order_addressToorder_drop_address_id   order[]          @relation("addressToorder_drop_address_id")
+  order_addressToorder_pickup_address_id order[]          @relation("addressToorder_pickup_address_id")
+  store                                  store[]          @relation("addressTostore_address_id")
+  user_addresses                         user_addresses[] @relation("addressTouser_addresses_address_id")
 }
 
 model bank_detail {
@@ -61,22 +63,26 @@ model driver_document {
 }
 
 model order {
-  id               String           @default(dbgenerated()) @id
-  user_id          String?
-  driver_id        String?
-  ref_no           String?
-  otp              String?
-  store_id         String?
-  shipping_cost    Float?
-  total_commission Float?
-  created_at       DateTime?        @default(now())
-  active           Boolean?
-  status           order_status?
-  driver           driver?          @relation("driverToorder_driver_id", fields: [driver_id], references: [id])
-  store            store?           @relation("order_store_idTostore", fields: [store_id], references: [id])
-  user             user?            @relation("order_user_idTouser", fields: [user_id], references: [id])
-  order_products   order_products[] @relation("orderToorder_products_order_id")
-  transaction      transaction[]    @relation("orderTotransaction_order_id")
+  id                                       String           @default(dbgenerated()) @id
+  user_id                                  String?
+  driver_id                                String?
+  ref_no                                   String?
+  otp                                      String?
+  store_id                                 String?
+  shipping_cost                            Float?
+  total_commission                         Float?
+  created_at                               DateTime?        @default(now())
+  active                                   Boolean?
+  status                                   order_status?
+  pickup_address_id                        String?
+  drop_address_id                          String?
+  driver                                   driver?          @relation("driverToorder_driver_id", fields: [driver_id], references: [id])
+  address_addressToorder_drop_address_id   address?         @relation("addressToorder_drop_address_id", fields: [drop_address_id], references: [id])
+  address_addressToorder_pickup_address_id address?         @relation("addressToorder_pickup_address_id", fields: [pickup_address_id], references: [id])
+  store                                    store?           @relation("order_store_idTostore", fields: [store_id], references: [id])
+  user                                     user?            @relation("order_user_idTouser", fields: [user_id], references: [id])
+  order_products                           order_products[] @relation("orderToorder_products_order_id")
+  transaction                              transaction[]    @relation("orderTotransaction_order_id")
 }
 
 model order_products {
