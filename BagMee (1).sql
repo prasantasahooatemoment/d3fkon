@@ -173,7 +173,7 @@ CREATE TABLE "ticket" (
 CREATE TABLE "ticket_history" (
   "id" uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
   "message" varchar,
-  "admin" boolean,
+  "admin" boolean DEFAULT false,
   "ticket_id" uuid,
   "created_at" timestamptz DEFAULT (now())
 );
