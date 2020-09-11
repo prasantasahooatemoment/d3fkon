@@ -5,7 +5,9 @@ export const ticketQuery = extendType({
   type: 'Query',
   definition(t) {
     t.crud.ticket({"filtering":true, "ordering":true, "alias":"ticket"})
-	t.crud.tickets({"filtering":true, "ordering":true, "alias":"tickets"})
+	t.crud.tickets({"filtering":true, "ordering":true, "alias":"tickets", computedInputs:{
+    user_id:({ctx}) => ({equals:ctx.userId})
+  }})
   }
 })
 
