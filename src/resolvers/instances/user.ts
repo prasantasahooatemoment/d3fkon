@@ -29,7 +29,11 @@ export const user = objectType({
 	})
 	t.model.order()
 	t.model.rating()
-	t.model.ticket()
+	t.model.ticket({
+		filtering:true,
+		ordering:true,
+		pagination:true
+	})
 	t.model.transaction()
 	t.model.user_addresses()
     }
