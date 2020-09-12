@@ -3,7 +3,22 @@ import { objectType } from '@nexus/schema'
 export const ticket = objectType({
     name:'ticket',
     definition(t){
-     t.model.created_at()
+	 t.model.created_at()
+	 t.field('updatedAt', {
+		 type:'DateTime',
+		async resolve(root, args, ctx, info){
+			const messages =  await ctx.prisma.ticket_history.findMany({
+				where:{
+					ticket_id:root.id
+				},
+				orderBy:{
+					created_at:'desc'
+				},
+				take:1,
+			})
+			return messages[0].created_at;
+		}
+	 })
 	t.model.driver_id()
 	t.model.id()
 	t.model.name({
