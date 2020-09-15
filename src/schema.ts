@@ -7,7 +7,6 @@ import { nexusSchemaPrisma } from 'nexus-plugin-prisma/schema'
 export const schema = makeSchema({
   types: [allTypes],
   plugins: [nexusSchemaPrisma({experimentalCRUD:true, prismaClient: (ctx:Context) => ctx.prisma, 
-
 })],
   outputs: {
     schema: __dirname + '/../schema.graphql',

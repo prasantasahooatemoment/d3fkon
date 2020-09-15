@@ -1629,7 +1629,6 @@ input orderCreateInput {
   store: storeCreateOneWithoutOrderInput
   total_commission: Float
   transaction: transactionCreateManyWithoutOrderInput
-  user: userCreateOneWithoutOrderInput
 }
 
 input orderCreateManyWithoutAddress_addressToorder_drop_address_idInput {
@@ -2225,7 +2224,7 @@ type product {
   order_products(after: order_productsWhereUniqueInput, before: order_productsWhereUniqueInput, first: Int, last: Int): [order_products!]!
   product_image(after: product_imageWhereUniqueInput, before: product_imageWhereUniqueInput, first: Int, last: Int): [product_image!]!
   product_sizes(after: product_sizesWhereUniqueInput, before: product_sizesWhereUniqueInput, first: Int, last: Int): [product_sizes!]!
-  rating(after: ratingWhereUniqueInput, before: ratingWhereUniqueInput, first: Int, last: Int): [rating!]!
+  rating(after: ratingWhereUniqueInput, before: ratingWhereUniqueInput, first: Int, last: Int, orderBy: [ratingOrderByInput!], where: ratingWhereInput): [rating!]!
   selling_price: Float
   store: store
   store_id: String
@@ -2966,6 +2965,7 @@ type Query {
   productImages(after: product_imageWhereUniqueInput, before: product_imageWhereUniqueInput, first: Int, last: Int, orderBy: [product_imageOrderByInput!], where: product_imageWhereInput): [product_image!]!
   products(after: productWhereUniqueInput, before: productWhereUniqueInput, first: Int, last: Int, orderBy: [productOrderByInput!], where: productWhereInput): [product!]!
   productSizes(after: product_sizesWhereUniqueInput, before: product_sizesWhereUniqueInput, first: Int, last: Int, orderBy: [product_sizesOrderByInput!], where: product_sizesWhereInput): [product_sizes!]!
+  profile: user!
   rating(where: ratingWhereUniqueInput!): rating
   ratings(after: ratingWhereUniqueInput, before: ratingWhereUniqueInput, first: Int, last: Int, orderBy: [ratingOrderByInput!], where: ratingWhereInput): [rating!]!
   search(query: String, type: String): searchObj!
@@ -2982,7 +2982,7 @@ type Query {
   tickets(after: ticketWhereUniqueInput, before: ticketWhereUniqueInput, first: Int, last: Int, orderBy: [ticketOrderByInput!], where: ticketWhereInput): [ticket!]!
   transaction(where: transactionWhereUniqueInput!): transaction
   transactions(after: transactionWhereUniqueInput, before: transactionWhereUniqueInput, first: Int, last: Int, orderBy: [transactionOrderByInput!], where: transactionWhereInput): [transaction!]!
-  user: user!
+  user(where: userWhereUniqueInput!): user
   userAddresses(after: user_addressesWhereUniqueInput, before: user_addressesWhereUniqueInput, first: Int, last: Int, orderBy: [user_addressesOrderByInput!], where: user_addressesWhereInput): [user_addresses!]!
   users(after: userWhereUniqueInput, before: userWhereUniqueInput, first: Int, last: Int, orderBy: [userOrderByInput!], where: userWhereInput): [user!]!
 }
@@ -3007,7 +3007,6 @@ input ratingCreateInput {
   id: String
   product: productCreateOneWithoutRatingInput
   rating: Float
-  user: userCreateOneWithoutRatingInput
 }
 
 input ratingCreateManyWithoutProductInput {
@@ -3866,15 +3865,18 @@ input StringNullableFilter {
 
 type ticket {
   created_at: DateTime
+  description: String!
   driver: driver
   driver_id: String
+  from: String!
   id: String!
-  name: String
   open: Boolean
   store: store
   store_id: String
+  subject: String
   ticket_history(after: ticket_historyWhereUniqueInput, before: ticket_historyWhereUniqueInput, first: Int, last: Int): [ticket_history!]!
   type: ticket_types
+  updatedAt: DateTime!
   user: user
   user_id: String
 }
@@ -4028,7 +4030,6 @@ input ticketCreateInput {
   store: storeCreateOneWithoutTicketInput
   ticket_history: ticket_historyCreateManyWithoutTicketInput
   type: ticket_types
-  user: userCreateOneWithoutTicketInput
 }
 
 input ticketCreateManyWithoutDriverInput {
@@ -4543,7 +4544,7 @@ type user {
   orderCount: Int!
   rating(after: ratingWhereUniqueInput, before: ratingWhereUniqueInput, first: Int, last: Int): [rating!]!
   spendings: Float!
-  ticket(after: ticketWhereUniqueInput, before: ticketWhereUniqueInput, first: Int, last: Int): [ticket!]!
+  ticket(after: ticketWhereUniqueInput, before: ticketWhereUniqueInput, first: Int, last: Int, orderBy: [ticketOrderByInput!], where: ticketWhereInput): [ticket!]!
   transaction(after: transactionWhereUniqueInput, before: transactionWhereUniqueInput, first: Int, last: Int): [transaction!]!
   user_addresses(after: user_addressesWhereUniqueInput, before: user_addressesWhereUniqueInput, first: Int, last: Int): [user_addresses!]!
 }
@@ -4837,6 +4838,7 @@ input userOrderByInput {
 
 input userUpdateInput {
   active: NullableBoolFieldUpdateOperationsInput
+  id: StringFieldUpdateOperationsInput
   mobile: NullableFloatFieldUpdateOperationsInput
   name: NullableStringFieldUpdateOperationsInput
   order: orderUpdateManyWithoutUserInput

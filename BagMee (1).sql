@@ -153,6 +153,7 @@ CREATE TABLE "size" (
 CREATE TABLE "transaction" (
   "id" uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
   "user_id" uuid,
+  "ref_no" varchar,
   "order_id" uuid,
   "amount" float,
   "tax" float,

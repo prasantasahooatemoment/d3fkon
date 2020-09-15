@@ -1165,7 +1165,6 @@ export interface NexusGenInputs {
     store?: NexusGenInputs['storeCreateOneWithoutOrderInput'] | null; // storeCreateOneWithoutOrderInput
     total_commission?: number | null; // Float
     transaction?: NexusGenInputs['transactionCreateManyWithoutOrderInput'] | null; // transactionCreateManyWithoutOrderInput
-    user?: NexusGenInputs['userCreateOneWithoutOrderInput'] | null; // userCreateOneWithoutOrderInput
   }
   orderCreateManyWithoutAddress_addressToorder_drop_address_idInput: { // input type
     connect?: NexusGenInputs['orderWhereUniqueInput'][] | null; // [orderWhereUniqueInput!]
@@ -2479,7 +2478,6 @@ export interface NexusGenInputs {
     id?: string | null; // String
     product?: NexusGenInputs['productCreateOneWithoutRatingInput'] | null; // productCreateOneWithoutRatingInput
     rating?: number | null; // Float
-    user?: NexusGenInputs['userCreateOneWithoutRatingInput'] | null; // userCreateOneWithoutRatingInput
   }
   ratingCreateManyWithoutProductInput: { // input type
     connect?: NexusGenInputs['ratingWhereUniqueInput'][] | null; // [ratingWhereUniqueInput!]
@@ -3155,7 +3153,6 @@ export interface NexusGenInputs {
     store?: NexusGenInputs['storeCreateOneWithoutTicketInput'] | null; // storeCreateOneWithoutTicketInput
     ticket_history?: NexusGenInputs['ticket_historyCreateManyWithoutTicketInput'] | null; // ticket_historyCreateManyWithoutTicketInput
     type?: NexusGenEnums['ticket_types'] | null; // ticket_types
-    user?: NexusGenInputs['userCreateOneWithoutTicketInput'] | null; // userCreateOneWithoutTicketInput
   }
   ticketCreateManyWithoutDriverInput: { // input type
     connect?: NexusGenInputs['ticketWhereUniqueInput'][] | null; // [ticketWhereUniqueInput!]
@@ -3792,6 +3789,7 @@ export interface NexusGenInputs {
   }
   userUpdateInput: { // input type
     active?: NexusGenInputs['NullableBoolFieldUpdateOperationsInput'] | null; // NullableBoolFieldUpdateOperationsInput
+    id?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
     mobile?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
     name?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     order?: NexusGenInputs['orderUpdateManyWithoutUserInput'] | null; // orderUpdateManyWithoutUserInput
@@ -4217,7 +4215,6 @@ export interface NexusGenRootTypes {
     created_at?: NexusGenScalars['DateTime'] | null; // DateTime
     driver_id?: string | null; // String
     id: string; // String!
-    name?: string | null; // String
     open?: boolean | null; // Boolean
     store_id?: string | null; // String
     type?: NexusGenEnums['ticket_types'] | null; // ticket_types
@@ -4942,6 +4939,7 @@ export interface NexusGenFieldTypes {
     productImages: NexusGenRootTypes['product_image'][]; // [product_image!]!
     products: NexusGenRootTypes['product'][]; // [product!]!
     productSizes: NexusGenRootTypes['product_sizes'][]; // [product_sizes!]!
+    profile: NexusGenRootTypes['user']; // user!
     rating: NexusGenRootTypes['rating'] | null; // rating
     ratings: NexusGenRootTypes['rating'][]; // [rating!]!
     search: NexusGenRootTypes['searchObj']; // searchObj!
@@ -4958,7 +4956,7 @@ export interface NexusGenFieldTypes {
     tickets: NexusGenRootTypes['ticket'][]; // [ticket!]!
     transaction: NexusGenRootTypes['transaction'] | null; // transaction
     transactions: NexusGenRootTypes['transaction'][]; // [transaction!]!
-    user: NexusGenRootTypes['user']; // user!
+    user: NexusGenRootTypes['user'] | null; // user
     userAddresses: NexusGenRootTypes['user_addresses'][]; // [user_addresses!]!
     users: NexusGenRootTypes['user'][]; // [user!]!
   }
@@ -5125,15 +5123,18 @@ export interface NexusGenFieldTypes {
   }
   ticket: { // field return type
     created_at: NexusGenScalars['DateTime'] | null; // DateTime
+    description: string; // String!
     driver: NexusGenRootTypes['driver'] | null; // driver
     driver_id: string | null; // String
+    from: string; // String!
     id: string; // String!
-    name: string | null; // String
     open: boolean | null; // Boolean
     store: NexusGenRootTypes['store'] | null; // store
     store_id: string | null; // String
+    subject: string | null; // String
     ticket_history: NexusGenRootTypes['ticket_history'][]; // [ticket_history!]!
     type: NexusGenEnums['ticket_types'] | null; // ticket_types
+    updatedAt: NexusGenScalars['DateTime']; // DateTime!
     user: NexusGenRootTypes['user'] | null; // user
     user_id: string | null; // String
   }
@@ -5776,6 +5777,9 @@ export interface NexusGenArgTypes {
       orderBy?: NexusGenInputs['transactionOrderByInput'][] | null; // [transactionOrderByInput!]
       where?: NexusGenInputs['transactionWhereInput'] | null; // transactionWhereInput
     }
+    user: { // args
+      where: NexusGenInputs['userWhereUniqueInput']; // userWhereUniqueInput!
+    }
     userAddresses: { // args
       after?: NexusGenInputs['user_addressesWhereUniqueInput'] | null; // user_addressesWhereUniqueInput
       before?: NexusGenInputs['user_addressesWhereUniqueInput'] | null; // user_addressesWhereUniqueInput
@@ -5877,6 +5881,8 @@ export interface NexusGenArgTypes {
       before?: NexusGenInputs['ratingWhereUniqueInput'] | null; // ratingWhereUniqueInput
       first?: number | null; // Int
       last?: number | null; // Int
+      orderBy?: NexusGenInputs['ratingOrderByInput'][] | null; // [ratingOrderByInput!]
+      where?: NexusGenInputs['ratingWhereInput'] | null; // ratingWhereInput
     }
   }
   size: {
@@ -5946,6 +5952,8 @@ export interface NexusGenArgTypes {
       before?: NexusGenInputs['ticketWhereUniqueInput'] | null; // ticketWhereUniqueInput
       first?: number | null; // Int
       last?: number | null; // Int
+      orderBy?: NexusGenInputs['ticketOrderByInput'][] | null; // [ticketOrderByInput!]
+      where?: NexusGenInputs['ticketWhereInput'] | null; // ticketWhereInput
     }
     transaction: { // args
       after?: NexusGenInputs['transactionWhereUniqueInput'] | null; // transactionWhereUniqueInput
