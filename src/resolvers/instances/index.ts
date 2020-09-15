@@ -9,6 +9,7 @@ import * as product from './product';
 import * as productImage from './productImage';
 import * as productSizes from './productSizes';
 import * as rating from './rating';
+import * as devlog from './devlog';
 import * as size from './size';
 import * as store from './store';
 import * as storeDocument from './storeDocument';
@@ -22,6 +23,7 @@ export const Instances = {
   ...address,
 ...bankDetail,
 ...driver,
+...devlog,
 ...driverDocument,
 ...order,
 ...orderProducts,

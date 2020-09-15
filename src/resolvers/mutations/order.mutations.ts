@@ -10,6 +10,11 @@
         user: ({ctx}) => ({connect: {id: ctx.userId}})
        },
        async resolve(root, args, ctx, info, original){
+        await ctx.prisma.devlog.create({
+              data:{
+                sent_object: args.data
+              }
+            }) 
          const res = original(root,args,ctx,info);
           return res;
         }})

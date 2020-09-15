@@ -2,6 +2,7 @@
 import * as addressQuery from './address.queries';
 import * as bankDetailQuery from './bankDetail.queries';
 import * as driverQuery from './driver.queries';
+import * as devlogQuery from './devlog.queries';
 import * as driverDocumentQuery from './driverDocument.queries';
 import * as orderQuery from './order.queries';
 import * as orderProductsQuery from './orderProducts.queries';
@@ -22,6 +23,7 @@ export const Queries = {
   ...addressQuery,
 ...bankDetailQuery,
 ...driverQuery,
+...devlogQuery,
 ...driverDocumentQuery,
 ...orderQuery,
 ...orderProductsQuery,

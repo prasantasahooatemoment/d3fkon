@@ -9,11 +9,16 @@ const prisma = new PrismaClient()
 const pubsub = new PubSub()
 
 
-prisma.$use(async (params, next) => {
-  const result = await next(params);
-  
-  return result;
-})
+// prisma.$use(async (params, next) => {
+//   if(params.)
+//   await prisma.devlog.create({
+//     data:{
+//       sent_object: params.args
+//     }
+//   })  
+//   const result = await next(params);
+// return result;
+// })
 
 export const createContext = (ctx: any): Context => {
   let userId;
