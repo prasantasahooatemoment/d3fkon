@@ -8,6 +8,7 @@ export const transaction = objectType({
 	t.model.id()
 	t.model.order_id()
 	t.model.tax()
+	t.model.ref_no()
 	t.model.user_id()
 	t.model.order()
 	t.model.user()
