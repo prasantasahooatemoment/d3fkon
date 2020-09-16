@@ -27,7 +27,11 @@ export const user = objectType({
 			})
 		}
 	})
-	t.model.order()
+	t.model.order({
+		filtering:true,
+		ordering:true,
+		pagination:true
+	})
 	t.model.rating()
 	t.model.ticket({
 		filtering:true,

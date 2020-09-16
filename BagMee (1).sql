@@ -241,7 +241,7 @@ ALTER TABLE "store_document" ADD FOREIGN KEY ("store_id") REFERENCES "store" ("i
 ALTER TABLE "order" ADD FOREIGN KEY ("store_id") REFERENCES "store" ("id");
 
 
-CREATE TABLE "devlog"{
+CREATE TABLE "devlog"(
   "id" uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
-  "sent_object" blob
-}
+  "sent_object" jsonb
+)
