@@ -51,6 +51,7 @@ export const authenticationMutation = extendType({
           },
         })
         if (user) {
+          // const verified = await verifyOtp(mobile, otp);
           const verified = true
           if (verified) {
             accessToken = generateAccessToken(user.id)
