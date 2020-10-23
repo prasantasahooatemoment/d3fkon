@@ -14,8 +14,8 @@ export const otpMutations = extendType({
         }),
       },
       resolve: (ctx, args, info) => {
-        const sent = sendOtp(args.mobile)
-        return { status: sent }
+        // const sent = sendOtp(args.mobile)
+        return { status: 'success' }
       },
     })
 
