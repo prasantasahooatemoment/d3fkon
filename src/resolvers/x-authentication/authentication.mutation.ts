@@ -15,7 +15,7 @@ export const authenticationMutation = extendType({
             user = await ctx.prisma.store.findMany({
               where:{
                 address:{
-                  mobile:{equals:number}
+                  mobile:{equals:Number(number)}
                 }
               },
             })
