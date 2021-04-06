@@ -675,6 +675,8 @@ input DateTimeNullableFilter {
   notIn: [DateTime!]
 }
 
+type devlog
+
 enum document_types {
   aadhar
   dl
@@ -1224,6 +1226,7 @@ type Mutation {
   deleteOnetransaction(where: transactionWhereUniqueInput!): transaction
   deleteOneuser(where: userWhereUniqueInput!): user
   deleteOneuserAddresses(where: user_addressesWhereUniqueInput!): user_addresses
+  login(number: String!, password: String!): store!
   mobileLogin(mobile: Float!, otp: Float!): MobileAuthPayload!
   sendOTP(mobile: Float!): OTP!
   updateManyaddress(data: addressUpdateManyMutationInput!, where: addressWhereInput): BatchPayload!
@@ -4540,7 +4543,7 @@ type user {
   id: String!
   mobile: Float
   name: String
-  order(after: orderWhereUniqueInput, before: orderWhereUniqueInput, first: Int, last: Int): [order!]!
+  order(after: orderWhereUniqueInput, before: orderWhereUniqueInput, first: Int, last: Int, orderBy: [orderOrderByInput!], where: orderWhereInput): [order!]!
   orderCount: Int!
   rating(after: ratingWhereUniqueInput, before: ratingWhereUniqueInput, first: Int, last: Int): [rating!]!
   spendings: Float!

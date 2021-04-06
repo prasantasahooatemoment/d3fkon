@@ -51,7 +51,7 @@ export const bookingQuery = extendType({
       computedInputs:{
         where: () => ({ product:{
           some:{
-            offer:true
+            offer:{equals:true}
           }
         }})
       }
