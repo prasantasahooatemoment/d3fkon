@@ -15,3 +15,11 @@ export const MobileAuthPayload = objectType({
     t.field('user', { type: 'user' })
   },
 })
+
+export const DriverAuthPayload = objectType({
+  name: 'DriverAuthPayload',
+  definition(t) {
+    t.string('accessToken')
+    t.field('driver', { type: 'driver' })
+  },
+})

@@ -67,5 +67,39 @@ export const authenticationMutation = extendType({
         return { user, accessToken }
       },
     })
+
+    t.field('driverLogin', {
+      type: 'DriverAuthPayload',
+      args: {
+        mobile: floatArg({ required: true }),
+        otp: floatArg({ required: true }),
+      },
+      resolve: async (_parent, { mobile, otp }, ctx) => {
+        let user = null
+        let accessToken = null
+        user = await ctx.prisma.driver.findOne({
+          where: {
+            mobile,
+          },
+        })
+        if (user) {
+          // const verified = await verifyOtp(mobile, otp);
+          const verified = true
+          if (verified) {
+            accessToken = generateAccessToken(user.id)
+            ctx.userId = user.id
+          }
+          // const comparision = await compare(password, user.password);
+          // console.log(comparision);
+          // if(comparision){
+          //  accessToken = generateAccessToken(user.id)
+          //   ctx.userId = user.id;
+          // }
+          //  else
+          //  throw Error("Password is invalid!")
+        } else throw Error('User is invalid!')
+        return { user, accessToken }
+      },
+    })
   },
 })
