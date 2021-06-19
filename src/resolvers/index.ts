@@ -3,7 +3,7 @@ import * as Instances from './instances'
 import * as Mutations from './mutations'
 import * as customMutations from './custom-resolvers'
 import {authenticationMutation} from './x-authentication/authentication.mutation'
-import {AuthPayload, MobileAuthPayload} from './x-authentication/authPayload';
+import {AuthPayload, MobileAuthPayload, DriverAuthPayload} from './x-authentication/authPayload';
 export {
     Queries,
     Instances,
@@ -11,5 +11,6 @@ export {
     customMutations,
     // AuthPayload,
     MobileAuthPayload,
+    DriverAuthPayload,
     authenticationMutation
 }
